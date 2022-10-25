@@ -1,19 +1,10 @@
 # nan.ci
 
-## Project setup
-```
-npm install
-```
+Reconstruction du site de NaN
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Comment lancer le projet
+Tout d'abord cloner le depot et lancer les commandes suivantes: 
+* cd nan.ci
+* npm i
+* npm run serve
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
