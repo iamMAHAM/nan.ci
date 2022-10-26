@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="general">
   <div class="image">
   </div>
   <div class="formation-container" >
@@ -54,6 +54,10 @@ export default {
 </script>
 
 <style scoped>
+
+.general{
+  background: var(--bg2);
+}
 .image{
   width: 100%;
   height: 500px;
