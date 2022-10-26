@@ -9,7 +9,7 @@
           </span>
           <span class="status"
             :style="{
-              backgroundColor: info.isBusy ? 'var(--red)' : 'var(--green)'
+              backgroundColor: info.isBusy ? 'var(--rouge)' : 'var(--vert)'
             }"
           >
             {{ info.isBusy ? 'BUSY' : 'FREE'}}
@@ -109,7 +109,7 @@ export default defineComponent({
     width: 300px;
     height: 300px;
     border-radius: 8px;
-    background-color: var(--bglow);
+    background-color: var(--bg2);
   }
 
   .user-card .user-top{
@@ -119,6 +119,10 @@ export default defineComponent({
     /* border-bottom: 1px solid white; */
     background-size: cover;
     background-repeat: no-repeat;
+  }
+
+  .user-card .user-top.back p{
+    text-align: center;
   }
 
   .tt{
@@ -133,7 +137,7 @@ export default defineComponent({
 
   .user-top i{
     cursor: pointer;
-    color: var(--green);
+    color: var(--vert);
     font-size: 25px;
   }
 
@@ -143,8 +147,8 @@ export default defineComponent({
     vertical-align: middle;
     font-size: 15px;
     border-radius: 5px;
-    color: var(--white);
-    background-color: var(--green);
+    color: var(--blanc);
+    background-color: var(--vert);
   }
 
   .user-card .user-center{
@@ -172,7 +176,7 @@ export default defineComponent({
   .nb-likes{
     font-size: 20px;
     margin-left: 5px;
-    color: var(--white);
+    color: var(--blanc);
   }
 
   .user-icones i{
@@ -181,11 +185,11 @@ export default defineComponent({
 
   .user-icones a:nth-child(1){
     color: var(--lnblue);
-    /* background-color: var(--white); */
+    /* background-color: var(--blanc); */
   }
 
   .user-icones a:nth-child(2){
-    color: var(--white);
+    color: var(--blanc);
   }
 
   .user-icones a:nth-child(3){
@@ -216,14 +220,14 @@ export default defineComponent({
     font-size: 18px;
     width: max-content;
     height: max-content;
-    color: var(--white);
+    color: var(--blanc);
   }
 
   .spec-logo{
     display: flex;
     justify-content: center;
     height: 78px;
-    color: var(--white);
+    color: var(--blanc);
     font-size: 22px;
     align-items: center;
   }
@@ -236,7 +240,7 @@ export default defineComponent({
   }
 
   .user-card.back{
-    color: var(--white);
+    color: var(--blanc);
   }
 
   .user-card.back p{
@@ -254,6 +258,7 @@ export default defineComponent({
 
   .skill{
     display: flex;
+    justify-content: center;
     align-items: center;
   }
 
@@ -263,6 +268,7 @@ export default defineComponent({
   }
 
   .simages{
+    text-align: center;
     overflow: hidden;
     width: 180px;
     height: 44px;
