@@ -193,7 +193,7 @@ export default defineComponent({
   }
 
   .user-icones a:nth-child(3){
-    color: var(--nanviolet);
+    color: var(----violet);
   }
 
   .user-center{

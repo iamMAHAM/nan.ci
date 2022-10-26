@@ -20,11 +20,13 @@ export default {
     --bg: #1E2029;
     --bg2: #262935;
     --noir: #000;
-    --max-width: 1140px;
     --vert: #00ec64;
-    --rouge: red;
-
-
+    --rouge: #EC0000;
+    --lnblue: #0b65c2;
+    --jaune: #f7e017;
+    --max-width: 1140px;
+    --titre: 35px;
+    --paragraphe: 18px;
   }
 
   body{
