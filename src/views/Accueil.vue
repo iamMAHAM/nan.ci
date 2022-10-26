@@ -1,11 +1,15 @@
 <template>
-  <div class="home">
+  <div>
+    <navbarComponent/>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'Home',
+  name: 'Accueil',
+  components:{
+    navbarComponent
+  }
 }
 </script>

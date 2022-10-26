@@ -10,7 +10,7 @@ import FormationDetail from '../views/FormationDetail.vue'
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'Accueil',
     component: Accueil
   },
   {
