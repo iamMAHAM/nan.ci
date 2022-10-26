@@ -1,15 +1,15 @@
 <template>
   <div>
-    <navbarComponent/>
+    <headerComponent/>
   </div>
 </template>
 
 <script>
-import navbarComponent from "../components/navbar.vue";
+import headerComponent from "../components/Accueil/header.vue";
 export default {
   name: 'Accueil',
   components:{
-    navbarComponent
+    headerComponent
   }
 }
 </script>

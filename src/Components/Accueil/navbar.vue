@@ -1,7 +1,8 @@
 <template>
+   
     <nav class="Acc-nav">
         <div class="container-nav">
-            <a href="" class="logo">NaN</a>
+            <a href="" class="logo"><img src="@/assets/ImagesAccueil/logoN.png" alt=""></a>
             <ul>
                 <li><a href="" class="Acc-lien current">Accueil</a></li>
                 <li><a href="" class="Acc-lien">Nos Formations</a></li>
@@ -13,11 +14,32 @@
             <a href="" class="Acc-boutton">Accés aux Cours</a>
         </div>
     </nav>
+
+    
 </template>
 
 <script>
 export default {
-    name:'navbarComponent'
+    name:'navbarComponent',
+    data(){
+        return{
+
+        }
+    },methods: {
+        
+    },
+    setup(){
+        window.addEventListener("load",()=>{
+            const scrolle = document.querySelector(".Acc-nav"); 
+            window.addEventListener('scroll', () => {
+                    if (window.scrollY >= 50) {
+                        scrolle.classList.add('Acc-nav_active');
+                    } else {
+                        scrolle.classList.remove('Acc-nav_active');
+                    }
+                })
+        })
+    }
 
 }
 </script>
@@ -25,20 +47,26 @@ export default {
 <style scoped>
 
 .Acc-nav {
-    background-color: #222222;
+    /* background-color: #222222; */
     left: 0;
     position: fixed;
     right: 0;
     top: 0;
     transition: all 0.3s ease-in-out;
 }
+.Acc-nav_active{
+    background-color:var(--noir);
+    transition: 0.5s ease-in;
+    box-shadow: var(--shadow-medium);
+}
 .container-nav{
     margin: 0 auto;
     max-width: var(--max-width);
 }
-.logo{
-    font-size: 30px;
-    font-weight: bold;
+.logo img{
+    height: 50px;
+    width: 50px;
+    border: none;
 }
 
 .Acc-nav .container-nav{
