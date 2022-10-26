@@ -20,6 +20,7 @@ export default {
     --bg: #1E2029;
     --bg2: #262935;
     --noir: #000;
+    --max-width:1140px;
   }
 
   body{
