@@ -42,7 +42,6 @@ export default {
   body{
     font-family: 'Roboto', sans-serif;
     background: var(--bg);
-    padding-bottom: 50px;
   }
 
   p{
