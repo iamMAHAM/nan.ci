@@ -31,7 +31,7 @@
 
       <div class="user-bottom">
         <div class="user-icones">
-          <a :href="info.linkedinUrl" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a :href="info.linkedinUrl" target="_blank"><img src="@/assets/naniens/linkedin.png" alt="image de linkedin"></a>
           <a :href="info.githubUrl" target="_blank"><i class="fa-brands fa-github"></i></a>
           <a :href="info.portfolioUrl" target="_blank"><i class="fa-regular fa-address-card"></i></a>
         </div>
@@ -126,6 +126,7 @@ export default defineComponent({
   }
 
   .tt{
+    align-items: center;
     height: 30px;
     justify-content: space-between;
     display: flex;
@@ -142,7 +143,8 @@ export default defineComponent({
   }
 
   .user-top .status{
-    padding: 2px;
+    margin-right: 10px;
+    padding: 3px;
     text-align: center;
     vertical-align: middle;
     font-size: 15px;
@@ -171,6 +173,7 @@ export default defineComponent({
     overflow: hidden;
     font-size: 32px;
     margin: 5px;
+    color: var(--violet);
   }
 
   .nb-likes{
@@ -179,21 +182,16 @@ export default defineComponent({
     color: var(--blanc);
   }
 
-  .user-icones i{
+  .user-icones img{
     cursor: pointer;
+    width: 30px;
+    height: 30px;
   }
 
-  .user-icones a:nth-child(1){
-    color: var(--lnblue);
-    /* background-color: var(--blanc); */
-  }
-
-  .user-icones a:nth-child(2){
-    color: var(--blanc);
-  }
-
-  .user-icones a:nth-child(3){
-    color: var(----violet);
+  .user-icones a:nth-child(2) i{
+    border-radius: 50%;
+    color: var(--noir);
+    background-color: var(--blanc);
   }
 
   .user-center{
