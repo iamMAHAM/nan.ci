@@ -51,18 +51,33 @@
           </div>
         </div>
       </div>
+
       <div class="naniens-cards">
         <Card :info="info"/>
+        <Card :info="info"/>
+        <Card :info="info"/>
+        <Card :info="info"/>
+        <Card :info="info"/>
+        <Card :info="info"/>
+        <Card :info="info"/>
+        <Card :info="info"/>
+        <Card :info="info"/>
+      </div>
+
+      <div>
+        <Pagination />
       </div>
     </div>
   </div>
 </template>
 <script>
 import Card from '@/components/Naniens/Card.vue';
+import Pagination from '@/components/Naniens/Pagination.vue';
 export default {
   name: 'naniens',
   components: {
-    Card
+    Card,
+    Pagination
   },
   data(){
     return {
@@ -103,16 +118,6 @@ export default {
 }
 </script>
 <style>
-
-  h1{
-    color: var(--blanc);
-    font-size: var(--titre);
-  }
-
-  p{
-    font-size: var(--paragraphe);
-    letter-spacing: .5px;
-  }
   .naniens-container{
     margin: 0 auto;
     max-width: var(--max-width);
@@ -163,12 +168,23 @@ export default {
     margin: 5px;
     padding: 10px;
   }
-  /* .naniens-searcher i{
-    font-size: 20px;
-  } */
+
+  .naniens-searcher i{
+    color: var(--bg2);
+  }
+
+  .naniens-cards{
+    margin-top: 50px;
+    height: 1000px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+  }
 
   select {
     width: calc(100% - 50px);
     cursor: pointer;
   }
+
 </style>
