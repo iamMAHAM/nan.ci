@@ -29,8 +29,14 @@ export default {
     --paragraphe: 18px;
   }
 
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
   body{
     font-family: 'Roboto', sans-serif;
     background: var(--bg);
+    padding-bottom: 50px;
   }
 </style>
