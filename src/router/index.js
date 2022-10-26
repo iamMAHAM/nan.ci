@@ -25,7 +25,7 @@ const routes = [
   },
   {
     path: '/formations',
-    name: 'formation',
+    name: 'formations',
     component: Formations
   },
   {
