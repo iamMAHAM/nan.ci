@@ -1,9 +1,9 @@
 <template>
-    <div class="card">
+    <div class="card" v-for="formations in formation" :key="formations.id">
         <div class="face face1">
           <div class="content">
             <span class="stars"></span>
-            <h2 class="specia">JAVASCRIPT</h2>
+            <h2 class="specia">{{formations.nom}} </h2>
             <p class="specia">JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web.</p>
           </div>
         </div>
@@ -15,7 +15,15 @@
 </template>
 
 <script>
+// import { getImage } from '@/lib/getImage';
 export default {
+  name:"card",
+  props:['formation'],
+  data() {
+    return {
+      
+    }
+  },
 
 }
 </script>
@@ -56,6 +64,8 @@ export default {
   background-color: #6870E0;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
+    padding-bottom: 20px;
 }
 
  .card .face.face2 {

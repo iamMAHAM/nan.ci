@@ -26,7 +26,8 @@ const routes = [
   {
     path: '/formations',
     name: 'formations',
-    component: Formations
+    component: Formations,
+    props:true
   },
   {
     path: '/naniens',
