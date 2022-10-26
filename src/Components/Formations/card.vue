@@ -1,21 +1,22 @@
 <template>
-    <div class="card" v-for="formations in formation" :key="formations.id">
+    <div class="card" v-for="formations in formation" :key="formations.id"  @click="redirect(formations.nom)">
         <div class="face face1">
           <div class="content">
             <span class="stars"></span>
             <h2 class="specia">{{formations.nom}} </h2>
-            <p class="specia">JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web.</p>
+            <p class="specia">{{formations.description}}</p>
           </div>
         </div>
         <div class="face face2">
-          <img src="@/assets/formations/logoJs.png" alt="" />
+          <img :src="getImage(formations.image)" alt="" />
         </div>
       </div>
       
 </template>
 
 <script>
-// import { getImage } from '@/lib/getImage';
+import { getImage } from '@/lib/getImage';
+
 export default {
   name:"card",
   props:['formation'],
@@ -24,6 +25,15 @@ export default {
       
     }
   },
+  methods:{
+    getImage: getImage,
+    redirect(id){
+      console.log(id);
+      this.$router.push(`/formations/${id}`)
+
+    }
+  }
+
 
 }
 </script>

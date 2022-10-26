@@ -14,7 +14,7 @@
 </div>
 
 <div class="formation-cadre">
-  <Card v-for="(formations, index ) in formation"   :key="index.id" :formation="formation" />
+  <Card  :formation="formation" />
 
 </div>
 
@@ -45,7 +45,7 @@ export default {
    created() {
  
   const response = require("@/assets/s.json");
-   const data =  response
+   const data = response
    this.formation = data
    console.log( this.formation);
 }
@@ -71,7 +71,7 @@ export default {
   width: 100%;
   margin: 0 auto;
   padding: 15px;
-  max-width: 1140px;
+  max-width: var(--max-width);
   display: flex;
   flex-direction: column;
   align-items: center;
