@@ -27,6 +27,7 @@ export default {
     --max-width: 1140px;
     --titre: 35px;
     --paragraphe: 18px;
+    --radius: 8px;
   }
 
   *{
