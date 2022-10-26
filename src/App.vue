@@ -44,4 +44,15 @@ export default {
     background: var(--bg);
     padding-bottom: 50px;
   }
+
+  p{
+    font-size: var(--paragraphe);
+    letter-spacing: .5px;
+    color: var(--blanc);
+  }
+
+  h1{
+    color: var(--blanc);
+    font-size: var(--titre);
+  }
 </style>
