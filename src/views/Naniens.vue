@@ -15,28 +15,24 @@ export default {
   data(){
     return {
       info: {
-        fullName: 'nom complet',
-        speciality: 'no',
-        email: '',
-        gender: 'M',
-        age: '',
+        fullName: 'KABORE ABDUL MAHAMOUDOU',
+        speciality: 'javascript',
         profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
-        linkedinUrl: '',
-        githubUrl: '',
-        portfolioUrl: '',
-        phoneNumber: '',
-        generation: '',
+        linkedinUrl: 'https://linkedin.com',
+        githubUrl: 'https://github.com',
+        portfolioUrl: 'https://me.com',
+        generation: 5.22,
         isBusy: '',
         skills: {
-          frontEnd: [],
-          backEnd: [],
-          databases: []
+          frontEnd: ['html', 'vue', 'react'],
+          backEnd: ['express', 'node'],
+          databases: ['mongo', 'mysql']
         }
       },
     }
   }
 }
 </script>
-<style lang="">
+<style>
   
 </style>
