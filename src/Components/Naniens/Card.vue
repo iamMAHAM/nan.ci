@@ -78,20 +78,20 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Card',
   props: ['info'],
   methods:{
-    getImage(name: string){
+    getImage(name){
       try{
-        return require(`@/assets/${name.toLowerCase()}.png`)
-      } catch (e: unknown){
+        return require(`@/assets/naniens/${name.toLowerCase()}.png`)
+      } catch (e){
         if (e instanceof Error){
           alert(`aucune image trouvé avec le nom : ${name}`)
-          return require('@/assets/no.png')
+          return require('@/assets/naniens/no.png')
         }
       }
     }
