@@ -22,7 +22,7 @@ export default {
     --noir: #000;
     --vert: #00ec64;
     --rouge: #EC0000;
-    --respon:hsl(240deg 7% 97% / 60%);
+    --respon: hsl(240deg 7% 97% / 60%);
     --lnblue: #0b65c2;
     --jaune: #f7e017;
     --max-width: 1140px;
@@ -53,6 +53,8 @@ export default {
 
   h1{
     color: var(--blanc);
+    padding: 20px;
     font-size: var(--titre);
+    margin: 10px 0;
   }
 </style>
