@@ -1,6 +1,6 @@
 <template>
   <div class="pagination">
-    <button class="btn">
+    <button class="btn" @click="page($event, 'previous')">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="btn--icon"
@@ -24,7 +24,7 @@
       <a class="page" @click="page">5</a>
       <a class="page" @click="page">6</a>
     </div>
-    <button class="btn">
+    <button class="btn" @click="page($event, 'next')">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="btn--icon"
@@ -47,10 +47,34 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'pagination',
+  props: {
+    total: {
+      type: Number,
+      required: true
+    },
+    "item-to-show": {
+      type: Array,
+      required: false,
+      default: 9,
+    }
+  },
+  data(){
+    return {
+      current: null,
+    }
+  },
   methods: {
-    page(e){
-      const target = e.target
-      const number = parseInt(e.target.textContent)
+    page(e, direction=null){
+      console.log(this.current)
+      console.log('direction', direction)
+      const target = direction
+        ? direction === 'next'
+          ? this.current.nextElementSibling
+          : this.current.previousElementSibling
+        : e.currentTarget
+
+      const number = parseInt(target.textContent)
+
       Array.from(document.querySelectorAll('.page')).forEach(p => {
         p === target
           ? ''
@@ -61,7 +85,17 @@ export default defineComponent({
         this.$emit('page', number)
         target.classList.add('active')
       }
+      this.current = target
     }
+  },
+  beforeMount(){
+    const max = 9
+    const total = 0
+  },
+  mounted(){
+    document.addEventListener('DOMContentLoaded', () => {
+      this.current = document.querySelector('.page.active')
+    })
   }
 })
 </script>
@@ -72,7 +106,7 @@ export default defineComponent({
     align-items: center;
     justify-content: center;
     gap: 16px;
-    margin-top: 50px;
+    margin: 50px 0;
   }
 
   .pages {

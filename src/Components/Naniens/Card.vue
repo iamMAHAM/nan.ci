@@ -1,6 +1,6 @@
 <template>
   <div class="card-container">
-    <div class="user-card front">
+    <div class="user-card front" @click="flip">
       <div class="user-top">
         <div class="tt">
           <span class="tl">
@@ -94,6 +94,18 @@ export default defineComponent({
           return require('@/assets/naniens/no.png')
         }
       }
+    },
+    flip(e){
+      const target = e.target
+      const parent = target.closest('.card-container')
+
+      if (['A', 'IMG'].includes(target.tagName)){
+        return
+      }
+      parent.classList.add('active')
+      parent.addEventListener('mouseleave', () => {
+        parent.classList.remove('active')
+      })
     }
   }
 })
@@ -116,11 +128,11 @@ export default defineComponent({
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
   }
-  .card-container:hover .user-card.back {
+  .card-container.active:hover .user-card.back {
     -webkit-transform: rotateY(0deg);
     transform: rotateY(0deg);
   }
-  .card-container:hover .user-card.front {
+  .card-container.active:hover .user-card.front {
     -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
     -webkit-transform-style: preserve-3d;
