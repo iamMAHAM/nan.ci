@@ -28,7 +28,18 @@
  .fas{
     position: absolute;
     font-weight: 900;
-    font-size: 60px;
-    color: var(--noir);
+    font-size: 40px;
+    color: var(--blanc);
+    top: 40%;
+    background-color: var(--bg);
+  
+    background-color:   #13151b72;
+    margin: 40px;
+    border-radius: 50%;
+    padding: 10px;
+
+ }
+ .fa-arrow-right{
+    right: 0;
  }
   </style>
