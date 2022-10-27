@@ -751,7 +751,6 @@ export default {
       return this.control.spec === 'speciality'
     },
     filtered(){
-      console.log('filtered')
       if (this.control.spec && (this.control.promotion || this.control.speciality)) this.isFilter = true
       else this.isFilter = false
       return this.cards.filter(
