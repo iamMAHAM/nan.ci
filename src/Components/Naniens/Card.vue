@@ -27,10 +27,11 @@
           <span class="spec">
             {{
               specs.devs.includes(info.speciality.toLowerCase())
-                ? 'Développeur'
-                : 'Spécialisé en '
+                ? 'Développeur ' + info.speciality
+                : info.speciality === 'multimedia'
+                  ? 'Digital marketeur'
+                  : 'Spécialisé en reseau voip'
             }}
-            {{ info.speciality }}
           </span>
           <img :src="getImage(`${info.speciality}`)" alt="image de spécialité">
         </div>
