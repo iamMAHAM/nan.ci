@@ -3,7 +3,7 @@
     <nav class="Acc-nav">
         <div class="container-nav">
             <a href="" class="logo"><img src="@/assets/ImagesAccueil/logoN.png" alt=""></a>
-            <ul>
+            <ul class="Acc-menu">
                 <li><a href="" class="Acc-lien current">Accueil</a></li>
                 <li><a href="" class="Acc-lien">Nos Formations</a></li>
                 <li><a href="" class="Acc-lien">Admission</a></li>
@@ -11,8 +11,16 @@
                 <li><a href="" class="Acc-lien">Parent</a></li>
                 <li><a href="" class="Acc-lien">A propos</a></li>
             </ul>
-            <a href="" class="Acc-boutton">Accés aux Cours</a>
+            <div class="Acc-cadenas">
+                <a href="" class="Acc-boutton"><i class="fas fa-lock"></i>Accés aux Cours</a>
+            </div>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line1"></div>
+                <div class="line1"></div>
+            </div>
         </div>
+       
     </nav>
 
     
@@ -39,6 +47,14 @@ export default {
                     }
                 })
         })
+        window.addEventListener("load", ()=>{
+                const burger = document.querySelector('.burger')
+                const Navmenu = document.querySelector('.Acc-menu')
+                burger.addEventListener('click',() =>{
+                    burger.classList.toggle("burger-active")
+                    Navmenu.classList.toggle("Acc-menu-active")
+              })
+        })
     }
 
 }
@@ -55,7 +71,8 @@ export default {
     transition: all 0.3s ease-in-out;
 }
 .Acc-nav_active{
-    background-color:var(--noir);
+    /* background-color:var(--noir); */
+    background-color:var(--blanc);
     transition: 0.5s ease-in;
     box-shadow: var(--shadow-medium);
 }
@@ -89,6 +106,10 @@ export default {
     text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
+.Acc-nav_active a{
+    color:var(--bg2);
+
+}
 .Acc-nav a::before{
     content: '';
     position:absolute;
@@ -120,14 +141,93 @@ a.current{
     color: var(--violet);
      
 }
+.Acc-cadenas i{
+    margin-right: 15px;
+}
 .Acc-boutton{
-    height: 38px;
+    height: 45px;
     background: var(--violet);;
     border-radius: 6px;
     color: var(--blanc);
+    font-weight: bold;
+}
+.Acc-nav_active .Acc-boutton{
+    color: var(--blanc);
 }
 .Acc-boutton:hover{
-    color: var(--blanc)
+    color: var(--blanc);
+    font-weight: bold;
+}
+.burger{
+    margin-top: 5px;
+    cursor: pointer;
+    display: none;
+}
+.burger div{
+    width: 25px;
+    height: 5px;
+    margin: 5px;
+    background-color: var(--blanc);
+
+}
+.Acc-nav_active .burger div{
+    background-color: var(--bg2);
+}
+@media (max-width:768px) {
+    .burger{
+        margin-top: -3px;
+        display: block;
+        margin-right: 42px;
+    } 
+    .burger.burger-active .line1:nth-child(2){
+        opacity: 0;
+    }
+    .burger.burger-active .line1:nth-child(1){
+        transform: translateY(9px) rotate(45deg);
+    }
+    .burger.burger-active .line1:nth-child(3){
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    .Acc-menu{
+        position: fixed;
+        left: 0px;
+        top:-100% ;
+        gap: 6;
+        display: flex;
+        flex-direction: column;
+        background-color:var(--respon);
+        width: 100%;
+        text-align: center;
+        transition:  0.3s;
+        margin-top: 108px;
+      
+
+
+    }
+    .Acc-nav_active .Acc-menu{
+        position: fixed;
+        left: 0px;
+        top:-100% ;
+        gap: 6;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 1);
+        width: 100%;
+        text-align: center;
+        transition:  0.3s;
+        margin-top: 108px;
+        /* color: var(--bg2); */
+
+
+    }
+    li{
+        margin: 16px 0;
+    }
+    .Acc-menu.Acc-menu.Acc-menu-active{
+        top: 0; 
+    }
+     
+    
 }
 
 
