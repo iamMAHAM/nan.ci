@@ -1,8 +1,9 @@
 <template>
 
-    <!-- <navbarComponent/> -->
+    
+    
     <div>
-        
+        <navbarComponent class="Acc-headd"/> 
         <Carousel :slides="slides" :interval="3000" controls indicators class="carou"></Carousel>
 
     </div>
@@ -12,7 +13,7 @@
 
 <script>
 import Carousel from '@/components/Accueil/banner/carousel.vue'
-import navbarComponent from "../Accueil/navbar.vue";
+import navbarComponent from "@/components/Accueil/navbar.vue";
 export default {
     name:'headerComponent', 
     data() {
@@ -39,8 +40,13 @@ export default {
 </script>
 
 <style scoped>
+
+.Acc-headd{
+   
+    z-index: 999;
+}
 .carou{
-    height: 500px;
+    height: 920px;
    
 }
  .Acc-hed img{

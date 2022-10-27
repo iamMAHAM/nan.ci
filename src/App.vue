@@ -22,6 +22,7 @@ export default {
     --noir: #000;
     --vert: #00ec64;
     --rouge: #EC0000;
+    --respon:hsl(240deg 7% 97% / 60%);
     --lnblue: #0b65c2;
     --jaune: #f7e017;
     --max-width: 1140px;
