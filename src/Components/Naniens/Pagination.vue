@@ -57,12 +57,16 @@ export default defineComponent({
       type: Number,
       required: false,
       default: 9,
+    },
+    isFilter: {
+      type: Boolean,
+      required: false
     }
   },
   data(){
     return {
       current: null,
-      numbers: [],
+      pageNumber: 1,
     }
   },
   methods: {
@@ -73,29 +77,30 @@ export default defineComponent({
           ? this.current?.nextElementSibling
           : this.current?.previousElementSibling
       }
-      const number = parseInt(target?.textContent)
-      if (direction && isNaN(number)) return
+      this.pageNumber = parseInt(target?.textContent)
+      if (direction && isNaN(this.pageNumber)) return
       Array.from(document.querySelectorAll('.page')).forEach(p => {
         p === target
           ? ''
           : p.classList.remove('active')
         
-        if (number >= 5){
-          number === this.numbers
+        if (this.pageNumber >= 5){
+          this.pageNumber === this.numbers
             ? ''
-            : p.style.transform = `translate(${-60 * (number - 5)}px)`
+            : p.style.transform = `translate(${-60 * (this.pageNumber - 5)}px)`
         }
       })
       if (!target.classList.contains('active')){
-        this.$emit('page', number)
+        this.$emit('page', this.pageNumber)
         target.classList.add('active')
       }
       this.current = target
     }
   },
-  beforeMount(){
-    console.log(this.total)
-    this.numbers = Math.ceil(this.total / this.itemToShow)
+  computed: {
+    numbers(){
+      return Math.ceil(this.total / this.itemToShow)
+    }
   },
   mounted(){
     document.addEventListener('DOMContentLoaded', () => {
@@ -103,8 +108,10 @@ export default defineComponent({
     })
   },
   watch: {
-    numbers(){
-      console.log(this.numbers)
+    isFilter: function (new_, _){
+      if (new_) {
+        this.$emit('page', 1)
+      }
     }
   }
 })
