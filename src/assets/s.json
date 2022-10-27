@@ -8,7 +8,7 @@
     },
     {
       "id":2,
-      "nom":"PhP",
+      "nom":"php",
       "description":"PHP Hypertext Preprocessor, plus connu sous son sigle PHP,est un langage de programmation libre,principalement utilisé pour produire des pages web dynamiques via un serveur HTTP",
       "image":"formations/php_PNG25-removebg-preview.png"
     },

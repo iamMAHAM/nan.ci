@@ -8,15 +8,15 @@
           </div>
         </div>
         <div class="face face2">
-          <img :src="getImage(formations.image)" alt="" />
+          <img :src="getImage(formations.image)"
+           :alt="`logo de ${formations.nom}`" />
         </div>
-      </div>
+    </div>
       
 </template>
 
 <script>
 import { getImage } from '@/lib/getImage';
-
 export default {
   name:"card",
   props:['formation'],
@@ -44,7 +44,7 @@ export default {
   width: 300px;
   height: 400px;
   margin: 0 auto;
-  background: #fff;
+  background:var(--bg2);
   border-radius: 15px;
   box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
 }
@@ -71,7 +71,7 @@ export default {
 }
 
  .card .face.face1 .specia {
-  background-color: #6870E0;
+  background-color:var(--blanc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
