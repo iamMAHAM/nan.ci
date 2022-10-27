@@ -55,6 +55,6 @@ export default {
     color: var(--blanc);
     padding: 20px;
     font-size: var(--titre);
-    margin: 10px 0;
+    margin: 20px 0;
   }
 </style>
