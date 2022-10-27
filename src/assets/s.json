@@ -10,31 +10,31 @@
       "id":2,
       "nom":"PhP",
       "description":"PHP Hypertext Preprocessor, plus connu sous son sigle PHP,est un langage de programmation libre,principalement utilisé pour produire des pages web dynamiques via un serveur HTTP",
-      "image":"formations/php_PNG25-removebg-preview.png"
+      "image":"formations/php.png"
     },
     {
       "id":3,
       "nom":"Python",
       "description":"Python est un langage de programmation open source le plus employé par les informaticiens. Ce langage s’est propuisé en tête de la gestion d’infrastructure, d’analyse de données ou dans le domaine du déleloppement de logiciels.",
-      "image":"formations/python-removebg-preview (1).png"
+      "image":"formations/python.png"
     },
     {
       "id":4,
       "nom":"Flutter",
       "description":"Flutter est utile pour créer des applications sur mobile,tablette,télévision de desktop.L’utilisation du Dart,qui est un langage de programmation très facile d’accès si vous connaissez JavaScript,TypeScript ou Java,permet une compilation en ARM(langage machine)",
-      "image":"formations/flutter-removebg-preview.png"
+      "image":"formations/flutter.png"
     },
     {
       "id":5,
       "nom":"Reseaux-voix",
       "description":"La voix sur IP, ou << VoIP>> pour <<Voice over IP>>, est une technologie informatique qui permet de transmettre la voix sur des réseaux compatibles IP, via Internet ou des réseaux privés ou publics, qu’ils soient filaires ou non.",
-      "image":"formations/pngwing.com-removebg-preview.png"
+      "image":"formations/voip.png"
     },
     {
       "id":6,
       "nom":"Marketing & Digital",
       "description":"Animation de communauté ou gestionnaire de communauté,aussi community manager (CM),est un métier - l’animation de communité ,gestion de communité, ou création de contenues.",
-      "image":"formations/kisspng-digital-marketing-digital-strategy-customer-social-d-badaun-group-5c05ca00f408d7.8810153415438832649996-removebg-preview (1).png"
+      "image":"formations/digitalmarketing.png"
     }
   ]
 }
