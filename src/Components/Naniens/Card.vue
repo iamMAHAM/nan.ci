@@ -1,6 +1,6 @@
 <template>
   <div class="card-container">
-    <div class="user-card front">
+    <div class="user-card front" @click="flip">
       <div class="user-top">
         <div class="tt">
           <span class="tl">
@@ -94,6 +94,18 @@ export default defineComponent({
           return require('@/assets/naniens/no.png')
         }
       }
+    },
+    flip(e){
+      const target = e.target
+      const parent = target.closest('.card-container')
+
+      if (['A', 'IMG'].includes(target.tagName)){
+        return
+      }
+      parent.classList.add('active')
+      parent.addEventListener('mouseleave', () => {
+        parent.classList.remove('active')
+      })
     }
   }
 })
@@ -101,9 +113,33 @@ export default defineComponent({
 <style>
 
   .card-container{
-    display: flex;
-    gap: 20px;
+    width: 300px;
+    height: 300px;
+    position: relative;
   }
+
+  .card-container .user-card.back {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+  .card-container .user-card.front {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  .card-container.active:hover .user-card.back {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  .card-container.active:hover .user-card.front {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+
   .user-card{
     overflow: hidden;
     width: 300px;
@@ -123,6 +159,21 @@ export default defineComponent({
 
   .user-card .user-top.back p{
     text-align: center;
+  }
+
+  .user-card.front,
+  .user-card.back{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    text-align: center;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  }
+
+  .user-card.back{
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   .tt{

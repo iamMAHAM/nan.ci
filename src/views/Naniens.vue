@@ -14,7 +14,7 @@
         <div class="naniens-searcher">
           <div class="nsl">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" role="search" placeholder="recherche ..." v-model="control.name">
+            <input type="text" role="search" placeholder="rechercher un nom ..." v-model="control.name">
           </div>
           <div class="nsl">
             <i class="fa-solid fa-filter"></i>
@@ -33,7 +33,8 @@
               <option value="C#">C#</option>
               <option value="flutter">Flutter</option>
               <option value="PHP">PHP</option>
-              <option value="front-end">Front-end</option>
+              <option value="front-end">Front end</option>
+              <option value="reseau-voip">Reseau Voip</option>
               <option value="multimedia">Multimédia</option>
             </select>
             <select name="promotion" v-model="control.promotion" v-else>
@@ -46,23 +47,36 @@
             </select>
           </div>
           <div class="nsl" style="border-right: none" v-else="showFs">
-            <i class="fa-solid fa-square-xmark"></i>
+            <i class="fa-solid fa-square-xmark"
+              @click="control = {name: '', spec: '', speciality: '', promotion: ''}"
+              style="cursor: pointer;"
+            ></i>
             <input type="text" placeholder="Aucun filtre selectionné" disabled>
           </div>
         </div>
       </div>
+
       <div class="naniens-cards">
-        <Card :info="info"/>
+        <Card
+          v-for="info in toDisplayed"
+          :info="info"
+        />
+      </div>
+
+      <div>
+        <Pagination :itemToShow="itemToShow" :total="filtered.length" @page='paginate' :isFilter="isFilter"/>
       </div>
     </div>
   </div>
 </template>
 <script>
 import Card from '@/components/Naniens/Card.vue';
+import Pagination from '@/components/Naniens/Pagination.vue';
 export default {
   name: 'naniens',
   components: {
-    Card
+    Card,
+    Pagination
   },
   data(){
     return {
@@ -74,7 +88,7 @@ export default {
         githubUrl: 'https://github.com',
         portfolioUrl: 'https://me.com',
         generation: 5.22,
-        isBusy: '',
+        isBusy: false,
         skills: {
           frontEnd: ['html', 'vue', 'react'],
           backEnd: ['express', 'node'],
@@ -86,7 +100,647 @@ export default {
         spec: '',
         speciality: '',
         promotion: ''
-      }
+      },
+      cards: [
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'python',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: true,
+          skills: {
+            frontEnd: ['html', 'angular'],
+            backEnd: ['flask', 'node'],
+            databases: ['mysql', 'postgresql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'php',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+        {
+          fullName: 'KABORE ABDUL MAHAMOUDOU',
+          speciality: 'javascript',
+          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          linkedinUrl: 'https://linkedin.com',
+          githubUrl: 'https://github.com',
+          portfolioUrl: 'https://me.com',
+          generation: 5.22,
+          isBusy: '',
+          skills: {
+            frontEnd: ['html', 'vue', 'react'],
+            backEnd: ['express', 'node'],
+            databases: ['mongo', 'mysql']
+          }
+        },
+      ],
+      itemToShow: 9,
+      page: 1,
+      isFilter: false
+    }
+  },
+  methods: {
+    paginate(number){
+      this.page = number
     }
   },
   computed: {
@@ -95,24 +749,29 @@ export default {
     },
     filter(){
       return this.control.spec === 'speciality'
+    },
+    filtered(){
+      if (this.control.spec && (this.control.promotion || this.control.speciality)) this.isFilter = true
+      else this.isFilter = false
+      return this.cards.filter(
+        c =>
+          c.fullName.toLocaleLowerCase().includes(this.control.name.toLocaleLowerCase())
+          && String(c.generation).toLowerCase().includes(String(this.control.promotion).toLocaleLowerCase())
+          && c.speciality.toLocaleLowerCase().includes(this.control.speciality.toLocaleLowerCase())
+      )
+    },
+    toDisplayed(){
+      return this.filtered.filter((c, index) => {
+        const left = this.itemToShow * this.page - this.itemToShow //left interval born
+        const right = this.itemToShow * this.page - 1 // right interval born
+        const inter = [left, right] // interval simulator
+        return index >= inter[0] && index <= inter[1]
+      })
     }
-  },
-  updated(){
-    console.log(this.control)
   }
 }
 </script>
 <style>
-
-  h1{
-    color: var(--blanc);
-    font-size: var(--titre);
-  }
-
-  p{
-    font-size: var(--paragraphe);
-    letter-spacing: .5px;
-  }
   .naniens-container{
     margin: 0 auto;
     max-width: var(--max-width);
@@ -157,18 +816,30 @@ export default {
   }
 
   .naniens-searcher div :nth-child(2){
+    background: none;
     outline: none;
     border: none;
     font-size: 18px;
     margin: 5px;
     padding: 10px;
   }
-  /* .naniens-searcher i{
-    font-size: 20px;
-  } */
+
+  .naniens-searcher i{
+    color: var(--bg2);
+  }
+
+  .naniens-cards{
+    margin-top: 50px;
+    height: 1000px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+  }
 
   select {
     width: calc(100% - 50px);
     cursor: pointer;
   }
+
 </style>
