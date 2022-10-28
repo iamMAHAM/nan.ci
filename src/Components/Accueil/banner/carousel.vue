@@ -3,7 +3,7 @@
       <div class="carousel-inner">
         <carousel-indicators v-if="indicators" :total="slides.length" :current-index="currentSlide" @switch="switchSlide($event)"></carousel-indicators>
         <carousel-item v-for="(slide, index) in slides" :slide="slide" :key="`item-${index}`" :current-slide="currentSlide" :index="index" :direction="direction"
-          @mouseenter="stopSlideTimer" @mouseout="startSlideTimer"></carousel-item>
+         :texte="textes[index]" :titre="titres[index]" @mouseenter="stopSlideTimer" @mouseout="startSlideTimer"></carousel-item>
         <carousel-controls v-if="controls" @prev="prev" @next="next"></carousel-controls>
       </div>
     </div>
@@ -16,6 +16,7 @@
   export default {
     name:"Carousel",
     props: {
+       
       slides: {
         type: Array,
         required: true,
@@ -32,6 +33,14 @@
         type: Number,
         default: 5000,
       },
+      textes: {
+        type: Array,
+        required: false
+      },
+      titres: {
+        type: Array,
+        required: false
+      }
     },
     components: { CarouselItem, CarouselControls, CarouselIndicators },
     data: () => ({
