@@ -10,7 +10,7 @@ import FormationDetail from '../views/FormationDetail.vue'
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'Accueil',
     component: Accueil
   },
   {
@@ -25,8 +25,9 @@ const routes = [
   },
   {
     path: '/formations',
-    name: 'formation',
-    component: Formations
+    name: 'formations',
+    component: Formations,
+    props:true
   },
   {
     path: '/naniens',

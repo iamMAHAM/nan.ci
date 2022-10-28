@@ -1,4 +1,5 @@
 <template>
+
   <div class="parents_contenaire">
    <h1>PORTAIL PARENT</h1>
     
@@ -30,36 +31,46 @@ export default {
  }
  h1{
    text-align: center;
+   font-size: 64px;
+   color: var(--violet);
  }
  .sous_cadre_parents_id{
-   border: 1px solid white;
    width: 50%;
-   height: 400px;
+   height: 452px;
    position: absolute;
    left: 50%;
    top: 50%;
    transform: translate(-50%,-50%);
+   border-radius: 15px;
+   background-color: var(--bg2);
  }
  .sous_cadre_parents_id>h2{
+   margin-top: 10px;
  text-align: center;
+ font-size: var(--titre);
+ color: var(--violet);
  }
  .sous_cadre_parents_id .parents_id_input{
     width: 360px;
     margin: 80px auto;
  }
  .parents_id_input .saisie{
-   width: 350px;
+   width: 345.15px;
    height: 50px;
    margin-top: 20px;
    border-radius: 8px;
+   font-size: 16px;
+   padding: 10px;
  }
  .btn{
   width: 150px;
   height: 40px;
   position: relative;
   left: 50%;
-  top: 10%;
+  top: 8%;
   transform: translate(-50%,-50%);
   border-radius: 8px;
+  background-color: var(--violet);
+  color: var(--blanc);
  }
 </style>
