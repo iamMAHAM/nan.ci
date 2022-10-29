@@ -4,8 +4,8 @@
       "id":1,
       "nom":"JavaScript",
       "description":"JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web.",
-      "image":"formations/logoJs.png"
-    },
+      "image":"formations/logoJs.png",
+      "contenu": ""   },
     {
       "id":2,
       "nom":"php",

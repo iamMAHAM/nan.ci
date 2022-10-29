@@ -6,7 +6,13 @@
     <div  class='card_1'>
         <h2>javascript</h2>
         <p>
-  JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web. Avec les technologies HTML et CSS, JavaScript est parfois considéré comme l'une des technologies cœur du World Wide Web3. Une grande majorité des sites web l'utilisent4, et la majorité des navigateurs web disposent d'un moteur JavaScript5 dédié pour l'interpréter, indépendamment des considérations de sécurité qui peuvent se poser le cas échéant.
+          JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web. Avec les technologies HTML et CSS, JavaScript est parfois considéré comme l'une des technologies cœur du World Wide Web3. Une grande majorité des sites web l'utilisent4, et la majorité des navigateurs web disposent d'un moteur JavaScript5 dédié pour l'interpréter, indépendamment des considérations de sécurité qui peuvent se poser le cas échéant.
+
+C'est un langage orienté objet à prototype : les bases du langage et ses principales interfaces sont fournies par des objets. Cependant, à la différence d'un langage orienté objets, les objets de base ne sont pas des instances de classes.
+
+Chaque objet de base (ex : l'objet document ou windows) possède son propre modèle qui lui permettra d'instancier des objets fils à l'aide de constructeurs utilisant ses propriétés. Par exemple, la propriété de prototypage va leur permettre de créer des objets héritiers personnalisés. En outre, les fonctions sont des objets de première classe. Le langage supporte le paradigme objet, impératif et fonctionnel. JavaScript est le langage possédant le plus large écosystème grâce à son gestionnaire de dépendances npm, avec environ 500 000 paquets en août 20176.
+
+
   </p>
     </div>
   
@@ -84,7 +90,7 @@
    background: var(--bg);
    font-size: 1.1em;
   width: 1094px;
-  height: 351px;
+  height: 381px;
   left: 90px;
   top: 507px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -128,8 +134,8 @@ border-radius: 45px;
   .box>p{
     font-size: 1.1em;
   padding-top: 2em ;
- padding-left: 3em;
- padding-right: 3em;
+ padding-left: 2em;
+ padding-right: 2em;
  display: flex;
  justify-content: center;
 
