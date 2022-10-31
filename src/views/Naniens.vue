@@ -58,6 +58,7 @@
 
       <div class="naniens-cards">
         <Card
+          :specs="specialities"
           v-for="info in toDisplayed"
           :info="info"
         />
@@ -72,6 +73,8 @@
 <script>
 import Card from '@/components/Naniens/Card.vue';
 import Pagination from '@/components/Naniens/Pagination.vue';
+import { specialities } from '@/lib/specialities';
+
 export default {
   name: 'naniens',
   components: {
@@ -133,23 +136,23 @@ export default {
           }
         },
         {
-          fullName: 'KABORE ABDUL MAHAMOUDOU',
-          speciality: 'php',
-          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
+          fullName: 'KIONOU MOHAMED',
+          speciality: 'multimedia',
+          profilUrl: 'https://burst.shopifycdn.com/photos/dark-braids-in-hair-and-red-lips-fashion.jpg?width=1850&format=pjpg&exif=1&iptc=1',
           linkedinUrl: 'https://linkedin.com',
           githubUrl: 'https://github.com',
           portfolioUrl: 'https://me.com',
           generation: 5.22,
           isBusy: '',
           skills: {
-            frontEnd: ['html', 'vue', 'react'],
-            backEnd: ['express', 'node'],
-            databases: ['mongo', 'mysql']
+            frontEnd: [],
+            backEnd: [],
+            databases: []
           }
         },
         {
-          fullName: 'KABORE ABDUL MAHAMOUDOU',
-          speciality: 'php',
+          fullName: 'DESNOS',
+          speciality: 'multimedia',
           profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
           linkedinUrl: 'https://linkedin.com',
           githubUrl: 'https://github.com',
@@ -735,7 +738,8 @@ export default {
       ],
       itemToShow: 9,
       page: 1,
-      isFilter: false
+      isFilter: false,
+      specialities: specialities
     }
   },
   methods: {
