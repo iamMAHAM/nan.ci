@@ -55,8 +55,8 @@
           </div>
         </div>
       </div>
-
       <div class="naniens-cards">
+        <Loader v-if="load"/>
         <Card
           :specs="specialities"
           v-for="info in toDisplayed"
@@ -74,12 +74,13 @@
 import Card from '@/components/Naniens/Card.vue';
 import Pagination from '@/components/Naniens/Pagination.vue';
 import { specialities } from '@/lib/specialities';
-
+import Loader from '@/components/Global/Loader.vue';
 export default {
   name: 'naniens',
   components: {
     Card,
-    Pagination
+    Pagination,
+    Loader
   },
   data(){
     return {
@@ -739,7 +740,8 @@ export default {
       itemToShow: 9,
       page: 1,
       isFilter: false,
-      specialities: specialities
+      specialities: specialities,
+      load: true
     }
   },
   methods: {
