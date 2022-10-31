@@ -131,11 +131,61 @@
         <div class="corps-mission">
             <div class="corps-mission-titre">
                 <h2>Pourquoi Etudier À NaN</h2>
-                <p>Un Avenir de professionnel assuré avec Nan</p>
+                <p>Un Avenir de professionnel assuré avec NaN</p>
             </div>
             <div class="corps-mission-card">
-                <div class="corps-mission-card1"></div>
+                <div class="corps-mission-card1">
+                    <img src="@/assets/ImagesAccueil/goal.svg" alt="">
+                    <h3>Notre Vision</h3>
+                    <p>La vision de NaN repose sur ce que doit être l’avenir de l'Afrique francophone. L'Afrique doit devenir un des endroits de la terre où il fait le mieux-vivre.</p>
+                </div>
+                <div class="corps-mission-card1">
+                    <img src="@/assets/ImagesAccueil/goal.svg" alt="">
+                    <h3>Nos missions</h3>
+                    <p>Activité principale du développeur web: le développement web consiste à programmer et mettre en place des sites web.</p>
+                </div>
+                <div class="corps-mission-card1">
+                    <img src="@/assets/ImagesAccueil/goal.svg" alt="">
+                    <h3>Propositon de valeurs</h3>
+                    <p>Dans l'optique de devenir l'une des meilleures ecole de formation africaine, NaN se fonde sur ces expériences en tant qu'école semi-gratuite.</p>
+                </div>
             </div>
+        </div>
+        <div class="corps-video">
+            <!-- <video src="@/assets/ImagesAccueil/VIDEO1.mp4">le fichier ne peut pas être lu</video> -->
+            <video width="320" height="240" controls>
+                <source src=”http://techslides.com/demos/sample-videos/small.ogv” type=video/ogg> <source src="/build/videos/arcnet.io(7-sec).mp4" type=video/mp4>
+            </video>
+        </div>
+        <div class="corps-statistique">
+            <div class="corps-statistique-titre">
+                <h2>Statistiques 2021 De NaN</h2>
+            </div>
+           <div class="corps-statistique-group">
+                <div class="corps-statistique-arrow"></div>
+                <div class="corps-statistique-stat">
+                    <div class="corps-statistique-stat1">
+                        <h3>41</h3>
+                        <span></span>
+                        <p>ÉTUDIANTS EN PRÉSENTIEL</p>
+                    </div>
+                    <div class="corps-statistique-stat1">
+                        <h3>41</h3>
+                        <span></span>
+                        <p>ÉTUDIANTS EN PRÉSENTIEL</p>
+                    </div>
+                    <div class="corps-statistique-stat1">
+                        <h3>41</h3>
+                        <span></span>
+                        <p>ÉTUDIANTS EN PRÉSENTIEL</p>
+                    </div>
+                    <div class="corps-statistique-stat1">
+                        <h3>41</h3>
+                        <span></span>
+                        <p>ÉTUDIANTS EN PRÉSENTIEL</p>
+                    </div>
+                </div>
+           </div>
         </div>
     </div>
 </template>
@@ -440,8 +490,8 @@ export default {
 .corps-mission{
     max-width: var(--max-width);
     margin: 47px auto;
-    height: 500px;
-    background-color: red;
+    height: 450px;
+    border: 2px solid var(--blanc);
     border-radius: 20px;
 }
 .corps-mission-titre h2{
@@ -460,10 +510,103 @@ export default {
     
 }
 .corps-mission-card{
-    border: 1px solid blanchedalmond;
-    height: 200px;
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+}
+.corps-mission-card1{
+    height: 261px;
+    width: 290px;
+    background-color: var(--blanc);
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+.corps-mission-card1 img{
+    height: 90px;
+    width: 90px;
+    margin-bottom: 20px;
+}
+.corps-mission-card1 p{
+    color: var(--noir);
+    font-size: 14px;
+    text-align: justify;
+    padding: 20px;
+
+}
+.corps-video{
+    max-width: var(--max-width);
+    margin: 47px auto;
+    height: 500px;
+    border: 2px solid var(--bg2);
+    border-radius: 20px;
+}
+.corps-video video{
+    height: 500px;
+    width: 100%;
+    border-radius: 20px;
+}
+.corps-statistique{
+    max-width: var(--max-width);
+    margin: 47px auto;
+    height: 500px;
+   background-color:  var(--bg2);
+    border-radius: 20px;
+}
+.corps-statistique-titre h2{
+    text-align: center;
+    padding: 20px;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
+    color: var(--blanc);
+    text-transform: uppercase;
+}
+.corps-statistique-group{
+    border: 1px solid green;
+    display: flex;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+}
+/* .corps-statistique-arrow{
+    border: 1px solid red;
+    height: 100px;
+    width: 100px;
+} */
+.corps-statistique-stat{
+    display: flex;
+    justify-content: space-around;
+}
+.corps-statistique-stat1{
+    border: 1px solid yellow;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+
+}
+.corps-statistique-stat1 h3{
+    border-bottom: 4px solid var(--blanc);
+    width: 60px;
+    font-size: 30px;
+    color: var(--violet);
+    text-align: center;
+}
+.corps-statistique-stat1 p{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 20px;
 }
 
+    
+                    
 
 
 
