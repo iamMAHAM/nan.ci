@@ -27,6 +27,7 @@
 <script>
 
 import Card from '@/components/Formations/card.vue';
+import axios from 'axios'
 
 export default {
   name:"formations",
@@ -39,13 +40,19 @@ export default {
       formation:""
     }
   },
-  created() {
- 
-  const response = require("@/assets/s.json");
-   const data = response
-   this.formation = data
-   console.log( this.formation);
-}
+mounted() {
+  axios
+  .get('http://192.168.88.15:3001/api/specialities')
+  .then(response =>{ 
+    this.formation = response.data.specialities
+  })
+  .catch((error) =>{
+    this.$router.push('/')
+
+  })
+},
+
+
 
 }
 </script>
