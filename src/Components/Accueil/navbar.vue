@@ -20,6 +20,14 @@
                 <div class="line1"></div>
             </div>
         </div>
+        <!-- <div class="Acc-text">
+                <h1>Une Pédagogie inspirée de 42</h1>
+                <p>
+                    Travailler avec le sourire et sans stress, c'est sourire à l'avenir
+                </p>
+              
+        </div> -->
+        
        
     </nav>
 
@@ -69,6 +77,7 @@ export default {
     right: 0;
     top: 0;
     transition: all 0.3s ease-in-out;
+   
 }
 .Acc-nav_active{
     /* background-color:var(--noir); */
@@ -183,7 +192,7 @@ a.current{
         opacity: 0;
     }
     .burger.burger-active .line1:nth-child(1){
-        transform: translateY(9px) rotate(45deg);
+        transform: translateY(10px) rotate(45deg);
     }
     .burger.burger-active .line1:nth-child(3){
         transform: translateY(-9px) rotate(-45deg);
@@ -200,9 +209,6 @@ a.current{
         text-align: center;
         transition:  0.3s;
         margin-top: 108px;
-      
-
-
     }
     .Acc-nav_active .Acc-menu{
         position: fixed;
