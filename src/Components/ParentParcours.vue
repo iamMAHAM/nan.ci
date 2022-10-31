@@ -5,12 +5,12 @@
      <div class="sous_card1_1">
        <h3>TOTAL DE POINTS</h3>
        <p>60.80</p>
-       <button class="details1"><i class="fa-solid fa-plus"></i></button>
+       <button class="details1" @click="ToseePoint"><i class="fa-solid fa-plus"></i></button>
      </div>
      <div class="sous_card1_1">
        <h3>POINT DE PROJET</h3>
        <p>12</p>
-       <button class="details2"><i class="fa-solid fa-plus"></i></button>
+       <button class="details2" @click="ToseeProjet"><i class="fa-solid fa-plus"></i></button>
      </div>
    </div>
    <div class="card2_Etudiant_parcours">
@@ -29,6 +29,16 @@ export default {
 data(){
   return{
     
+  }
+},
+methods:{
+  ToseePoint(){
+ console.log('bonjur')
+ this.$router.push('/parent/Points')
+  },
+  ToseeProjet(){
+ console.log('bonjur')
+ this.$router.push('/parent/Points_Projet')
   }
 }
 }
