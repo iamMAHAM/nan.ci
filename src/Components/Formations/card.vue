@@ -27,9 +27,9 @@ export default {
   },
   methods:{
     getImage: getImage,
-    redirect(id){
-      console.log(id);
-      this.$router.push(`/formations/${id}`)
+    redirect(nom){
+      console.log(nom);
+      this.$router.push(`/formations/${nom}`)
 
     }
   }

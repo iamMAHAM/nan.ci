@@ -5,6 +5,7 @@
     
     <div  class='card_1'>
         <h2>javascript</h2>
+        {{specialite}}
         <p>
           JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web. Avec les technologies HTML et CSS, JavaScript est parfois considéré comme l'une des technologies cœur du World Wide Web3. Une grande majorité des sites web l'utilisent4, et la majorité des navigateurs web disposent d'un moteur JavaScript5 dédié pour l'interpréter, indépendamment des considérations de sécurité qui peuvent se poser le cas échéant.
 
@@ -18,7 +19,7 @@ Chaque objet de base (ex : l'objet document ou windows) possède son propre mod�
   
     <div class="card_2">
       <div class="box">
-          <h2>Node js</h2>
+          <h2>Node js </h2>
           <p>Node.js est une plateforme logicielle libre en JavaScript, orientée vers les applications réseau évènementielles hautement concurrentes qui doivent pouvoir monter en charge. Elle utilise la machine virtuelle V8, la librairie libuv pour sa boucle d'évènements, et implémente sous licence MIT les spécifications CommonJS. Parmi les modules natifs de Node.js, on retrouve http qui permet le développement de serveur HTTP. Ce qui autorise, lors du déploiement de sites internet et d'applications web développés avec Node.js, de ne pas installer et utiliser des serveurs webs tels que Nginx ou Apache. Concrètement, Node.js est un environnement bas niveau permettant l’exécution de JavaScript côté serveur.</p>
       </div>
       <div class="box">
@@ -58,7 +59,7 @@ Chaque objet de base (ex : l'objet document ou windows) possède son propre mod�
       <p>Javascript basics</p>
   
     </div>
-  
+    
   </div>
 </div>
   
@@ -67,8 +68,28 @@ Chaque objet de base (ex : l'objet document ou windows) possède son propre mod�
   </template>
   
   <script>
+  import  axios  from "axios";
   export default {
-  
+    props:["specialite"],
+    data() {
+      return {
+        
+      }
+    },
+    mounted() {
+  axios
+  .get(`http://192.168.88.15:3001/api/specialities/${this.specialite}`)
+  .then(response =>{ 
+console.log(response.data.data)
+    // this.formation = response.data.specialities
+  })
+  .catch((error) =>{
+    this.$router.push('/')
+
+  })
+}
+
+
   }
   </script >
   

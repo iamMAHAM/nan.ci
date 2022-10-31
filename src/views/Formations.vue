@@ -31,7 +31,6 @@ import axios from 'axios'
 
 export default {
   name:"formations",
-  props:['texte'],
   components:{
     Card
   },
