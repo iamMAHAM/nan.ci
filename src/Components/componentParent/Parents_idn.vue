@@ -31,8 +31,8 @@ export default {
  }
  h1{
    text-align: center;
-   font-size: 64px;
-   color: var(--violet);
+   font-size: var(--titre);
+   color: var(--blanc);
  }
  .sous_cadre_parents_id{
    width: 50%;
@@ -61,6 +61,7 @@ export default {
    border-radius: 8px;
    font-size: 16px;
    padding: 10px;
+   outline: none;
  }
  .btn{
   width: 150px;
