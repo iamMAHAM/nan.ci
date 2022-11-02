@@ -3,7 +3,7 @@
     <h1>INFORMATIONS DE L’ETUDIANT</h1>
    <div class="Etudiants_infos1">
        <fieldset class="Etudiants_infos1_data">
-         <legend></legend>
+         <legend><img src="../../assets/ImagesParents/christopher-campbell-rDEOVtE7vOs-unsplash.jpg" alt=""></legend>
          <div class="card_infos">
            <p>Nom :   <span>Kone</span></p>
            <p>Prenom :   <span>sekou</span></p>
@@ -35,8 +35,8 @@ font-weight: 400;
 font-size: var(--titre);
 }
 .Etudiants_infos1{
-  max-width: var(--max-width);
-  /* margin: 0 auto; */
+  max-width: 1140px;
+  max-height: 700px;
   position: relative;
   left: 50%;
   top: 40%;
@@ -59,6 +59,14 @@ legend{
   border: 1px solid white;
   text-align: center;
   border-radius: 60px;
+  overflow: hidden;
+}
+legend>img{
+  width: 230px;
+  height: 195px;
+  border-radius: 20px;
+  margin: 0px auto;
+
 }
 .card_infos{
   margin: 20px auto;
