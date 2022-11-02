@@ -88,6 +88,7 @@ export default {
 @media (max-width:800px) {
   .card-body .texte1 {
       padding:  10px;
+      font-size: 16px;
     }
 }
 

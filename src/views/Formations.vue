@@ -29,8 +29,6 @@
 import Card from '@/components/Formations/card.vue';
 import Loader from '@/components/Global/Loader.vue';
 
-import axios from 'axios'
-
 export default {
   name:"formations",
   components:{
@@ -43,11 +41,13 @@ export default {
     }
   },
 mounted() {
-  axios
-  .get('http://192.168.88.15:3001/api/specialities')
-  .then(response =>{ 
-    this.formation = response.data.specialities
-    this.loading = false
+  
+  fetch('http://192.168.88.15:3001/api/specialities')
+  .then(response => response.json())
+  .then((response)=>{
+    console.log(response);
+     this.formation = response.specialities
+     this.loading = false
   })
   .catch((error) =>{
     this.$router.push('/')
