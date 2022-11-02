@@ -1,37 +1,27 @@
 <template>
-   
     <nav class="Acc-nav">
         <div class="container-nav">
-            <a href="" class="logo"><img src="@/assets/ImagesAccueil/logoN.png" alt=""></a>
-            <ul class="Acc-menu">
-                <li><a href="" class="Acc-lien current">Accueil</a></li>
-                <li><a href="" class="Acc-lien">Nos Formations</a></li>
-                <li><a href="" class="Acc-lien">Admission</a></li>
-                <li><a href="" class="Acc-lien">Naniens</a></li>
-                <li><a href="" class="Acc-lien">Parent</a></li>
-                <li><a href="" class="Acc-lien">A propos</a></li>
-            </ul>
-            <div class="Acc-cadenas">
-                <a href="" class="Acc-boutton"><i class="fas fa-lock"></i>Accés aux Cours</a>
-            </div>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line1"></div>
-                <div class="line1"></div>
-            </div>
+          <a href="" class="logo"><img src="@/assets/ImagesAccueil/logoN.png" alt=""></a>
+          <ul class="Acc-menu">
+            <li><router-link to="/" class="Acc-lien">Accueil</router-link></li>
+            <li><router-link to="/formations" class="Acc-lien">Nos Formations</router-link></li>
+            <li><router-link to="/admission" class="Acc-lien">Admission</router-link></li>
+            <li><router-link to="/naniens" class="Acc-lien">Naniens</router-link></li>
+            <li><router-link to="/parent" class="Acc-lien">Parent</router-link></li>
+            <li><router-link to="/apropos" class="Acc-lien">A propos</router-link></li>
+          </ul>
+          <div class="Acc-cadenas">
+            <a href="https://classe.nan.ci" class="Acc-boutton" target="_blank">
+              <i class="fas fa-lock"></i>Accés aux Cours
+            </a>
+          </div>
+          <div class="burger">
+            <div class="line1"></div>
+            <div class="line1"></div>
+            <div class="line1"></div>
+          </div>
         </div>
-        <!-- <div class="Acc-text">
-                <h1>Une Pédagogie inspirée de 42</h1>
-                <p>
-                    Travailler avec le sourire et sans stress, c'est sourire à l'avenir
-                </p>
-              
-        </div> -->
-        
-       
-    </nav>
-
-    
+    </nav>  
 </template>
 
 <script>
@@ -143,9 +133,6 @@ export default {
 padding: 10px 0;
 }
 
-a.current{
-    color: var(--violet);
-}
 .Acc-lien:hover{
     color: var(--violet);
      

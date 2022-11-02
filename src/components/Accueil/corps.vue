@@ -224,31 +224,6 @@
         </div>
       </div>
     </div>
-    <div class="corps-footer" >
-      <div class="corps-footer-logo" ><a href="" class="logo" ><img src="/img/logoN.58439b18.png" alt="" >NaN</a></div>
-      <div class="corps-footer-menu" >
-        <nav >
-          <ul class="Acc-menu" >
-            <li ><a href="" class="Acc-lien current" >Accueil</a></li>
-            <li ><a href="" class="Acc-lien" >Nos Formations</a></li>
-            <li ><a href="" class="Acc-lien" >Admission</a></li>
-            <li ><a href="" class="Acc-lien" >Naniens</a></li>
-            <li ><a href="" class="Acc-lien" >Parent</a></li>
-            <li ><a href="" class="Acc-lien" >A propos</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="corps-footer-reseau" >
-        <a href="https://www.youtube.com/channel/UCWB0VDT_tMZ-xOkvjFvlUnw" ><i class="fab fa-facebook-square" ></i></a>
-        <a href="https://www.facebook.com/nandigitalacademy" ><i class="fab fa-youtube-square" ></i></a>
-        <a href="https://api.whatsapp.com/send/?phone=2250789252529&amp;text&amp;type=phone_number&amp;app_absent=0" ><i class="fab fa-whatsapp-square" ></i></a>
-        <a href="https://discord.com/invite/dHKn7G29XZ" ><i class="fab fa-discord" ></i></a>
-        <a href="https://www.linkedin.com/school/nan-digital-academy" ><i class="fab fa-linkedin" ></i></a>
-      </div>
-      <div class="corps-footer-text" >
-        <p >© 2022 Tous droits réservés, NaN Business</p>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -259,7 +234,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 .Acc-corps {}
 
@@ -707,13 +682,9 @@ export default {
 }
 
 .corps-info {
-  position: absolute;
-  top: 487%;
-  left: 30%;
-  margin-bottom: 170%;
   height: 350px;
   max-width: 850px;
-  margin: auto;
+  margin: 30px auto;
   background-color: var(--blanc);
   display: flex;
   border-radius: 10px;
@@ -773,69 +744,6 @@ export default {
   color: var(--noir);
   font-size: 14px;
   margin-top: 8px;
-}
-
-.corps-footer {
-  max-width: var(--max-width);
-  /* border: 1px solid yellow;  */
-  height: 300px;
-  margin: 240px auto;
-  border-radius: 10px;
-  background-color: var(--bg2);
-  margin-bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-}
-
-.corps-footer-logo a {
-  height: 60px;
-  width: 60px;
-  text-decoration: none;
-  font-size: 30px;
-  font-weight: bold;
-  color: var(--blanc);
-}
-
-.corps-footer-logo img {
-  height: 60px;
-  width: 60px;
-  margin-right: 10px;
-}
-
-.corps-footer-menu ul {
-  list-style-type: none;
-  display: flex;
-}
-
-.corps-footer-menu ul li a {
-  text-decoration: none;
-  margin-right: 40px;
-  color: var(--blanc);
-  font-weight: 500;
-}
-
-.corps-footer-menu ul li a:hover {
-  color: var(--violet);
-}
-
-.corps-footer-reseau a {
-  background-color: var(--blanc);
-  height: 40px;
-  width: 40px;
-  margin-right: 30px;
-  padding: 20px 10px 10px 10px;
-  border-radius: 10px;
-}
-
-.corps-footer-reseau i {
-  color: var(--violet);
-  font-size: 30px;
-}
-
-.corps-footer-text p:hover {
-  color: var(--violet)
 }
 
 @media (max-width:768px) {
