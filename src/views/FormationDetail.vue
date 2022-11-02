@@ -48,9 +48,7 @@
       >
         {{ point }}
       </li>
-      <!-- <li>Qu'es ce que le javascript, les variables,</li> 
-      <li>Qu'es ce que le javascript, les variables,</li> 
-      <li>Qu'es ce que le javascript, les variables,</li>  -->
+     
     </div>
     <div class="card_etape2" >
       <p>ce que vous allez realiser en pratique</p>
@@ -59,6 +57,17 @@
     </div>
     
   </div>
+
+    <div>
+      <h1></h1>
+      
+
+
+    </div>
+
+
+
+
 </div>
   
   
@@ -154,11 +163,9 @@
    width: var(--max-width);
    color:var(--blanc) ;
    background: var(--bg);
-   width: 521px;
 height: 456px;
 left: 88px;
 top: 1054px;
-
 background: #272935;
 box-shadow: 5px 8px 12px 2px #6870E0;
 border-radius: 45px;
@@ -199,7 +206,7 @@ border-radius: 45px;
   }
   .etape{
     display: flex;
-   gap:5%;
+   gap:3%;
     padding-top: 2.5rem;
     width: var(--max-width);
   }
@@ -257,20 +264,20 @@ cursor: pointer;
   .card_1{
   width:87%;
   height:55vh;
-  margin-left:2%;
+  margin-left:6%;
   }
   .card_2{
-    margin-left:2%;
+    margin-left:6%;
     width:87%;
   }
   img{
-    width: 1100px;
+    width: var(--max-width);
   }
   .container1>h2{
-    margin-left: 2%;
+    margin-left: 4%;
   }
   .etape{
-    margin-left: 2%;
+    margin-left: 4%;
     width: 90%;
   }
   .card_etape{
@@ -280,7 +287,28 @@ cursor: pointer;
 
     
 }
-@media only screen and (max-width: 412px){
+@media only screen and (max-width: 768px){
+.card_2{
+  display: flex;
+  flex-wrap: wrap; 
+  margin-bottom: 8% ;
+}
+.box{
+  height: 38vh;
+}
+img{
+    width: var(--max-width);
+    height: 30vh;   
+}
+#image2>h1{
+    font-size: var(--titre);
+    width:  max-content; 
+    position: absolute;
+    top: 24%;
+    transform: translate(18%);
+   
+  }
+
 
 }
 
