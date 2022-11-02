@@ -187,6 +187,46 @@
                 </div>
            </div>
         </div>
+        <div class="corps-maps">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.101780364658!2d-3.964882484463386!3d5.401462436684686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1933ec546f809%3A0xa13e690552d16e30!2sNaN%20Digital%20Academy!5e0!3m2!1sfr!2sci!4v1656348981532!5m2!1sfr!2sci" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="corps-info">
+            <img src="" alt="">
+            <div class="corps-info-details">
+                <h1>CONTACT INFORMATION </h1>
+                <div class="corps-info-details1">
+                    <i></i>
+                    <div class="corps-info-details11">
+                        <span>Telephone:</span>
+                        <p>+23459122345666</p>
+                    </div>
+                </div>
+                <div class="corps-info-details1">
+                    <i></i>
+                    <div class="corps-info-details11">
+                        <span>Email:</span>
+                        <p>nandigital@gmail.com</p>
+                    </div>
+                </div>
+                <div class="corps-info-details1">
+                    <i></i>
+                    <div class="corps-info-details11">
+                        <span>Adresse:</span>
+                        <p>cocody André </p>
+                    </div>
+                </div>
+                <div class="corps-info-details1">
+                    <i></i>
+                    <div class="corps-info-details11">
+                        <span>Temps de Travail</span>
+                        <p>Lundi Au Vendredi De 09h00 à 17h30 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="corps-footer">
+
+        </div>
     </div>
 </template>
 
@@ -603,6 +643,53 @@ export default {
     text-align: center;
     font-size: 15px;
     margin-top: 20px;
+}
+.corps-maps{
+    max-width: var(--max-width);
+    margin: 47px auto;
+    
+
+}
+.corps-maps iframe{
+    width: 1140px;
+    height: 510px;
+    border-radius: 10px;
+    z-index: 999;
+
+}
+.corps-info{
+    height: 350px;
+    max-width: 800px;
+    /* margin: -70px auto; */
+    margin: auto;
+    border:1px solid red;
+    z-index: 999;
+    background-color: var(--blanc);
+
+}
+.corps-info-details1{
+    display: flex;
+}
+.corps-info-details11{
+   
+
+}
+.corps-info-details11 span{
+    font-weight: bold;
+    font-size: 20px;
+}
+.corps-info-details11 p{
+    color:red;
+    font-size:14px;
+}
+.corps-footer{
+    max-width: var(--max-width);
+    border: 1px solid yellow; 
+    height: 300px;
+    margin: 47px auto;
+    border-radius: 10px;
+    background-color: var(--bg2);
+
 }
 
     
