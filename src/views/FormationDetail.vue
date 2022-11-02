@@ -4,28 +4,19 @@
   <div class="container1">
     
     <div  class='card_1'>
-        <h2>javascript</h2>
-        {{specialite}}
-        <p>
-          JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web. Avec les technologies HTML et CSS, JavaScript est parfois considéré comme l'une des technologies cœur du World Wide Web3. Une grande majorité des sites web l'utilisent4, et la majorité des navigateurs web disposent d'un moteur JavaScript5 dédié pour l'interpréter, indépendamment des considérations de sécurité qui peuvent se poser le cas échéant.
-
-C'est un langage orienté objet à prototype : les bases du langage et ses principales interfaces sont fournies par des objets. Cependant, à la différence d'un langage orienté objets, les objets de base ne sont pas des instances de classes.
-
-Chaque objet de base (ex : l'objet document ou windows) possède son propre modèle qui lui permettra d'instancier des objets fils à l'aide de constructeurs utilisant ses propriétés. Par exemple, la propriété de prototypage va leur permettre de créer des objets héritiers personnalisés. En outre, les fonctions sont des objets de première classe. Le langage supporte le paradigme objet, impératif et fonctionnel. JavaScript est le langage possédant le plus large écosystème grâce à son gestionnaire de dépendances npm, avec environ 500 000 paquets en août 20176.
-
-
-  </p>
+        <h2>{{formation.nom}} </h2>
+        
+        <p>{{formation.contenu}}</p>
     </div>
   
     <div class="card_2">
       <div class="box">
-          <h2>Node js </h2>
-          <p>Node.js est une plateforme logicielle libre en JavaScript, orientée vers les applications réseau évènementielles hautement concurrentes qui doivent pouvoir monter en charge. Elle utilise la machine virtuelle V8, la librairie libuv pour sa boucle d'évènements, et implémente sous licence MIT les spécifications CommonJS. Parmi les modules natifs de Node.js, on retrouve http qui permet le développement de serveur HTTP. Ce qui autorise, lors du déploiement de sites internet et d'applications web développés avec Node.js, de ne pas installer et utiliser des serveurs webs tels que Nginx ou Apache. Concrètement, Node.js est un environnement bas niveau permettant l’exécution de JavaScript côté serveur.</p>
+          <h2>{{formation.nom2}} </h2>
+          <p>{{formation.contenu2}}</p>
       </div>
       <div class="box">
-           <h2>Frameworks</h2>
-           <p>Un framework (ou infrastructure logicielle en français ) désigne en programmation informatique un ensemble d'outils et de composants logiciels à la base d'un logiciel ou d'une application.
-  En javascript, nous avons une multitude de frameworks, les plus utilisés sont React JS , Vue JS et aussi Svelte</p>
+           <h2>{{formation.nom3}}</h2>
+           <p>{{formation.contenu3}}</p>
       </div>
   
     </div>
@@ -38,25 +29,32 @@ Chaque objet de base (ex : l'objet document ou windows) possède son propre mod�
   <div class="container1">
    <h2>Consulter le programme de notre formation, etape par etape</h2>
    <div class='etape'>
-    <button>etape1</button>
-    <button>etape1</button>
-    <button>etape1</button>
-    <button>etape1</button>
-    <button>etape1</button>
-    <button>etape1</button>
-    <button>etape1</button>
-    <button>etape1</button>
+    <button
+      v-for="titre in titres"
+      :key="titre"
+      :title="JSON.stringify(formation.etapes[titre])"
+      @click="changeData"
+    >
+      {{ titre}}
+    </button>
+   
    </div>
   <div class='card_etape'>
     <div class='card_etape1'>
       <p>Dans ce module ce que vpous apprendrez,les bases du langage javascript,entre autres:</p>
+      <li
+        v-for="point in current?.points"
+        :key="point"
+      >
+        {{ point }}
+      </li>
+      <!-- <li>Qu'es ce que le javascript, les variables,</li> 
       <li>Qu'es ce que le javascript, les variables,</li> 
-      <li>Qu'es ce que le javascript, les variables,</li> 
-      <li>Qu'es ce que le javascript, les variables,</li> 
+      <li>Qu'es ce que le javascript, les variables,</li>  -->
     </div>
     <div class="card_etape2" >
       <p>ce que vous allez realiser en pratique</p>
-      <p>Javascript basics</p>
+      <p>{{ current?.titre}}</p>
   
     </div>
     
@@ -68,28 +66,43 @@ Chaque objet de base (ex : l'objet document ou windows) possède son propre mod�
   </template>
   
   <script>
-  import  axios  from "axios";
   export default {
-    props:["specialite"],
+  props:["specialite"],
     data() {
       return {
-        
+       formation:"",
+       titres:[],
+       current: {}
       }
     },
-    mounted() {
-  axios
-  .get(`http://192.168.88.15:3001/api/specialities/${this.specialite}`)
-  .then(response =>{ 
-console.log(response.data.data)
-    // this.formation = response.data.specialities
-  })
-  .catch((error) =>{
-    this.$router.push('/')
+    methods:{
+      changeData(e){
+        this.current = JSON.parse(e.target.title)
+        console.dir((this.current))
+      }
+    },
 
-  })
+    mounted() {
+      fetch(`http://192.168.88.15:3001/api/specialities/${this.specialite}`)
+      .then(res => res.json())
+      .then(data => {
+        console.log("vklnrkier")
+        console.log(data.data.etapes)
+        this.formation= data.data
+
+        const vals  = Object.entries(data.data.etapes)
+        vals.forEach(val => {
+          console.log(val)
+            this.titres.push(val[0])
+            console.log('titre : ', val[0], 'value :  ', val[1])
+        })
+      })
+      .catch((error) =>{
+        console.log(error)
+      })
 }
 
-
+                                                                                                                                                                                                                      
   }
   </script >
   

@@ -4,10 +4,16 @@
       "id":1,
       "nom":"JavaScript",
       "description":"JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web.",
+      "contenu":"JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web. Avec les technologies HTML et CSS, JavaScript est parfois considéré comme l'une des technologies cœur du World Wide Web3. Une grande majorité des sites web l'utilisent4, et la majorité des navigateurs web disposent d'un moteur JavaScript5 dédié pour l'interpréter, indépendamment des considérations de sécurité qui peuvent se poser le cas échéant. C'est un langage orienté objet à prototype : les bases du langage et ses principales interfaces sont fournies par des objets. Cependant, à la différence d'un langage orienté objets, les objets de base ne sont pas des instances de classes.Chaque objet de base (ex : l'objet document ou windows) possède son propre modèle qui lui permettra d'instancier des objets fils à l'aide de constructeurs utilisant ses propriétés. Par exemple, la propriété de prototypage va leur permettre de créer des objets héritiers personnalisés. En outre, les fonctions sont des objets de première classe. Le langage supporte le paradigme objet, impératif et fonctionnel. JavaScript est le langage possédant le plus large écosystème grâce à son gestionnaire de dépendances npm, avec environ 500 000 paquets en août 20176.",
+      "nom2":"Node js",
+      "contenu2":"Node.js est une plateforme logicielle libre en JavaScript, orientée vers les applications réseau évènementielles hautement concurrentes qui doivent pouvoir monter en charge. Elle utilise la machine virtuelle V8, la librairie libuv pour sa boucle d'évènements, et implémente sous licence MIT les spécifications CommonJS. Parmi les modules natifs de Node.js, on retrouve http qui permet le développement de serveur HTTP. Ce qui autorise, lors du déploiement de sites internet et d'applications web développés avec Node.js, de ne pas installer et utiliser des serveurs webs tels que Nginx ou Apache. Concrètement, Node.js est un environnement bas niveau permettant l’exécution de JavaScript côté serveur.",
+      "nom3":"Frameworks",
+      "contenu3":"Un framework (ou infrastructure logicielle en français ) désigne en programmation informatique un ensemble d'outils et de composants logiciels à la base d'un logiciel ou d'une application. En javascript, nous avons une multitude de frameworks, les plus utilisés sont React JS , Vue JS et aussi Svelte",
       "image":"formations/logoJs.png",
       "etapes": {
         "basics":{
           "titre": "JavaScript basics",
+          "texte":"Dans ce modue , vous apprendrez les bases du langage javascript, entres autres: ",
           "points": [
             "qu'est ce que le JavaScript ?",
             "les variables, les conditions, les structure itéractives ",
@@ -16,31 +22,147 @@
         },
         "advanced":{
           "titre": "JavaScript advanced",
+          "texte":"Dans ce modue , vous verrez des notions un peu plus poussez en javascript:",
           "points": [
             "les modules, la syntaxe es6,try...catch ",
-            "es promesses,ajax, ",
+            "les promesses,ajax, ",
             "async await,canvas,etc ...."
           ]
+        },
+        "DOM":{
+          "titre": "DOM",
+          "texte":"Dans ce modue , vous verrez le DOM:",
+          "points": [
+            " manipuler les donnés html et css en javascript ",
+            " animer les balises ",
+            "créer des animations en javascript"
+          ]
+        },
+        "Node JS":{
+          "titre": "Node JS (environnement & server)",
+          "texte":"Dans ce modue , vous verrez l'environnement Node JS,entre autre:",
+          "points": [
+            " qu'es ce que le nodejs ? , à quoi sert t-il ? ",
+            "  comment créer un serveur en node js ?",
+            " comment recevoir des requêtes et envoyer des réponses)"
+          ]
+        },
+        "Node JS":{
+          "titre": "Node JS (Express framework, CRUD and project folders structuration)",
+          "texte":"Dans ce modue , vous verrez le framework express de node js:",
+          "points": [
+            
+            " il nous permettra de créer nos serveurs , de manère simple et efficace, ",
+            " vous verrez aussi le CRUD et enfin le plus important ",
+            "comment structurer ces dossiers et fichiers dans un projet"
+          ]
+        },
+        "Node JS":{
+          "titre": "Node JS (mongodb and mongoose)",
+          "texte":"Dans ce modue , vous verrez la gestion des base de données avec mongodb",
+          "points": [
+            " comment fonctionne mongodb, quel est son architecture .., ",
+            " vous verrez également mongoose qui est le package utilisé par node js pour fait des intéractions avec une base de donnés mongodb ",
+            "vous verrez donc les models de données, les requêtes "
+          ]
+        },
+        "React JS":{
+          "titre": "React JS (javascript front framework)",
+          "texte":"Dans ce modue , vous verrez React JS, qui est un framework javascript , lui il agit principalement sur le front-end",
+          "points": [
+            " vous verrez comment fonctionne le principe des applications web single page,",
+            "comment peut-on lier notre back-end à notre application react "
+          ]
+        },
+        "Projet ":{
+          "titre": "Projet de fin de formation",
+          "texte":"Dans ce module ",
+          "points": [
+            " vous aurez à travailler sur un projet qui vous sera donné à la fin de votre parcours.. ",
+            "  ce projet comporteras tout ce que vous aurez vue au cous de votre formation .. "
+            
+          ]
         }
-      },
-      "contenu": ""   },
+
+      }  
+    },
     {
       "id":2,
-      "nom":"php",
-      "description":"PHP Hypertext Preprocessor, plus connu sous son sigle PHP,est un langage de programmation libre,principalement utilisé pour produire des pages web dynamiques via un serveur HTTP",
-      "image":"formations/php.png"
-    },
-    {
-      "id":3,
-      "nom":"Python",
-      "description":"Python est un langage de programmation open source le plus employé par les informaticiens. Ce langage s’est propuisé en tête de la gestion d’infrastructure, d’analyse de données ou dans le domaine du déleloppement de logiciels.",
-      "image":"formations/python.png"
-    },
-    {
-      "id":4,
       "nom":"Flutter",
-      "description":"Flutter est utile pour créer des applications sur mobile,tablette,télévision de desktop.L’utilisation du Dart,qui est un langage de programmation très facile d’accès si vous connaissez JavaScript,TypeScript ou Java,permet une compilation en ARM(langage machine)",
-      "image":"formations/flutter.png"
+      "description":"PHP Hypertext Preprocessor, plus connu sous son sigle PHP,est un langage de programmation libre,principalement utilisé pour produire des pages web dynamiques via un serveur HTTP",
+      "contenu":"Flutter est utile pour créer des applications sur mobile, tablette, télévision et desktop. L'utilisation du Dart, qui est un langage de programmation très facile d'accès si vous connaissez JavaScript, TypeScript ou Java, permet une compilation en ARM (langage machine). Cette compilation permet la création d'applications natives extrêmement performantes. Flutter n'utilise pas de bridge JavaScript comme le fait ReactNative par exemple. Flutter utilise son propre système de rendu, qui lui laisse donc une très grande liberté. La librairie incorpore une large collection de widgets Material et Cupertino qui fonctionnent sur iOS et Android. Flutter est de loin le framework mobile le plus performant et moderne. L'essayer c'est l'adoper !Apple lance son SDK en 2008, Google en 2009,chacun basé sur son langage propre : Objective-C et Java. • L’application communique avec la plateforme pour créer des widgets ou accéder à des services comme l’appareil photo. Le rendu des widgets est fait sur un Canvas et les événements sont renvoyés aux widgets. C’est une architecture assez simple,cependant, il faut créer des applications différentes pour chaque plateforme car les widgets et le langage de développement sont différents chez iOS et Android.haute vitesse de développement avec des fonctionnalités comme le « hot reload »,un framework reactif, des widgets pré-existants et des outils intégrés aux environnements de développement • designs de qualité, personnalisables,reposant sur des widgets, une bibliothèque d’animations,une architecture en couches extensible • expérience de haute qualité sur les différentes plateformes grâce à un coeur à haute performance et une prise en compte de l’interopérabilité des plateformes.",
+      "nom2":"A quoi sert le langage Flutter ?",
+      "contenu2":"Les principales utilisations de Flutter par les développeurs sont :La programmation d’applications natives pour IOS et Android,Développez un code pour deux plates-formes,Rechargement à chaud,Haute Performance",
+      "nom3":"Quelle est la version actuelle de Flutter?",
+      "contenu3":"Google a maintenant lancé la dernière version de Flutter qui prend en charge iOS 15 et Android 11 . Récemment, il y a eu une version du nouveau Google Flutter qui est une version stable 2.5.3,Selon certaines données et recherches, on peut dire qu'il y a une augmentation de l'utilisation du SDK Google Flutter. En raison de ce nombre de personnes sont également de plus en plus nombreuses à vouloir connaître l'utilisation de Flutter et les avantages de son utilisation par rapport à d'autres outils. Source : Flutter",
+      "image":"formations/Flutter.png",
+      "etapes": {
+        "Introduction":{
+          "titre": "Introduction à Flutter",
+          "texte":"En général, développer une application mobile est une tâche complexe et exigeante ",
+          "points": [
+            "Il existe de nombreux frameworks disponibles pour développer une application mobile."
+                ]
+        },
+        "Dart":{
+          "titre": "Dart",
+          "texte":"C'est quoi Dart ?",
+          "points": [
+            "Dart est un langage de programmation open source développé par Google et qui est apparu en 2011",
+            "Il est utilisé pour le développement d'applications mobiles, Web, de bureau ",
+            " d'autres applications intégrant la technologie Internet des objets (IoT)"
+                ]
+        },
+        "widgets":{
+          "titre": "Introduction aux widgets",
+          "texte":"Créez des thèmes de matériaux personnalisés pour rendre votre produit unique",
+          "points": [
+            "Mettez en œuvre votre vision de la conception avec Material Theming,",
+            "simplifie le processus de personnalisation de votre produit et d'utilisation des composants.."
+                ]
+        },
+        "HTTP":{
+          "titre": "Utilisation du protocole HTTP",
+          "texte":"Flutter fournit un package http pour consommer les ressources HTTP",
+          "points": [
+            "http est une bibliothèque basée sur l’avenir et utilise les fonctionnalités d’attente et d’async",
+            " Il fournit de nombreuses méthodes de haut niveau",
+            "simplifie le développement d’applications mobiles basées sur REST."
+                ]
+        },
+        "Google Maps":{
+          "titre": "Utilisation de Google Maps",
+          "texte":"Utiliser Google Maps dans vos application ",
+          "points": [
+            " apprenez à géolocalisé vos utilisateurs",
+            " De nos jours, de nombreuses applications demandent l'accès à la géolocation de l'utilisateur.",
+            "Nous allons voir aujourd'hui comment l'utiliser dans nos applications Flutter.."
+                ]
+        },
+        "Les formulaires":{
+          "titre": "Les formulaires",
+          "texte":"La première chose que nous allons voir  ",
+          "points": [
+            " Un contrôleur est un objet puissant qui vous aide à gérer certains scénarios complexes avec des formulaires ainsi que les plus simples, comme nous allons le voir."
+           
+                ]
+        },
+        "Projet":{
+          "titre": "Projet de fin de formation",
+          "texte":"Dans ce module ",
+          "points": [
+            " vous aurez à travailler sur un projet qui vous sera donné à la fin de votre parcours.. ",
+            "  ce projet comporteras tout ce que vous aurez vue au cous de votre formation .. "
+            ]
+        }
+    } 
+   },
+   {
+      "id":4,
+      "nom":"PHP",
+      "description":"PHP: Hypertext Preprocessor, plus connu sous son sigle PHP, est un langage de programmation libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP",
+      "contenu":" ",
+      "image":"formations/php.png"
     },
     {
       "id":5,
