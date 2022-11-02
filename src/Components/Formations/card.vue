@@ -5,9 +5,11 @@
             <span class="stars"></span>
             <h2 class="specia">{{formations.nom}} </h2>
             <p class="specia">{{formations.description}}</p>
+            <p class="lien">voir plus ...</p>
           </div>
         </div>
         <div class="face face2">
+          <!-- <img src="@/assets/formations/JS" alt=""> -->
           <img :src="getImage(formations.image)"
            :alt="`logo de ${formations.nom}`" />
         </div>
@@ -43,7 +45,7 @@ export default {
  .card {
   position: relative;
   width: 300px;
-  height: 400px;
+  height: 320px;
   margin: 0 auto;
   background:var(--bg2);
   border-radius: 15px;
@@ -63,7 +65,7 @@ export default {
  .face.face1 {
   box-sizing: border-box;
   padding: 20px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
  .card .face.face1 h2 {
@@ -102,6 +104,12 @@ export default {
 
  .card:hover .face.face2 {
   height: 0px;
+}
+
+.lien{
+  font-size: 11px;
+  padding-left: 20px;
+  cursor: pointer;
 }
 
 </style>

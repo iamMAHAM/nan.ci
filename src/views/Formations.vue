@@ -27,7 +27,7 @@
 <script>
 
 import Card from '@/components/Formations/card.vue';
-import Loader from '@/components/Formations/loader.vue';
+import Loader from '@/components/Global/Loader.vue';
 
 import axios from 'axios'
 
@@ -68,13 +68,13 @@ mounted() {
 .image{
   width: 100%;
   height: 500px;
-  background: url('@/assets/formations/microsoft-edge-RoaneQUy84A-unsplash.jpg') no-repeat center;
+  background: url('@/assets/ImagesAccueil/im4.jpg') no-repeat center;
   background-size: cover;
 }
 .footer{
   width: 100%;
   height: 350px;
-  background: url('@/assets/formations/microsoft-edge-RoaneQUy84A-unsplash.jpg') no-repeat center;
+  background: url('@/assets/ImagesAccueil/im4.jpg') no-repeat center;
   background-size: cover;
 }
 .formation-container{
