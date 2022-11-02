@@ -9,7 +9,7 @@
       "contenu2":"Node.js est une plateforme logicielle libre en JavaScript, orientée vers les applications réseau évènementielles hautement concurrentes qui doivent pouvoir monter en charge. Elle utilise la machine virtuelle V8, la librairie libuv pour sa boucle d'évènements, et implémente sous licence MIT les spécifications CommonJS. Parmi les modules natifs de Node.js, on retrouve http qui permet le développement de serveur HTTP. Ce qui autorise, lors du déploiement de sites internet et d'applications web développés avec Node.js, de ne pas installer et utiliser des serveurs webs tels que Nginx ou Apache. Concrètement, Node.js est un environnement bas niveau permettant l’exécution de JavaScript côté serveur.",
       "nom3":"Frameworks",
       "contenu3":"Un framework (ou infrastructure logicielle en français ) désigne en programmation informatique un ensemble d'outils et de composants logiciels à la base d'un logiciel ou d'une application. En javascript, nous avons une multitude de frameworks, les plus utilisés sont React JS , Vue JS et aussi Svelte",
-      "image":"formations/logoJs.png",
+      "image":"formations/js1.png",
       "etapes": {
         "basics":{
           "titre": "JavaScript basics",
@@ -56,7 +56,8 @@
             " vous verrez aussi le CRUD et enfin le plus important ",
             "comment structurer ces dossiers et fichiers dans un projet"
           ]
-        },
+        }
+        ,
         "Node JS":{
           "titre": "Node JS (mongodb and mongoose)",
           "texte":"Dans ce modue , vous verrez la gestion des base de données avec mongodb",
@@ -85,9 +86,55 @@
         }
 
       }  
-    },
+    } ,
     {
-      "id":2,
+       "id":2,
+       "nom":"PHP",
+       "description":"PHP: Hypertext Preprocessor, plus connu sous son sigle PHP, est un langage de programmation libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP",
+       "contenu":" ",
+       "image":"formations/php01.png"
+     },
+     
+    {
+      "id":3,
+      "nom":"Python",
+      "description":"Python est un langage de programmation open source le plus employé par les informaticiens. Ce langage s’est propuisé en tête de la gestion d’infrastructure, d’analyse de données ou dans le domaine du déleloppement de logiciels.",
+      "image":"formations/py1.png",
+      "contenu":"Python est le langage de programmation open source le plus employé par les informaticiens. Ce langage s’est propulsé en tête de la gestion d’infrastructure, d’analyse de données ou dans le domaine du développement de logiciels.En effet, parmi ses qualités, Python permet notamment aux développeurs de se concentrer sur ce qu’ils font plutôt que sur la manière dont ils le font. Il a libéré les développeurs des contraintes de formes qui occupaient leur temps avec les langages plus anciens. Ainsi, développer du code avec Python est plus rapide qu’avec d’autres langages.Il reste aussi accessible pour les débutants, à condition de lui consacrer un peu de temps pour la prise en main. De nombreux tutoriels sont d’ailleurs disponibles pour l’étudier sur des sites Internet spécialisés ou sur des comptes Youtube. Sur les forums d'informatique, il est toujours possible de trouver des réponses à ses questions, puisque beaucoup de professionnels l'utilisent.",
+      "nom2":"A quoi sert le langage Python ?",
+      "contenu2":"Les principales utilisations de Python par les développeurs sont :                        la programmation d’applications,la création de services web,  la génération de code,   la métaprogrammation,  Techniquement, ce langage servira surtout pour le scripting et l’automatisation (interaction avec les navigateurs web) ",
+      "nom3":"Quelle est la version actuelle de Python ?",
+      "contenu3":"On différencie deux versions : Python 2 et Python 3. Python 2, l’ancienne version propose des mises à jour jusqu’en 2020. Python 3 est la version actuelle. Son interpréteur est plus efficace, ainsi que son contrôle de concurrence.La version 3.9 sera livrée le 5 octobre prochain, tandis que la version 3.10 est attendue pour le 4 octobre 2021. Si la branche 3 continue d'évoluer, il est quand même important de savoir si la communauté est actuellement sur la même longueur d’onde. Autrement dit, est-ce que la grande majorité des projets Python utilisent aujourd’hui Python 3.x ?      Un sondage devra être fait afin d'en savoir plus. Cependant, certains commentaires d’internautes montrent que beaucoup continuent encore d’utiliser Python 2.x.",
+      "etapes": {
+        "Git":{
+          "titre": "Démarrer un dépôt Git ",
+          "texte":"Nous vous montrerons comment ",
+          "points": [
+            "paramétrer Git pour qu’il ignore certains fichiers ou patrons de fichiers",
+            "revenir sur les erreurs rapidement et facilement ",
+            "voir les modifications entre deux validations",
+            " parcourir l’historique de votre projet",
+            "pousser et tirer les modifications avec des dépôts distants."
+          ]
+        },
+        "Introduction ":{
+          "titre": "Introduction     ",
+          "texte":"C'est quoi Python ?",
+          "points": [
+            "Conseils pour installer et configurer Python Miniconda"
+          ]
+        },
+        "environnement de développement ":{
+          "titre": "Mettre en place votre environnement de développement   ",
+          "texte":"C'est quoi Python ?",
+          "points": [
+            "Conseils pour installer et configurer Python Miniconda"
+          ]
+        }
+    }
+  },
+    {
+      "id":4,
       "nom":"Flutter",
       "description":"PHP Hypertext Preprocessor, plus connu sous son sigle PHP,est un langage de programmation libre,principalement utilisé pour produire des pages web dynamiques via un serveur HTTP",
       "contenu":"Flutter est utile pour créer des applications sur mobile, tablette, télévision et desktop. L'utilisation du Dart, qui est un langage de programmation très facile d'accès si vous connaissez JavaScript, TypeScript ou Java, permet une compilation en ARM (langage machine). Cette compilation permet la création d'applications natives extrêmement performantes. Flutter n'utilise pas de bridge JavaScript comme le fait ReactNative par exemple. Flutter utilise son propre système de rendu, qui lui laisse donc une très grande liberté. La librairie incorpore une large collection de widgets Material et Cupertino qui fonctionnent sur iOS et Android. Flutter est de loin le framework mobile le plus performant et moderne. L'essayer c'est l'adoper !Apple lance son SDK en 2008, Google en 2009,chacun basé sur son langage propre : Objective-C et Java. • L’application communique avec la plateforme pour créer des widgets ou accéder à des services comme l’appareil photo. Le rendu des widgets est fait sur un Canvas et les événements sont renvoyés aux widgets. C’est une architecture assez simple,cependant, il faut créer des applications différentes pour chaque plateforme car les widgets et le langage de développement sont différents chez iOS et Android.haute vitesse de développement avec des fonctionnalités comme le « hot reload »,un framework reactif, des widgets pré-existants et des outils intégrés aux environnements de développement • designs de qualité, personnalisables,reposant sur des widgets, une bibliothèque d’animations,une architecture en couches extensible • expérience de haute qualité sur les différentes plateformes grâce à un coeur à haute performance et une prise en compte de l’interopérabilité des plateformes.",
@@ -95,7 +142,7 @@
       "contenu2":"Les principales utilisations de Flutter par les développeurs sont :La programmation d’applications natives pour IOS et Android,Développez un code pour deux plates-formes,Rechargement à chaud,Haute Performance",
       "nom3":"Quelle est la version actuelle de Flutter?",
       "contenu3":"Google a maintenant lancé la dernière version de Flutter qui prend en charge iOS 15 et Android 11 . Récemment, il y a eu une version du nouveau Google Flutter qui est une version stable 2.5.3,Selon certaines données et recherches, on peut dire qu'il y a une augmentation de l'utilisation du SDK Google Flutter. En raison de ce nombre de personnes sont également de plus en plus nombreuses à vouloir connaître l'utilisation de Flutter et les avantages de son utilisation par rapport à d'autres outils. Source : Flutter",
-      "image":"formations/Flutter.png",
+      "image":"formations/flutter.png",
       "etapes": {
         "Introduction":{
           "titre": "Introduction à Flutter",
@@ -155,15 +202,7 @@
             "  ce projet comporteras tout ce que vous aurez vue au cous de votre formation .. "
             ]
         }
-    } 
-   },
-   {
-      "id":4,
-      "nom":"PHP",
-      "description":"PHP: Hypertext Preprocessor, plus connu sous son sigle PHP, est un langage de programmation libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP",
-      "contenu":" ",
-      "image":"formations/php.png"
-    },
+    }},
     {
       "id":5,
       "nom":"Reseaux-voix",
@@ -174,6 +213,6 @@
       "id":6,
       "nom":"Marketing & Digital",
       "description":"Animation de communauté ou gestionnaire de communauté,aussi community manager (CM),est un métier - l’animation de communité ,gestion de communité, ou création de contenues.",
-      "image":"formations/digitalmarketing.png"
+      "image":"formations/mmx.png"
     }
   ]
