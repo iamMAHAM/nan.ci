@@ -98,7 +98,7 @@ export default defineComponent({
         return require(`@/assets/naniens/${name.toLowerCase()}.png`)
       } catch (e){
         if (e instanceof Error){
-          alert(`aucune image trouvé avec le nom : ${name}`)
+          // alert(`aucune image trouvé avec le nom : ${name}`)
           return require('@/assets/naniens/no.png')
         }
       }
