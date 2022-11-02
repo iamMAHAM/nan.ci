@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header :slides="slides" :textes="textes" :titres="titres" :height="700"/>
     <div class="naniens-container">
       <div class="nanien-head">
         <h1>NOS CERTIFIÉS <img src="@/assets/naniens/certificate.svg" alt="image de certificat"></h1> 
@@ -77,12 +78,14 @@ import Card from '@/components/Naniens/Card.vue';
 import Pagination from '@/components/Naniens/Pagination.vue';
 import { specialities } from '@/lib/specialities';
 import Loader from '@/components/Global/Loader.vue';
+import Header from '@/components/Accueil/header.vue';
 export default {
   name: 'naniens',
   components: {
     Card,
     Pagination,
-    Loader
+    Loader,
+    Header
   },
   data(){
     return {
@@ -92,6 +95,25 @@ export default {
         speciality: '',
         promotion: ''
       },
+      slides:[
+          "ImagesAccueil/im2.jpg",
+          "ImagesAccueil/im3.jpg",
+          "ImagesAccueil/im4.jpg",
+          "ImagesAccueil/im6.jpg",
+          
+      ],
+      textes: [      
+          ` Travailler avec le sourire et sans stress, c'est sourire à l'avenir`,
+          'Un environnement motivant et inspirant',
+          'Coder pour devenir des professionnelles en programmation',
+          '',
+      ],
+      titres: [
+          'Une Pédagogie inspirée de 42',
+          'Un cadre agréable',
+          'Apprendre le code ',
+          'NaN forme des professionnelles',
+      ],
       cards: [],
       itemToShow: 9,
       page: 1,
