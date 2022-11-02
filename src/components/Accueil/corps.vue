@@ -236,8 +236,6 @@ export default {
 
 <style>
 
-.Acc-corps {}
-
 .corps-titre {
   max-width: var(--max-width);
   margin: 47px auto;
@@ -733,8 +731,6 @@ export default {
   font-size: 20px;
 }
 
-.corps-info-details11 {}
-
 .corps-info-details11 span {
   font-weight: bold;
   font-size: 20px;
@@ -755,8 +751,6 @@ export default {
     text-align: center;
     font-size: 17px;
   }
-
-  .corps-pro {}
 
   .coprs-pro1 {
     border: none;
@@ -829,12 +823,4 @@ export default {
     font-size: 2em;
   }
 }
-
-/* @media(max-width:768px){
-
-} */
-
-
-
-
 </style>
