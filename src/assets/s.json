@@ -47,7 +47,7 @@
             " comment recevoir des requêtes et envoyer des réponses)"
           ]
         },
-        "Node JS":{
+        "CRUD JS":{
           "titre": "Node JS (Express framework, CRUD and project folders structuration)",
           "texte":"Dans ce modue , vous verrez le framework express de node js:",
           "points": [
@@ -58,7 +58,7 @@
           ]
         }
         ,
-        "Node JS":{
+        "Mongo JS":{
           "titre": "Node JS (mongodb and mongoose)",
           "texte":"Dans ce modue , vous verrez la gestion des base de données avec mongodb",
           "points": [
