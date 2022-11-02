@@ -2,8 +2,8 @@
   <div class="general">
     <div class="image">
     </div>
-
-    <div class="formation-container" >
+    <Loader v-if="loading"></Loader>
+    <div class="formation-container" v-else>
 
       <div class="formation-hearder">
         <p>
@@ -27,25 +27,35 @@
 <script>
 
 import Card from '@/components/Formations/card.vue';
+import Loader from '@/components/Global/Loader.vue';
+
+import axios from 'axios'
 
 export default {
   name:"formations",
-  props:['texte'],
   components:{
-    Card
+    Card, Loader
   },
   data() {
     return {
-      formation:""
+      formation:"",
+      loading:true
     }
   },
-  created() {
- 
-  const response = require("@/assets/s.json");
-   const data = response
-   this.formation = data
-   console.log( this.formation);
-}
+mounted() {
+  axios
+  .get('http://192.168.88.15:3001/api/specialities')
+  .then(response =>{ 
+    this.formation = response.data.specialities
+    this.loading = false
+  })
+  .catch((error) =>{
+    this.$router.push('/')
+
+  })
+},
+
+
 
 }
 </script>
@@ -58,13 +68,13 @@ export default {
 .image{
   width: 100%;
   height: 500px;
-  background: url('@/assets/formations/microsoft-edge-RoaneQUy84A-unsplash.jpg') no-repeat center;
+  background: url('@/assets/ImagesAccueil/im4.jpg') no-repeat center;
   background-size: cover;
 }
 .footer{
   width: 100%;
   height: 350px;
-  background: url('@/assets/formations/microsoft-edge-RoaneQUy84A-unsplash.jpg') no-repeat center;
+  background: url('@/assets/ImagesAccueil/im4.jpg') no-repeat center;
   background-size: cover;
 }
 .formation-container{
