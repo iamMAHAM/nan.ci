@@ -14,7 +14,7 @@
         <div class="naniens-searcher">
           <div class="nsl">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" role="search" placeholder="recherche ..." v-model="control.name">
+            <input type="text" role="search" placeholder="rechercher un nom ..." v-model="control.name">
           </div>
           <div class="nsl">
             <i class="fa-solid fa-filter"></i>
@@ -33,7 +33,8 @@
               <option value="C#">C#</option>
               <option value="flutter">Flutter</option>
               <option value="PHP">PHP</option>
-              <option value="front-end">Front-end</option>
+              <option value="front-end">Front end</option>
+              <option value="reseau-voip">Reseau Voip</option>
               <option value="multimedia">Multimédia</option>
             </select>
             <select name="promotion" v-model="control.promotion" v-else>
@@ -46,21 +47,26 @@
             </select>
           </div>
           <div class="nsl" style="border-right: none" v-else="showFs">
-            <i class="fa-solid fa-square-xmark"></i>
+            <i class="fa-solid fa-square-xmark"
+              @click="control = {name: '', spec: '', speciality: '', promotion: ''}"
+              style="cursor: pointer;"
+            ></i>
             <input type="text" placeholder="Aucun filtre selectionné" disabled>
           </div>
         </div>
       </div>
-
       <div class="naniens-cards">
+        <Loader v-if="load"/>
         <Card
-          v-for="info in cards"
+          :specs="specialities"
+          v-for="info in toDisplayed"
+          :key="info.id"
           :info="info"
         />
       </div>
 
       <div>
-        <Pagination />
+        <Pagination :itemToShow="itemToShow" :total="filtered.length" @page='paginate' :isFilter="isFilter"/>
       </div>
     </div>
   </div>
@@ -68,11 +74,14 @@
 <script>
 import Card from '@/components/Naniens/Card.vue';
 import Pagination from '@/components/Naniens/Pagination.vue';
+import { specialities } from '@/lib/specialities';
+import Loader from '@/components/Global/Loader.vue';
 export default {
   name: 'naniens',
   components: {
     Card,
-    Pagination
+    Pagination,
+    Loader
   },
   data(){
     return {
@@ -242,10 +251,25 @@ export default {
     },
     filter(){
       return this.control.spec === 'speciality'
+    },
+    filtered(){
+      if (this.control.spec && (this.control.promotion || this.control.speciality)) this.isFilter = true
+      else this.isFilter = false
+      return this.cards.filter(
+        c =>
+          c.fullName.toLocaleLowerCase().includes(this.control.name.toLocaleLowerCase())
+          && String(c.generation).toLowerCase().includes(String(this.control.promotion).toLocaleLowerCase())
+          && c.speciality.toLocaleLowerCase().includes(this.control.speciality.toLocaleLowerCase())
+      )
+    },
+    toDisplayed(){
+      return this.filtered.filter((c, index) => {
+        const left = this.itemToShow * this.page - this.itemToShow //left interval born
+        const right = this.itemToShow * this.page - 1 // right interval born
+        const inter = [left, right] // interval simulator
+        return index >= inter[0] && index <= inter[1]
+      })
     }
-  },
-  updated(){
-    console.log(this.control)
   }
 }
 </script>
@@ -294,6 +318,7 @@ export default {
   }
 
   .naniens-searcher div :nth-child(2){
+    background: none;
     outline: none;
     border: none;
     font-size: 18px;

@@ -17,12 +17,13 @@
       </svg>
     </button>
     <div class="pages">
-      <a class="page active" @click="page">1</a>
-      <a class="page" @click="page">2</a>
-      <a class="page" @click="page">3</a>
-      <a class="page" @click="page">4</a>
-      <a class="page" @click="page">5</a>
-      <a class="page" @click="page">6</a>
+      <a
+        v-for="n in [...Array(numbers).keys()]"
+        :class="`page ${n === 0 ? 'active' : ''}`"
+        @click="page"
+        >
+          {{ n + 1 }}
+      </a>
     </div>
     <button class="btn" @click="page($event, 'next')">
       <svg
@@ -52,50 +53,66 @@ export default defineComponent({
       type: Number,
       required: true
     },
-    "item-to-show": {
-      type: Array,
+    itemToShow: {
+      type: Number,
       required: false,
       default: 9,
+    },
+    isFilter: {
+      type: Boolean,
+      required: false
     }
   },
   data(){
     return {
       current: null,
+      pageNumber: 1,
     }
   },
   methods: {
     page(e, direction=null){
-      console.log(this.current)
-      console.log('direction', direction)
-      const target = direction
-        ? direction === 'next'
-          ? this.current.nextElementSibling
-          : this.current.previousElementSibling
-        : e.currentTarget
-
-      const number = parseInt(target.textContent)
-
+      let target = e.currentTarget
+      if (direction){
+        target = direction === 'next' 
+          ? this.current?.nextElementSibling
+          : this.current?.previousElementSibling
+      }
+      this.pageNumber = parseInt(target?.textContent)
+      if (direction && isNaN(this.pageNumber)) return
       Array.from(document.querySelectorAll('.page')).forEach(p => {
         p === target
           ? ''
           : p.classList.remove('active')
+        
+        if (this.pageNumber >= 5){
+          this.pageNumber === this.numbers
+            ? ''
+            : p.style.transform = `translate(${-60 * (this.pageNumber - 5)}px)`
+        }
       })
       if (!target.classList.contains('active')){
-        console.log('emit page', number)
-        this.$emit('page', number)
+        this.$emit('page', this.pageNumber)
         target.classList.add('active')
       }
       this.current = target
     }
   },
-  beforeMount(){
-    const max = 9
-    const total = 0
+  computed: {
+    numbers(){
+      return Math.ceil(this.total / this.itemToShow)
+    }
   },
   mounted(){
     document.addEventListener('DOMContentLoaded', () => {
-      this.current = document.querySelector('.page.active')
+      this.current = document.querySelector('.pages').firstElementChild
     })
+  },
+  watch: {
+    isFilter: function (new_, _){
+      if (new_) {
+        this.$emit('page', 1)
+      }
+    }
   }
 })
 </script>
@@ -113,13 +130,15 @@ export default defineComponent({
     display: flex;
     flex-direction: row;
     gap: 20px;
+    max-width: 340px;
+    overflow: hidden;
   }
 
   .page {
     color: var(--blanc);
     background-color: var(--bg2);
-    height: 40px;
-    width: 40px;
+    min-height: 40px;
+    min-width: 40px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;

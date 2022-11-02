@@ -1,19 +1,19 @@
 <template>
    <Parents_idn />
    <div class="parent_Etudiant">
-<ParentEtudiant />
-<parent-parcours />
+     <ParentEtudiant />
+     <parent-parcours />
    </div>
    
 
 </template>
 
 <script>
-import Parents_idn from '@/components/Parents_idn.vue'
-import ParentEtudiant from '@/components/ParentEtudiant.vue'
-import ParentParcours from '@/components/ParentParcours.vue'
+import Parents_idn from '@/components/componentParent/Parents_idn.vue'
+import ParentParcours from '@/components/componentParent/ParentParcours.vue'
+import ParentEtudiant from '@/components/componentParent/ParentEtudiant.vue'
 export default {
-  components: { Parents_idn, ParentEtudiant, ParentParcours },
+  components: { Parents_idn, ParentEtudiant, ParentParcours, ParentEtudiant },
 
 }
 </script>

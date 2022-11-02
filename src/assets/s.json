@@ -1,14 +1,32 @@
-{
-  "formtaion" :[
+
+[
     {
       "id":1,
       "nom":"JavaScript",
       "description":"JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web.",
-      "image":"formations/logoJs.png"
-    },
+      "image":"formations/logoJs.png",
+      "etapes": {
+        "basics":{
+          "titre": "JavaScript basics",
+          "points": [
+            "qu'est ce que le JavaScript ?",
+            "les variables, les conditions, les structure itéractives ",
+            "les types de variables, les fonctions, les objets"
+          ]
+        },
+        "advanced":{
+          "titre": "JavaScript advanced",
+          "points": [
+            "les modules, la syntaxe es6,try...catch ",
+            "es promesses,ajax, ",
+            "async await,canvas,etc ...."
+          ]
+        }
+      },
+      "contenu": ""   },
     {
       "id":2,
-      "nom":"PhP",
+      "nom":"php",
       "description":"PHP Hypertext Preprocessor, plus connu sous son sigle PHP,est un langage de programmation libre,principalement utilisé pour produire des pages web dynamiques via un serveur HTTP",
       "image":"formations/php.png"
     },
@@ -37,4 +55,3 @@
       "image":"formations/digitalmarketing.png"
     }
   ]
-}

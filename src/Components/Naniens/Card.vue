@@ -24,7 +24,15 @@
         </div>
 
         <div class="spec-logo">
-          <span class="spec">Développeur {{ info.speciality }}</span>
+          <span class="spec">
+            {{
+              specs.devs.includes(info.speciality.toLowerCase())
+                ? 'Développeur ' + info.speciality
+                : info.speciality === 'multimedia'
+                  ? 'Digital marketeur'
+                  : 'Spécialisé en reseau voip'
+            }}
+          </span>
           <img :src="getImage(`${info.speciality}`)" alt="image de spécialité">
         </div>
       </div>
@@ -83,7 +91,7 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Card',
-  props: ['info'],
+  props: ['info', 'specs'],
   methods:{
     getImage(name){
       try{
