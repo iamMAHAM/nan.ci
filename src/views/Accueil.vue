@@ -1,13 +1,13 @@
 <template>
   <div>
-    <headerComponent :slides="slides" :textes="textes" :titres="titres" :height="920"/>
-    <corpsComponent/>
+    <Header :slides="slides" :textes="textes" :titres="titres" :height="920" />
+    <Corps />
   </div>
 </template>
 
 <script>
-import headerComponent from "../components/Accueil/header.vue";
-import corpsComponent from "../components/Accueil/corps.vue";
+import Header from "../components/Accueil/header.vue";
+import Corps from "../components/Accueil/corps.vue";
 export default {
   name: 'Accueil',
   data() {
@@ -42,8 +42,8 @@ export default {
         }
     },
   components:{
-    headerComponent,
-    corpsComponent
+    Header,
+    Corps
   }
 }
 </script>
