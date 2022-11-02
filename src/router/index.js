@@ -54,7 +54,8 @@ const routes = [
   {
     path: '/formations/:specialite',
     name: 'formation',
-    component: FormationDetail
+    component: FormationDetail,
+    props:true
   },
 ]
 

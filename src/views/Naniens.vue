@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header :slides="slides" :textes="textes" :titres="titres" :height="700"/>
     <div class="naniens-container">
       <div class="nanien-head">
         <h1>NOS CERTIFIÉS <img src="@/assets/naniens/certificate.svg" alt="image de certificat"></h1> 
@@ -58,6 +59,7 @@
       <div class="naniens-cards">
         <Loader v-if="load"/>
         <Card
+          v-else
           :specs="specialities"
           v-for="info in toDisplayed"
           :key="info.id"
@@ -66,7 +68,7 @@
       </div>
 
       <div>
-        <Pagination :itemToShow="itemToShow" :total="filtered.length" @page='paginate' :isFilter="isFilter"/>
+        <Pagination :itemToShow="itemToShow" :total="filtered.length" @page="paginate" :isFilter="isFilter"/>
       </div>
     </div>
   </div>
@@ -76,174 +78,64 @@ import Card from '@/components/Naniens/Card.vue';
 import Pagination from '@/components/Naniens/Pagination.vue';
 import { specialities } from '@/lib/specialities';
 import Loader from '@/components/Global/Loader.vue';
+import Header from '@/components/Accueil/header.vue';
 export default {
   name: 'naniens',
   components: {
     Card,
     Pagination,
-    Loader
+    Loader,
+    Header
   },
   data(){
     return {
-      info: {
-        fullName: 'KABORE ABDUL MAHAMOUDOU',
-        speciality: 'javascript',
-        profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
-        linkedinUrl: 'https://linkedin.com',
-        githubUrl: 'https://github.com',
-        portfolioUrl: 'https://me.com',
-        generation: 5.22,
-        isBusy: false,
-        skills: {
-          frontEnd: ['html', 'vue', 'react'],
-          backEnd: ['express', 'node'],
-          databases: ['mongo', 'mysql']
-        }
-      },
       control:{
         name: '',
         spec: '',
         speciality: '',
         promotion: ''
       },
-      cards: [
-        {
-          fullName: 'KABORE ABDUL MAHAMOUDOU',
-          speciality: 'python',
-          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
-          linkedinUrl: 'https://linkedin.com',
-          githubUrl: 'https://github.com',
-          portfolioUrl: 'https://me.com',
-          generation: 5.22,
-          isBusy: true,
-          skills: {
-            frontEnd: ['html', 'angular'],
-            backEnd: ['flask', 'node'],
-            databases: ['mysql', 'postgresql']
-          }
-        },
-        {
-          fullName: 'KABORE ABDUL MAHAMOUDOU',
-          speciality: 'php',
-          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
-          linkedinUrl: 'https://linkedin.com',
-          githubUrl: 'https://github.com',
-          portfolioUrl: 'https://me.com',
-          generation: 5.22,
-          isBusy: '',
-          skills: {
-            frontEnd: ['html', 'vue', 'react'],
-            backEnd: ['express', 'node'],
-            databases: ['mongo', 'mysql']
-          }
-        },
-        {
-          fullName: 'KABORE ABDUL MAHAMOUDOU',
-          speciality: 'javascript',
-          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
-          linkedinUrl: 'https://linkedin.com',
-          githubUrl: 'https://github.com',
-          portfolioUrl: 'https://me.com',
-          generation: 5.22,
-          isBusy: '',
-          skills: {
-            frontEnd: ['html', 'vue', 'react'],
-            backEnd: ['express', 'node'],
-            databases: ['mongo', 'mysql']
-          }
-        },
-        {
-          fullName: 'KABORE ABDUL MAHAMOUDOU',
-          speciality: 'javascript',
-          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
-          linkedinUrl: 'https://linkedin.com',
-          githubUrl: 'https://github.com',
-          portfolioUrl: 'https://me.com',
-          generation: 5.22,
-          isBusy: '',
-          skills: {
-            frontEnd: ['html', 'vue', 'react'],
-            backEnd: ['express', 'node'],
-            databases: ['mongo', 'mysql']
-          }
-        },
-        {
-          fullName: 'KABORE ABDUL MAHAMOUDOU',
-          speciality: 'javascript',
-          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
-          linkedinUrl: 'https://linkedin.com',
-          githubUrl: 'https://github.com',
-          portfolioUrl: 'https://me.com',
-          generation: 5.22,
-          isBusy: '',
-          skills: {
-            frontEnd: ['html', 'vue', 'react'],
-            backEnd: ['express', 'node'],
-            databases: ['mongo', 'mysql']
-          }
-        },
-        {
-          fullName: 'KABORE ABDUL MAHAMOUDOU',
-          speciality: 'javascript',
-          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
-          linkedinUrl: 'https://linkedin.com',
-          githubUrl: 'https://github.com',
-          portfolioUrl: 'https://me.com',
-          generation: 5.22,
-          isBusy: '',
-          skills: {
-            frontEnd: ['html', 'vue', 'react'],
-            backEnd: ['express', 'node'],
-            databases: ['mongo', 'mysql']
-          }
-        },
-        {
-          fullName: 'KABORE ABDUL MAHAMOUDOU',
-          speciality: 'javascript',
-          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
-          linkedinUrl: 'https://linkedin.com',
-          githubUrl: 'https://github.com',
-          portfolioUrl: 'https://me.com',
-          generation: 5.22,
-          isBusy: '',
-          skills: {
-            frontEnd: ['html', 'vue', 'react'],
-            backEnd: ['express', 'node'],
-            databases: ['mongo', 'mysql']
-          }
-        },
-        {
-          fullName: 'KABORE ABDUL MAHAMOUDOU',
-          speciality: 'javascript',
-          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
-          linkedinUrl: 'https://linkedin.com',
-          githubUrl: 'https://github.com',
-          portfolioUrl: 'https://me.com',
-          generation: 5.22,
-          isBusy: '',
-          skills: {
-            frontEnd: ['html', 'vue', 'react'],
-            backEnd: ['express', 'node'],
-            databases: ['mongo', 'mysql']
-          }
-        },
-        {
-          fullName: 'KABORE ABDUL MAHAMOUDOU',
-          speciality: 'javascript',
-          profilUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80',
-          linkedinUrl: 'https://linkedin.com',
-          githubUrl: 'https://github.com',
-          portfolioUrl: 'https://me.com',
-          generation: 5.22,
-          isBusy: '',
-          skills: {
-            frontEnd: ['html', 'vue', 'react'],
-            backEnd: ['express', 'node'],
-            databases: ['mongo', 'mysql']
-          }
-        },
-      ]
+      slides:[
+          "ImagesAccueil/im2.jpg",
+          "ImagesAccueil/im3.jpg",
+          "ImagesAccueil/im4.jpg",
+          "ImagesAccueil/im6.jpg",
+          
+      ],
+      textes: [      
+          ` Travailler avec le sourire et sans stress, c'est sourire à l'avenir`,
+          'Un environnement motivant et inspirant',
+          'Coder pour devenir des professionnelles en programmation',
+          '',
+      ],
+      titres: [
+          'Une Pédagogie inspirée de 42',
+          'Un cadre agréable',
+          'Apprendre le code ',
+          'NaN forme des professionnelles',
+      ],
+      cards: [],
+      itemToShow: 9,
+      page: 1,
+      isFilter: false,
+      specialities: specialities,
+      load: true
     }
+  },
+  methods: {
+    paginate(number){
+      this.page = number
+    }
+  },
+  mounted(){
+    fetch('http://192.168.88.15:3001/api/naniens')
+    .then(res => res.json())
+    .then(data => {
+      console.log([...data.data])
+      this.cards = [...data.data]
+      this.load = false
+    })
+
   },
   computed: {
     showFs(){
