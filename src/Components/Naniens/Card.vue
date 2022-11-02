@@ -27,7 +27,7 @@
           <span class="spec">
             {{
               specs.devs.includes(info.speciality.toLowerCase())
-                ? 'Développeur ' + info.speciality
+                ? `Développeu${info?.gender === 'M' ? 'r' : 'se'} ` + info.speciality
                 : info.speciality === 'multimedia'
                   ? 'Digital marketeur'
                   : 'Spécialisé en reseau voip'
@@ -50,7 +50,9 @@
         <p>GÉNÉRATION :  {{ info.generation }}</p>
         <p>COMPÉTENCES</p>
       </div>
-      <div class="skills">
+      <div class="skills"
+        v-if="specs.devs.includes(info.speciality.toLowerCase())"
+      >
         <div class="skill">
           <span>Front-End : </span>
           <div class="simages">
