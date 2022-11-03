@@ -92,7 +92,83 @@
        "nom":"PHP",
        "description":"PHP: Hypertext Preprocessor, plus connu sous son sigle PHP, est un langage de programmation libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP",
        "contenu":" ",
-       "image":"formations/php01.png"
+       "image":"formations/php01.png",
+      "etapes": {
+        "basics":{
+          "titre": "JavaScript basics",
+          "texte":"Dans ce modue , vous apprendrez les bases du langage javascript, entres autres: ",
+          "points": [
+            "qu'est ce que le JavaScript ?",
+            "les variables, les conditions, les structure itéractives ",
+            "les types de variables, les fonctions, les objets"
+          ]
+        },
+        "advanced":{
+          "titre": "JavaScript advanced",
+          "texte":"Dans ce modue , vous verrez des notions un peu plus poussez en javascript:",
+          "points": [
+            "les modules, la syntaxe es6,try...catch ",
+            "les promesses,ajax, ",
+            "async await,canvas,etc ...."
+          ]
+        },
+        "DOM":{
+          "titre": "DOM",
+          "texte":"Dans ce modue , vous verrez le DOM:",
+          "points": [
+            " manipuler les donnés html et css en javascript ",
+            " animer les balises ",
+            "créer des animations en javascript"
+          ]
+        },
+        "Node JS":{
+          "titre": "Node JS (environnement & server)",
+          "texte":"Dans ce modue , vous verrez l'environnement Node JS,entre autre:",
+          "points": [
+            " qu'es ce que le nodejs ? , à quoi sert t-il ? ",
+            "  comment créer un serveur en node js ?",
+            " comment recevoir des requêtes et envoyer des réponses)"
+          ]
+        },
+        "CRUD JS":{
+          "titre": "Node JS (Express framework, CRUD and project folders structuration)",
+          "texte":"Dans ce modue , vous verrez le framework express de node js:",
+          "points": [
+            
+            " il nous permettra de créer nos serveurs , de manère simple et efficace, ",
+            " vous verrez aussi le CRUD et enfin le plus important ",
+            "comment structurer ces dossiers et fichiers dans un projet"
+          ]
+        }
+        ,
+        "Mongo JS":{
+          "titre": "Node JS (mongodb and mongoose)",
+          "texte":"Dans ce modue , vous verrez la gestion des base de données avec mongodb",
+          "points": [
+            " comment fonctionne mongodb, quel est son architecture .., ",
+            " vous verrez également mongoose qui est le package utilisé par node js pour fait des intéractions avec une base de donnés mongodb ",
+            "vous verrez donc les models de données, les requêtes "
+          ]
+        },
+        "React JS":{
+          "titre": "React JS (javascript front framework)",
+          "texte":"Dans ce modue , vous verrez React JS, qui est un framework javascript , lui il agit principalement sur le front-end",
+          "points": [
+            " vous verrez comment fonctionne le principe des applications web single page,",
+            "comment peut-on lier notre back-end à notre application react "
+          ]
+        },
+        "Projet ":{
+          "titre": "Projet de fin de formation",
+          "texte":"Dans ce module ",
+          "points": [
+            " vous aurez à travailler sur un projet qui vous sera donné à la fin de votre parcours.. ",
+            "  ce projet comporteras tout ce que vous aurez vue au cous de votre formation .. "
+            
+          ]
+        }
+
+      }  
      },
      
     {
@@ -129,6 +205,29 @@
           "texte":"C'est quoi Python ?",
           "points": [
             "Conseils pour installer et configurer Python Miniconda"
+          ]
+        },
+        "Django et Django REST":{
+          "titre": "Django et Django REST  ",
+          "texte":"C'est quoi Python ?",
+          "points": [
+            "Conseils pour installer et configurer Python Miniconda"
+          ]
+        }
+        ,
+        "PostgreSQL":{
+          "titre": "PostgreSQL  ",
+          "texte":"Développer une base de données PostgreSQL sécurisée",
+          "points": [
+            "Conseils pour installer et configurer Python Miniconda"
+          ]
+        },
+        "Projet de fin de formation":{
+          "titre": "Projet de fin de formation  ",
+          "texte":"C'est quoi Python ?",
+          "points": [
+            " vous aurez à travailler sur un projet qui vous sera donné à la fin de votre parcours.. ",
+            "  ce projet comporteras tout ce que vous aurez vue au cous de votre formation .. "
           ]
         }
     }

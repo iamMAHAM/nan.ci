@@ -23,7 +23,7 @@
   </div>
   
   <div id="image2">
-    <img  src="@/assets/formations/barbecue-g82069dcb5_1920.jpg">
+    <img  src="@/assets/formations/binary.jpg">
      <h1>Ce que vous apprendriez à NaN</h1>
   </div>
   <div class="container1">
@@ -58,8 +58,19 @@
     
   </div>
 
-    <div>
-      <h1></h1>
+    <div class="container2">
+      <div class="text">
+      
+      <p>rejoignez un réseau tech mondial</p>
+    </div>
+
+      <div class="item">
+  
+         <img src="@/assets/formations/py1.png" alt="">
+         <img src="@/assets/formations/py1.png" alt="">
+         <img src="@/assets/formations/py1.png" alt="">
+         <img src="@/assets/formations/py1.png" alt="">
+      </div>
       
 
 
@@ -121,8 +132,44 @@
    width: var(--max-width); 
    background: var(--bg);
    margin: 0 auto;
+   margin-top: 10%;
    margin-bottom: 5%;
    
+  }
+  .container2{
+    background-color:var(--bg2) ;
+    height: 40VH;
+    margin-top:5% ;
+    border-radius: 9px ;
+    border: none;
+
+
+  }
+  .text{
+    padding-top: 8%;
+    padding-left: 25%;
+    padding-bottom: 5%;
+  }
+  .text>p{
+    font-size: 35px ;
+  }
+  
+  .item{
+     gap: 15%;
+     display: flex;
+     margin: 0 auto;
+     width: 200px;
+     justify-content: center;
+  }
+  .item>img{
+   
+    
+    height: 70px;
+    width: 70px;
+    border-radius:30% ;
+    border: 1px solid black ;
+    
+
   }
   h2{
     font-size: var(--titre);
@@ -139,7 +186,7 @@
   left: 90px;
   top: 507px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  box-shadow: 5px 8px 12px 2px #6870E0;
+  box-shadow: 6px 5px 12px 1px #6870E0;
   border-radius: 45px;
   }
   .card_1>h2{
@@ -167,7 +214,7 @@ height: 456px;
 left: 88px;
 top: 1054px;
 background: #272935;
-box-shadow: 5px 8px 12px 2px #6870E0;
+box-shadow: 6px 5px 12px 1px #6870E0;
 border-radius: 45px;
   }
   .box>h2{
@@ -238,7 +285,7 @@ cursor: pointer;
   left: 90px;
   top: 507px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  box-shadow: 5px 8px 12px 2px #6870E0;
+  box-shadow: 6px 5px 12px 1px #6870E0;
   border-radius: 45px;
   display: flex;
   padding: 60px;
