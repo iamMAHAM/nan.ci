@@ -3,7 +3,7 @@
     <h1>INFORMATIONS DE L’ETUDIANT</h1>
     <fieldset class="e-container">
       <legend>
-        <img src="../../assets/ImagesParents/christopher-campbell-rDEOVtE7vOs-unsplash.jpg">
+        <img :src="user.avatar">
       </legend>
       <div class="card_infos">
         <div class="libel">
@@ -15,12 +15,12 @@
           <p>Formation</p>
         </div>
         <div class="values">
-          <p>Kabore Abdul Mahamoudou</p>
-          <p>abdulkabore@gmail.com</p>
-          <p>+2250101010101</p>
-          <p>Javascript</p>
-          <p>5.22</p>
-          <p>Présentiel</p>
+          <p>{{ user.login}}</p>
+          <p>{{ user.email }}</p>
+          <p>{{ user.phone }}</p>
+          <p>{{ user.speciality.name}}</p>
+          <p>{{ promotion }}</p>
+          <p>{{ formation }}</p>
         </div>
       </div>
     </fieldset>
@@ -29,7 +29,18 @@
 
 <script>
 export default {
-
+  name: 'studentCard',
+  props: ['user'],
+  computed: {
+    promotion(){
+      return this.user.matricule.split('_')[1].split('-')[0]
+    },
+    formation(){
+      return this.user.status === 'realtime'
+        ? 'présentiel'
+        : 'en ligne '
+    }
+  }
 }
 </script>
 
@@ -38,6 +49,7 @@ export default {
 .e-container{
   display: flex;
   padding: 50px;
+  border: none;
   flex-direction: column;
   align-items: center;
   position: relative;

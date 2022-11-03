@@ -1,12 +1,12 @@
 <template>
-
+  <Loader v-if="load"/>
   <div class="parents_contenaire"> 
     <form class="sous_cadre_parents_id">
       <h1>PORTAIL PARENT</h1>
       <div class="parents_id_input">
         <input type="text" placeholder="code parent" class="saisie" v-model="parentCode">
         <input type="text" placeholder="Matricule de l'Étudiant" class="saisie" v-model="studentMat">
-        <p class="error" v-if="error">code parent ou matricule étudiant absent</p>
+        <p class="error" v-if="error">Invalid Credential</p>
       </div>
       <button
         type="submit"
@@ -20,28 +20,50 @@
 </template>
 
 <script>
+import Loader from '../Global/Loader.vue';
 export default {
-  name: 'Auth',
-  data(){
+  name: "Auth",
+  emits: ['logged'],
+  data() {
     return {
-      parentCode: '',
-      studentMat: '',
-      error: false
-    }
+      parentCode: "",
+      studentMat: "",
+      error: false,
+      load: false
+    };
   },
   methods: {
-    login(){
-      if (!this.parentCode || !this.studentMat){
-        this.error = true
-        return
+    login() {
+      if (!this.parentCode && this.parentCode !== this.studentMat) {
+        this.error = true;
+        return;
       }
-      this.$emit('logged', {name: 'ok', prenom: 'ahahahah'})
-      // fetch(`/user?parentcode=${this.parentCode}?studentmat=${this.studentMat}`)
-      // .then(res => res.json())
-      // .then(data => {
-      //   this.$emit('login', data)
-      // })
+      this.load = true
+      fetch("/api/getStudentInfo", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            codeparent: this.parentCode,
+            confirmation: this.studentMat
+          })
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log("data", data);
+          if (data.status) {
+            this.$emit('logged', data.data);
+          } else this.error = true;
+          this.load = false;
+        })
+        .catch(e => {
+          console.log(e);
+        });
     }
+  },
+  components: {
+    Loader
   }
 }
 </script>
@@ -53,7 +75,6 @@ export default {
   font-size: medium;
 }
 .parents_contenaire{
-  min-height: 80vh;
   margin: 0 auto;
   background-color: var(--bg);
   max-width: var(--max-width);

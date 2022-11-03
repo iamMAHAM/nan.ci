@@ -4,15 +4,25 @@
             <img src="../../assets/ImagesParents/jeshoots-com-9n1USijYJZ4-unsplash.jpg" alt="">
             <h1>Janvier</h1>
         </div>
-        <div class="infos_plus1">
+        <div class="infos_plus1" style="align-self: center;">
           <div class="infos_data">
-            <p>quizs passed :<span>{{pointInfo.quizzPassed}}/11</span></p>
+            <p>quizz passé :</p>
+            <span>{{pointInfo.quizzPassed}}/11</span>
           </div>
-          <div class="infos_data"> <p>totalQuizsPercent :<span>{{pointInfo.totalQuizsPercent}}</span></p></div>
-          <div class="infos_data"> <p>totalQuizsSeconds :<span>{{pointInfo.totalQuizsSeconds}}</span></p></div>
-          <div class="infos_data"><p>totalQuizsPoints :<span>{{pointInfo.totalQuizsPoints}}</span></p></div>
-          <div class="infos_data"><p>Total points :<span>{{pointInfo.Total}}</span></p></div>
-          <div class="infos_data"><p>Rank :<span>{{pointInfo.rang}} ème/30</span></p></div>
+          <div class="infos_data">
+            <p>exercices passés :</p>
+            <span>{{pointInfo.exercicePassed}}</span>
+          </div>
+          <div class="infos_data">
+            <p>Points :</p>
+            <span>{{pointInfo.Total}}</span>
+          </div>
+          <div class="infos_data">
+            <p>Rang :</p>
+            <span>
+              {{pointInfo.rang === 1 ? 1 + 'er' : pointInfo.rang + ' ème'}}/30
+            </span>
+          </div>
         </div>
     </div>
    
@@ -27,29 +37,30 @@ export default {
 
 <style scoped>
  .Etudiant_infos_plus{
+  padding: 20px;
   background-color: var(--blanc);
   position: relative;
-  z-index: 1;
-  margin: 32px auto;
-  max-width: 800px;
-  height: 300px;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
-  padding: 8px 10px;
+  flex-wrap: wrap;
   font-size: 16px;
+  margin: 0 auto;
   border: none;
   box-shadow: 0 10px 35px rgba(50,50,93,.1),0 2px 15px rgba(0,0,0,.07);
   border-radius:10px ;
 }
 .infos_plus1{
-    width: 400px;
-    height: 300px;
-    margin: 10px 70px;
-   color: black;
+  width: 50%;
+  height: 100%;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .infos_plus1>img{
-    width: 300px;
-    height: 260px;
+    width: 100%;
+    height: 100%;
     box-shadow: 0 10px 35px rgba(50,50,93,.1),0 2px 15px rgba(0,0,0,.07);
 }
 .infos_plus1>h1{
@@ -62,16 +73,19 @@ export default {
 }
 .infos_plus1 .infos_data{
   box-shadow: 0 10px 35px rgba(50,50,93,.1),0 2px 15px rgba(0,0,0,.07);
-  padding: 1px 1px;
-  width: 280px;
+  padding: 10px;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
+
 p{
-  margin-top: 20px;
-  margin-right: 10px;
-  margin-left: 10px;
-  color: black;
-  
+  font-size: 20px;
+  color: var(--bg);
 }
+
 
 
 </style>

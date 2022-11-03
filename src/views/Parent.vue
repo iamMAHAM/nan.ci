@@ -2,7 +2,7 @@
   <Header :slides="slides" :textes="textes" :titres="titres" :height="60"/>
   <Auth v-if="!isLogged" @logged="displayUser"/>
    <div class="parent_Etudiant" v-else>
-    <Index />
+    <Index :userInfo="userInfo"/>
    </div>
 </template>
 
@@ -11,11 +11,11 @@ import Auth from '@/components/Parents/Auth.vue'
 import Index from '@/components/Parents/Index.vue'
 import Header from '@/components/Accueil/header.vue'
 export default {
-  components: { 
+  components: {
     Header,
     Auth,
-    Index
-  },
+    Index,
+},
   data(){
     return {
       slides:[
@@ -31,12 +31,14 @@ export default {
           'Espace Parent',
           'Controle',
       ],
-      isLogged: true
+      isLogged: false,
+      userInfo: {}
     }
   },
   methods: {
     displayUser(data){
       console.log(data)
+      this.userInfo = data
       this.isLogged = true
     }
   }

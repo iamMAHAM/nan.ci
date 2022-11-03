@@ -1,6 +1,6 @@
 <template>
   <div class="index-container">
-    <StudentCard />
+    <StudentCard :user="userInfo"/>
     <Parcours />
   </div>
 </template>
@@ -11,6 +11,7 @@ import Parcours from './Parcours.vue'
 
 export default {
   name: 'index',
+  props: ['userInfo'],
   components:{
     StudentCard,
     Parcours

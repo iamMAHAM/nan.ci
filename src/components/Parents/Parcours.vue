@@ -6,13 +6,17 @@
         class="parc"
         v-for="month in months"
       >
-        <li @click="showInfo(month)"></li>
+        <span><i class="fa-solid fa-person-walking"></i></span>
+        <li
+          @click="showInfo(month)"
+          :class="currentMonth === month ? 'active' : ''"
+        ></li>
         <span>{{ month }}</span>
       </div>
     </ol>
     <Loader v-if="load"/>
-    <div v-else>
-      <h2>QUIZ DU MOIS</h2>
+    <div v-else style="max-width: 800px;">
+      <h2>RESULTAT DU MOIS</h2>
       <PetudiantPoints :point-info="currentInfo.points"/>
       <h2>PROJET DU MOIS</h2>
       <ProjetEt :projet-info="currentInfo.projet"/>
@@ -30,17 +34,18 @@ export default {
       return {
         currentInfo: {},
         months: ['mois 1', 'mois 2', 'mois 3', 'mois 4', 'mois 5', 'mois 6', 'mois 7', 'mois 8', 'mois 9'],
-        load: true
+        load: true,
+        currentMonth: 'mois 2'
       }
     },
     methods: {
       showInfo(month){
         console.log(month)
-        fetch(`/getInfo?month=${month}`)
-        .then(res=>res.json())
-        .then(data=>{
-          console.log(data)
-        })
+        // fetch(`/getInfo?month=${month}`)
+        // .then(res=>res.json())
+        // .then(data=>{
+        //   console.log(data)
+        // })
       }
     },
     mounted(){
@@ -62,7 +67,7 @@ export default {
       this.load = false
     },
     setup() {
-      document.addEventListener("DOMContentLoaded", () => {
+      document.addEventListener('DOMContentLoaded', () => {
         const list = document.querySelector("ol");
         const items = list.querySelectorAll("li");
         const click = (e) => {
@@ -74,7 +79,7 @@ export default {
             items.forEach(item => item.classList.remove("active"));
             target.classList.add("active");
         };
-        list.addEventListener("click", click);
+        list.addEventListener('click', click);
       });
     },
     components: { PetudiantPoints, ProjetEt, Loader }
@@ -130,7 +135,9 @@ li {
   position: relative;
   cursor: pointer;
 }
+
 li:after {
+  z-index: 999;
   content: '';
   display: block;
   width: 12px;
@@ -141,7 +148,11 @@ li:after {
   transition: background-color 0.2s ease;
 }
 li:hover:after {
-  background-color: #528787;
+  background-color: var(--vert);
+}
+
+li.active:after{
+  background-color: var(--vert);
 }
 li.active:after {
   background-color: #222;

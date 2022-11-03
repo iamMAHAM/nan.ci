@@ -37,12 +37,13 @@ export default {
   margin-top: 10px;
   justify-content: space-around;
 }
+
 .casse .casse1{
   color: var(--blanc);
   border: 1px solid var(--blanc);
-  width: 220px;
+  width: 30%;
   height: 100px;
-  margin: auto auto;
+  margin: auto;
   border-radius: 20px;
   box-shadow: 0 0 20px 8px #1b1f2b;
 }
