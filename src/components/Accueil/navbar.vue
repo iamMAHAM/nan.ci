@@ -11,13 +11,13 @@
             <li><router-link to="/apropos" class="Acc-lien">A propos</router-link></li>
             <div class="Acc-cadenas">
               <a href="https://classe.nan.ci" class="Acc-boutton" target="_blank">
-                <i class="fas fa-lock"></i>Accés aux Cours
+                <i class="fas fa-lock"></i>Accès aux Cours
               </a>
             </div>
           </ul>
           <div class="Acc-cadenas">
             <a href="https://classe.nan.ci" class="Acc-boutton" target="_blank">
-              <i class="fas fa-lock"></i>Accés aux Cours
+              <i class="fas fa-lock"></i>Accès aux Cours
             </a>
           </div>
           <div class="burger">

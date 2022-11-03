@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import PetudiantPoints from '@/components/componentParent/PetudiantPoints.vue'
-import ProjetEt from '@/components/componentParent/ProjetEt.vue'
+import PetudiantPoints from '@/components/Parents/PetudiantPoints.vue'
+import ProjetEt from '@/components/Parents/ProjetEt.vue'
 export default {
   components: { PetudiantPoints},
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :slides="slides" :textes="textes" :titres="titres" :height="100" />
+    <Header :slides="slides" :textes="textes" :titres="titres" :height="80" />
     <Corps />
   </div>
 </template>

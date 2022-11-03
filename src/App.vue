@@ -16,6 +16,11 @@ export default {
   components:{
     NavBar,
     Footer
+  },
+  watch: {
+    $route(old, _new){
+      window.scrollTo({top: 0, behavior: 'smooth'})
+    }
   }
 }
 </script>
