@@ -91,8 +91,102 @@
      "id":2,
      "nom":"PHP",
      "description":"PHP: Hypertext Preprocessor, plus connu sous son sigle PHP, est un langage de programmation libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP",
-     "contenu":" ",
+     "contenu":"Le langage PHP est un langage dynamique qui est directement lu par le serveur. Il s’agit donc d’un langage interprété. Si un ingénieur code une page en PHP, les utilisateurs de la page ne verront pas que celle-ci est en PHP puisqu’elle sera directement lue comme du HTML (langage statique). Utiliser du PHP est possible avec l’ensemble des systèmes d’exploitation informatique. Que vous ayez Microsoft Windows, Linux, Mac, Unix, ou autres, PHP sera toujours aussi bien lu. Un gros avantage pour les développeurs web qui travaillent avec des clients différents et ont besoin de langage universel. Tous les serveurs web sont aussi utilisés avec PHP. Le PHP est donc un langage informatique libre et gratuit utilisé pour la création de page web sur n’importe quel serveur de n’importe quel système d’exploitation. Il est ainsi possible de créer toutes sortes de formes de pages web, du blog au site, en passant par la base de données, etc.     ",
      "image":"formations/php01.png",
+     "nom2":"A quoi sert le langage Php ?",
+     "contenu2":"Les principales utilisations de Php par les développeurs sont :",
+     "nom3":"Quelle est la version actuelle de Php ?",
+     "contenu3":"",
+     "etapes":{
+      "Introduction":{
+        "titre": "Introduction",
+        "points": [
+          "Php-et-mysql-la-formation-ultime"
+        ]
+      },
+      "Module1":{
+        "titre": "Module1",
+        "points": [
+          "Become a wordpress developer php javascript",
+          "php et mysql la formation ultime"
+        ]
+      },
+      "Module2":{
+        "titre": "Module2",
+        "points": [
+          "Become a wordpress developer php javascript ",
+          "Creer un site php avec bootstrappdo et mvc pour ....."
+        ]
+      },
+      "Module3":{
+        "titre": "Module3",
+        "points": [
+          "Become a wordpress developer php javascript ",
+          "h2prog php pour etre autonome en programmation web"
+        ]
+      },
+      "Module4":{
+        "titre": "Module4",
+        "points": [
+          "Créer une API REST en utilisant PHP de base avec authentification par jeton.....",
+          "Php avec pdo apprendre a interroger les bases.....",
+          "Developpement web php poo mysql architecture mvc ....."
+        ]
+      },
+      "Module5":{
+        "titre": "Module5",
+        "points": [
+          "Créer une API REST en utilisant PHP de base avec authentification par jeton.....",
+          "Apprendre symfony par la creation d'un site e-commerce....."
+        ]
+      },
+      "Module6":{
+        "titre": "Module6",
+        "points": [
+          "Le bootcamp mysql ultime aller de sql débutant...."
+        ]
+      },
+      "Module7":{
+        "titre": "Module7",
+        "points": [
+          "Le bootcamp mysql ultime aller de sql débutant...."
+        ]
+      },
+      "Module8":{
+        "titre": "Module8",
+        "points": [
+          "Php pour les débutants complets inclut l’objet mysql...."
+        ]
+      },
+      "Module9":{
+        "titre": "Module9",
+        "points": [
+          "Php pour les débutants complets inclut l’objet mysql...."
+        ]
+      },
+      "Module11":{
+        "titre": "Module11",
+        "points": [
+          "Php pour les débutants complets inclut l’objet mysql...."
+        ]
+      },
+      "Module12":{
+        "titre": "Module12",
+        "points": [
+          "Blocs Gutenberg pour les développeurs wordPress et react"
+        ]
+      } 
+     },
+     "Projet":{
+       "titre": "Projet de fin de formation",
+       "texte":"Dans ce module ",
+       "points": [
+         " vous aurez à travailler sur un projet qui vous sera donné à la fin de votre parcours.. ",
+         "  ce projet comporteras tout ce que vous aurez vue au cous de votre formation .. "
+         ]
+     }
+    
+     
    },
    
   {
@@ -118,7 +212,7 @@
         ]
       },
       "Introduction ":{
-        "titre": "Introduction     ",
+        "titre": "Introduction ",
         "texte":"C'est quoi Python ?",
         "points": [
           "Conseils pour installer et configurer Python Miniconda"
