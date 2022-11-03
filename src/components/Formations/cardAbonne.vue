@@ -51,7 +51,7 @@
 
 
 </ul>
-      <div class="btn"><button>Purchase</button></div>
+      <div class="btn" @click="redirect"><button>Inscription</button></div>
     </div> 
 
     <div class="table premium">
@@ -106,7 +106,7 @@
 
         
       </ul>
-      <div class="btn"><button>Purchase</button></div>
+      <div class="btn"  @click="redirect"><button>Inscription</button></div>
     </div>
 
     <div class="table ultimate">
@@ -160,7 +160,9 @@
 
 
 </ul>
-      <div class="btn"><button>Purchase</button></div>
+      <div class="btn"  @click="redirect"><button>Inscription</button>
+      
+      </div>
     </div>
 
 
@@ -169,6 +171,16 @@
 
 <script>
 export default {
+  data() {
+    return {
+      
+    }
+  },
+  methods: {
+    redirect(){
+      window.location.href = 'https://classe.nan.ci/';
+    }
+  },
 
 }
 </script >
@@ -177,13 +189,13 @@ export default {
 
 /* table debut */
 .table{
-  background: #fff;
-  width: calc(33% - 20px);
+  background: var(--blanc);
   padding: 20px 20px;
   position: relative;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   width: 100%;
   max-width: 330px;
+  margin: 0 5px;
+  box-shadow: 0 15px 60px rgb(0 0 0 / 50%);
 }
 .table .price-section{
   display: flex;
@@ -199,10 +211,10 @@ export default {
   height: 100%;
   width: 100%;
   border-radius: 50%;
-  border: 3px solid #fff;
+  border: 3px solid var(--blanc);
   line-height: 117px;
   text-align: center;
-  color: #fff;
+  color: var(--blanc);
   position: relative;
 }
 .price-area .inner-area .text{
@@ -227,7 +239,7 @@ export default {
   left: 50%;
   font-size: 25px;
   font-weight: 500;
-  background: #fff;
+  background: var(--blanc);
   padding: 0 15px;
   transform: translate(-50%, -50%);
 }
@@ -259,7 +271,7 @@ export default {
 .table .btn button{
   width: 80%;
   height: 50px;
-  color: #fff;
+  color: var(--blanc);
   font-size: 20px;
   font-weight: 500;
   border: none;
@@ -281,12 +293,12 @@ export default {
 }
 .basic .btn button{
   border: 2px solid #ffd861;
-  background: #fff;
+  background: var(--blanc);
   color: #ffd861;
 }
 .basic .btn button:hover{
   background: #ffd861;
-  color: #fff;
+  color: var(--blanc);
 }
 .premium ::selection,
 .premium .price-area,
@@ -305,11 +317,11 @@ export default {
 .ultimate .btn button{
   border: 2px solid #43ef8b;
   color: #43ef8b;
-  background: #fff;
+  background: var(--blanc);
 }
 .ultimate .btn button:hover{
   background: #43ef8b;
-  color: #fff;
+  color: var(--blanc);
 }
 .basic .package-name{
   background: #ffecb3;
@@ -342,7 +354,7 @@ export default {
   }
 }
 ::selection{
-  color: #fff;
+  color: var(--blanc);
 }
 .table .ribbon{
   width: 150px;
@@ -378,7 +390,7 @@ export default {
   width: 200px;
   background: #a26bfa;
   padding: 10px 0;
-  color: #fff;
+  color: var(--blanc);
   text-align: center;
   font-size: 17px;
   text-transform: uppercase;

@@ -29,9 +29,9 @@ export default {
 
 <style scoped>
 .abonnements{
-  background-color: var(--bg2);
+  /* background-color: var(--bg2); */
  
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,17 +39,17 @@ export default {
 
  .abonnement-cardre{
 
-/* display: flex;
+display: flex;
 justify-content: space-evenly;
-flex-wrap: wrap; */
+flex-wrap: wrap;
 margin: 0 auto;
 padding: 40px 0;
 width: 100%;
-border: 1px solid blue;
+/* border: 1px solid blue; */
 
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-  grid-gap: 35px;
+  grid-gap: 35px; */
 }
 
 
