@@ -6,7 +6,9 @@
         class="parc"
         v-for="month in months"
       >
-        <span><i class="fa-solid fa-person-walking"></i></span>
+        <span v-if="month === currentMonth">
+          <i class="fa-solid fa-person-walking"></i>
+        </span>
         <li
           @click="showInfo(month)"
           :class="currentMonth === month ? 'active' : ''"
@@ -30,22 +32,29 @@ import Loader from '../Global/Loader.vue';
 
 export default {
     name: "Parcours",
+    props: ['matricule'],
+    created(){
+      this.currentMonth = this.months[new Date().getMonth() - 1]
+    },
     data(){
       return {
         currentInfo: {},
-        months: ['mois 1', 'mois 2', 'mois 3', 'mois 4', 'mois 5', 'mois 6', 'mois 7', 'mois 8', 'mois 9'],
+        months: ['Janvier','Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre'],
         load: true,
-        currentMonth: 'mois 2'
+        currentMonth: 'Octobre'
       }
     },
     methods: {
       showInfo(month){
         console.log(month)
-        // fetch(`/getInfo?month=${month}`)
-        // .then(res=>res.json())
-        // .then(data=>{
-        //   console.log(data)
-        // })
+        fetch(`/getStudentMonthResults/${month}`, {
+          method: 'GET',
+          headers: {'auth': this.matricule}
+        })
+        .then(res=>res.json())
+        .then(data=>{
+          console.log(data)
+        })
       }
     },
     mounted(){
@@ -147,15 +156,13 @@ li:after {
   border: 2px solid var(--blanc);
   transition: background-color 0.2s ease;
 }
+
 li:hover:after {
   background-color: var(--vert);
 }
 
 li.active:after{
   background-color: var(--vert);
-}
-li.active:after {
-  background-color: #222;
 }
 /* span {
   position: absolute;
