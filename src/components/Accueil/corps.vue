@@ -35,7 +35,7 @@
         <h2>Nos Valeurs</h2>
         <p>
           La position de NaN est unique en Côte d’ivoire 
-          de l’enseignement supérieur : elle repose sur des valeurs fortes pour une insertion professionnelle durable sur le marché de l’emploi.
+          de l'enseignement supérieur: elle repose sur des valeurs fortes pour une insertion professionnelle durable sur le marché de l’emploi.
         </p>
         <a href="">Concept Unique</a>
       </div>
@@ -314,13 +314,16 @@ export default {
   background-color: var(--bg2);
   border-radius: 20px;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
 }
 
 .corps-val1 {
   background-color: var(--blanc);
   /* height: 400px; */
   width: 500px;
-  margin: 50px 0 50px 50px;
+  /* margin: 50px 0 50px 50px; */
   display: flex;
   flex-direction: column;
   padding: 50px;
@@ -332,7 +335,7 @@ export default {
   /* background-color: var(--blanc); */
   /* height: 400px; */
   width: 500px;
-  margin: 50px;
+  /* margin: 50px; */
   border-radius: 30px;
 }
 

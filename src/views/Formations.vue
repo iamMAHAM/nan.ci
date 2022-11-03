@@ -42,9 +42,9 @@ export default {
       formation:"",
       loading:true,
       slides:[
-          "ImagesAccueil/im2.jpg",
-          "ImagesAccueil/im3.jpg",
-          "ImagesAccueil/im4.jpg",
+          "https://images.unsplash.com/photo-1637563680361-3e7ee7599318?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80",
+          "https://images.unsplash.com/photo-1573496773905-f5b17e717f05?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2369&q=80",
+          "https://scontent.fabj4-1.fna.fbcdn.net/v/t39.30808-6/270221587_943253462965835_4428444102021885826_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=t87Dm3q5PZcAX-k5UUT&_nc_ht=scontent.fabj4-1.fna&oh=00_AfAfqlGe7BnsB_w3w3Oo8v3-mT-QBAFm0lY10yXmIjormg&oe=63688542",
           "ImagesAccueil/im6.jpg",
           
       ],
