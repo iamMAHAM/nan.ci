@@ -84,11 +84,12 @@ export default {
 .Acc-menu >.Acc-cadenas {
   display: none;
 }
-.Acc-nav.Acc-nav_active .Acc-menu >.Acc-cadenas{
+
+.Acc-menu.Acc-menu-active >.Acc-cadenas{
   display: block;
 }
 
-.Acc-nav.Acc-nav_active .container-nav > .Acc-cadenas{
+.Acc-nav .Acc-menu.Acc-menu-active ~ .Acc-cadenas{
   display: none;
 }
 
@@ -186,7 +187,7 @@ padding: 10px 0;
 .Acc-nav_active .burger div{
     background-color: var(--bg2);
 }
-@media (max-width:768px) {
+@media (max-width: 880px) {
     .burger{
         margin-top: -3px;
         display: block;
@@ -214,7 +215,12 @@ padding: 10px 0;
         transition:  0.3s;
         margin-top: 108px;
     }
-    .Acc-nav_active .Acc-menu{
+
+    .Acc-nav .container-nav >.Acc-cadenas{
+      display: none;
+    }
+
+    .Acc-menu{
         position: fixed;
         left: 0px;
         top:-100% ;
@@ -226,9 +232,10 @@ padding: 10px 0;
         text-align: center;
         transition:  0.3s;
         margin-top: 108px;
-        /* color: var(--bg2); */
+    }
 
-
+    .Acc-nav a{
+      color: var(--bg2);
     }
     li{
         margin: 16px 0;

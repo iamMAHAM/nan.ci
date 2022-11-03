@@ -231,20 +231,41 @@ export default {
     gap: 5%;
   }
 
-  select {
+  .nsl select {
     width: calc(100% - 50px);
+    font-size: 18px;
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 1024px){
+    .naniens-cards{
+      min-height: 1000px;
+      height: auto;
+    }
+  }
+
+  @media screen and (max-width: 1013px){
+    .naniens-cards .card-container{
+      margin: 10px;
+    }
   }
 
   @media screen and (max-width: 768px){
     .naniens-searcher{
       flex-direction: column;
       height: auto;
+      margin: 20px auto;
+      width: 80%;
     }
 
     .naniens-searcher div {
-      width: 50%;
       align-items: center;
+      width: 100%;
+      border-bottom: .2px solid black;
+    }
+
+    .nsl select{
+      width: 207.5px;
     }
   }
 
