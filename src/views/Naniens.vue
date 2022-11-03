@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :slides="slides" :textes="textes" :titres="titres" :height="700"/>
+    <Header :slides="slides" :textes="textes" :titres="titres" :height="60"/>
     <div class="naniens-container">
       <div class="nanien-head">
         <h1>NOS CERTIFIÉS <img src="@/assets/naniens/certificate.svg" alt="image de certificat"></h1> 
@@ -202,8 +202,8 @@ export default {
   }
 
   .naniens-searcher div{
+    text-align: center;
     font-size: 20px;
-    padding: 20px;
     width: 33%;
     vertical-align: middle;
     border-right: .5px solid var(--bg2);
@@ -234,6 +234,18 @@ export default {
   select {
     width: calc(100% - 50px);
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 768px){
+    .naniens-searcher{
+      flex-direction: column;
+      height: auto;
+    }
+
+    .naniens-searcher div {
+      width: 50%;
+      align-items: center;
+    }
   }
 
 </style>

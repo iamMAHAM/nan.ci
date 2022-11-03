@@ -9,7 +9,7 @@
           indicators
           class="carou"
           :style="{
-            height: height + 'px'
+            height: height + 'vh'
           }"
         />
     </div>
