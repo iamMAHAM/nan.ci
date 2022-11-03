@@ -1,14 +1,21 @@
 <template>
   <div>
-
-    <router-view></router-view>
+    <NavBar class="Acc-headd"/>
+    <div class="router-link">
+      <router-view></router-view>
+    </div>
+    <Footer />
   </div>
 </template>
 <script>
+
+import NavBar from './components/Accueil/navbar.vue';
+import Footer from './components/Accueil/Footer.vue';
 export default {
   name: 'App',
   components:{
-    
+    NavBar,
+    Footer
   }
 }
 </script>
@@ -57,5 +64,15 @@ export default {
     padding: 20px;
     font-size: var(--titre);
     margin: 20px 0;
+  }
+
+  .router-link{
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .router-link-exact-active {
+    color: var(--violet) !important;
+    cursor: pointer;
   }
 </style>

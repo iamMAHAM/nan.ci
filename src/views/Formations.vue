@@ -1,7 +1,7 @@
 <template>
+   <Header :slides="slides" :textes="textes" :titres="titres" :height="500" />
+
   <div class="general">
-    <div class="image">
-    </div>
     <Loader v-if="loading"></Loader>
     <div class="formation-container" v-else>
 
@@ -19,8 +19,7 @@
 
     </div>
 
-    <div class="footer">
-    </div>
+   
   </div> 
 </template>
 
@@ -28,17 +27,37 @@
 
 import Card from '@/components/Formations/card.vue';
 import Loader from '@/components/Global/Loader.vue';
-
+import Header from '@/components/Accueil/header.vue';
 export default {
   name:"formations",
   components:{
-    Card, Loader
+    Card, Loader , Header
   },
   data() {
     return {
       formation:"",
-      loading:true
+      loading:true,
+      slides:[
+          "ImagesAccueil/im2.jpg",
+          "ImagesAccueil/im3.jpg",
+          "ImagesAccueil/im4.jpg",
+          "ImagesAccueil/im6.jpg",
+          
+      ],
+      textes: [      
+          ` Travailler avec le sourire et sans stress, c'est sourire à l'avenir`,
+          'Un environnement motivant et inspirant',
+          'Coder pour devenir des professionnelles en programmation',
+          '',
+      ],
+      titres: [
+          'Une Pédagogie inspirée de 42',
+          'Un cadre agréable',
+          'Apprendre le code ',
+          'NaN forme des professionnelles',
+      ],
     }
+    
   },
 mounted() {
   
