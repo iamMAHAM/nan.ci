@@ -5,12 +5,14 @@
             <h1>Janvier</h1>
         </div>
         <div class="infos_plus1">
-          <div class="infos_data"><p>quizs passed :<span>11/11</span></p></div>
-           <div class="infos_data"> <p>totalQuizsPercent :<span>939.17</span></p></div>
-            <div class="infos_data"> <p>totalQuizsSeconds :<span>567</span></p></div>
-             <div class="infos_data"><p>totalQuizsPoints :<span>11.5</span></p></div>
-              <div class="infos_data"><p>Total points :<span>11.5</span></p></div>
-            <div class="infos_data"><p>Rank :<span>10ème</span></p></div>
+          <div class="infos_data">
+            <p>quizs passed :<span>{{pointInfo.quizzPassed}}/11</span></p>
+          </div>
+          <div class="infos_data"> <p>totalQuizsPercent :<span>{{pointInfo.totalQuizsPercent}}</span></p></div>
+          <div class="infos_data"> <p>totalQuizsSeconds :<span>{{pointInfo.totalQuizsSeconds}}</span></p></div>
+          <div class="infos_data"><p>totalQuizsPoints :<span>{{pointInfo.totalQuizsPoints}}</span></p></div>
+          <div class="infos_data"><p>Total points :<span>{{pointInfo.Total}}</span></p></div>
+          <div class="infos_data"><p>Rank :<span>{{pointInfo.rang}} ème/30</span></p></div>
         </div>
     </div>
    
@@ -19,7 +21,7 @@
 
 <script>
 export default {
-
+  props: ['pointInfo']
 }
 </script>
 
@@ -60,8 +62,8 @@ export default {
 }
 .infos_plus1 .infos_data{
   box-shadow: 0 10px 35px rgba(50,50,93,.1),0 2px 15px rgba(0,0,0,.07);
-   padding: 1px 1px;
-   width: 280px;
+  padding: 1px 1px;
+  width: 280px;
 }
 p{
   margin-top: 20px;

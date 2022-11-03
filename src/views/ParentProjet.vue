@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import ProjetEt from '@/components/componentParent/ProjetEt.vue'
+import ProjetEt from '@/components/Parents/ProjetEt.vue'
 export default {
   components: { ProjetEt },
 

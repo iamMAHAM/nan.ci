@@ -1,21 +1,21 @@
 <template>
   <Header :slides="slides" :textes="textes" :titres="titres" :height="60"/>
-   <Parents_idn />
-   <div class="parent_Etudiant">
-     <ParentEtudiant />
-     <parent-parcours />
+  <Auth v-if="!isLogged" @logged="displayUser"/>
+   <div class="parent_Etudiant" v-else>
+    <Index />
    </div>
-   
-
 </template>
 
 <script>
-import Parents_idn from '@/components/componentParent/Parents_idn.vue'
-import ParentParcours from '@/components/componentParent/ParentParcours.vue'
-import ParentEtudiant from '@/components/componentParent/ParentEtudiant.vue'
+import Auth from '@/components/Parents/Auth.vue'
+import Index from '@/components/Parents/Index.vue'
 import Header from '@/components/Accueil/header.vue'
 export default {
-  components: { Parents_idn, ParentEtudiant, ParentParcours, ParentEtudiant, Header },
+  components: { 
+    Header,
+    Auth,
+    Index
+  },
   data(){
     return {
       slides:[
@@ -31,6 +31,13 @@ export default {
           'Espace Parent',
           'Controle',
       ],
+      isLogged: true
+    }
+  },
+  methods: {
+    displayUser(data){
+      console.log(data)
+      this.isLogged = true
     }
   }
 
@@ -42,7 +49,8 @@ export default {
   position: relative;
    background-color: var(--bg);
    width: 100%;
-   height: 100vh;
+   min-height: 100vh;
+   height: auto;
    object-fit: cover;  
 }
 </style>
