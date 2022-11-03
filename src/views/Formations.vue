@@ -1,5 +1,5 @@
 <template>
-   <Header :slides="slides" :textes="textes" :titres="titres" :height="500" />
+   <Header :slides="slides" :textes="textes" :titres="titres" :height="60" />
 
   <div class="general">
     <Loader v-if="loading"></Loader>
@@ -16,6 +16,9 @@
       <div class="formation-cadre">
         <Card  :formation="formation" />
       </div>
+      <div  class="abonnement">
+        <Abonnements/>
+      </div>
 
     </div>
 
@@ -28,10 +31,11 @@
 import Card from '@/components/Formations/card.vue';
 import Loader from '@/components/Global/Loader.vue';
 import Header from '@/components/Accueil/header.vue';
+import Abonnements from '@/components/Formations/abonnements.vue';
 export default {
   name:"formations",
   components:{
-    Card, Loader , Header
+    Card, Loader , Header,Abonnements
   },
   data() {
     return {
@@ -124,6 +128,10 @@ mounted() {
   grid-gap: 35px;
   margin: 0 auto;
   padding: 40px 0;
+  width: 100%;
+}
+
+.abonnement{
   width: 100%;
 }
 
