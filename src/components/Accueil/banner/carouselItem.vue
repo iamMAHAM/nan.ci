@@ -5,7 +5,7 @@
         <div class="Acc-texte">
             <h1>{{titre}}</h1>
             <p>{{ texte }}</p>
-            <button>Voir Plus</button>
+            <!-- <button>Voir Plus</button> -->
         </div>
       </div>
     </transition>

@@ -9,6 +9,11 @@
             <li><router-link to="/naniens" class="Acc-lien">Naniens</router-link></li>
             <li><router-link to="/parent" class="Acc-lien">Parent</router-link></li>
             <li><router-link to="/apropos" class="Acc-lien">A propos</router-link></li>
+            <div class="Acc-cadenas">
+              <a href="https://classe.nan.ci" class="Acc-boutton" target="_blank">
+                <i class="fas fa-lock"></i>Accés aux Cours
+              </a>
+            </div>
           </ul>
           <div class="Acc-cadenas">
             <a href="https://classe.nan.ci" class="Acc-boutton" target="_blank">
@@ -26,7 +31,7 @@
 
 <script>
 export default {
-    name:'navbarComponent',
+    name:'NavBar',
     data(){
         return{
 
@@ -35,30 +40,29 @@ export default {
         
     },
     setup(){
-        window.addEventListener("load",()=>{
-            const scrolle = document.querySelector(".Acc-nav"); 
-            window.addEventListener('scroll', () => {
-                    if (window.scrollY >= 50) {
-                        scrolle.classList.add('Acc-nav_active');
-                    } else {
-                        scrolle.classList.remove('Acc-nav_active');
-                    }
-                })
+      document.addEventListener('DOMContentLoaded',()=>{
+        const scrolle = document.querySelector(".Acc-nav");
+        const burger = document.querySelector('.burger')
+        const Navmenu = document.querySelector('.Acc-menu')
+
+        window.addEventListener('scroll', () => {
+          if (window.scrollY >= 50) {
+            scrolle.classList.add('Acc-nav_active');
+          }else {
+            scrolle.classList.remove('Acc-nav_active');
+          }
         })
-        window.addEventListener("load", ()=>{
-                const burger = document.querySelector('.burger')
-                const Navmenu = document.querySelector('.Acc-menu')
-                burger.addEventListener('click',() =>{
-                    burger.classList.toggle("burger-active")
-                    Navmenu.classList.toggle("Acc-menu-active")
-              })
+        burger.addEventListener('click',() =>{
+          burger.classList.toggle("burger-active")
+          Navmenu.classList.toggle("Acc-menu-active")
         })
+      })
     }
 
 }
 </script>
 
-<style scoped>
+<style>
 
 .Acc-nav {
     /* background-color: #222222; */
@@ -75,6 +79,20 @@ export default {
     transition: 0.5s ease-in;
     box-shadow: var(--shadow-medium);
 }
+
+
+.Acc-menu >.Acc-cadenas {
+  display: none;
+}
+
+.Acc-menu.Acc-menu-active >.Acc-cadenas{
+  display: block;
+}
+
+.Acc-nav .Acc-menu.Acc-menu-active ~ .Acc-cadenas{
+  display: none;
+}
+
 .container-nav{
     margin: 0 auto;
     max-width: var(--max-width);
@@ -169,7 +187,7 @@ padding: 10px 0;
 .Acc-nav_active .burger div{
     background-color: var(--bg2);
 }
-@media (max-width:768px) {
+@media (max-width: 880px) {
     .burger{
         margin-top: -3px;
         display: block;
@@ -197,7 +215,12 @@ padding: 10px 0;
         transition:  0.3s;
         margin-top: 108px;
     }
-    .Acc-nav_active .Acc-menu{
+
+    .Acc-nav .container-nav >.Acc-cadenas{
+      display: none;
+    }
+
+    .Acc-menu{
         position: fixed;
         left: 0px;
         top:-100% ;
@@ -209,9 +232,10 @@ padding: 10px 0;
         text-align: center;
         transition:  0.3s;
         margin-top: 108px;
-        /* color: var(--bg2); */
+    }
 
-
+    .Acc-nav a{
+      color: var(--bg2);
     }
     li{
         margin: 16px 0;
