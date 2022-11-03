@@ -184,13 +184,12 @@
       "etapes": {
         "Git":{
           "titre": "Démarrer un dépôt Git ",
-          "texte":"Nous vous montrerons comment ",
           "points": [
             "paramétrer Git pour qu’il ignore certains fichiers ou patrons de fichiers",
             "revenir sur les erreurs rapidement et facilement ",
             "voir les modifications entre deux validations",
-            " parcourir l’historique de votre projet",
-            "pousser et tirer les modifications avec des dépôts distants."
+            " parcourir l’historique de votre projet"
+           
           ]
         },
         "Introduction ":{
