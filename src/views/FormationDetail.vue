@@ -23,7 +23,7 @@
   </div>
   
   <div id="image2">
-    <img  src="@/assets/formations/barbecue-g82069dcb5_1920.jpg">
+    <img  src="@/assets/formations/binary.jpg">
      <h1>Ce que vous apprendriez à NaN</h1>
   </div>
   <div class="container1">
@@ -48,9 +48,7 @@
       >
         {{ point }}
       </li>
-      <!-- <li>Qu'es ce que le javascript, les variables,</li> 
-      <li>Qu'es ce que le javascript, les variables,</li> 
-      <li>Qu'es ce que le javascript, les variables,</li>  -->
+     
     </div>
     <div class="card_etape2" >
       <p>ce que vous allez realiser en pratique</p>
@@ -59,6 +57,28 @@
     </div>
     
   </div>
+
+    <div class="container2">
+      <div class="text">
+      
+      <p>rejoignez un réseau tech mondial</p>
+    </div>
+
+      <div class="item">
+  
+         <img src="@/assets/formations/py1.png" alt="">
+         <img src="@/assets/formations/py1.png" alt="">
+         <img src="@/assets/formations/py1.png" alt="">
+         <img src="@/assets/formations/py1.png" alt="">
+      </div>
+      
+
+
+    </div>
+
+
+
+
 </div>
   
   
@@ -112,8 +132,44 @@
    width: var(--max-width); 
    background: var(--bg);
    margin: 0 auto;
+   margin-top: 10%;
    margin-bottom: 5%;
    
+  }
+  .container2{
+    background-color:var(--bg2) ;
+    height: 40VH;
+    margin-top:5% ;
+    border-radius: 9px ;
+    border: none;
+
+
+  }
+  .text{
+    padding-top: 8%;
+    padding-left: 25%;
+    padding-bottom: 5%;
+  }
+  .text>p{
+    font-size: 35px ;
+  }
+  
+  .item{
+     gap: 15%;
+     display: flex;
+     margin: 0 auto;
+     width: 200px;
+     justify-content: center;
+  }
+  .item>img{
+   
+    
+    height: 70px;
+    width: 70px;
+    border-radius:30% ;
+    border: 1px solid black ;
+    
+
   }
   h2{
     font-size: var(--titre);
@@ -130,7 +186,7 @@
   left: 90px;
   top: 507px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  box-shadow: 5px 8px 12px 2px #6870E0;
+  box-shadow: 6px 5px 12px 1px #6870E0;
   border-radius: 45px;
   }
   .card_1>h2{
@@ -154,13 +210,11 @@
    width: var(--max-width);
    color:var(--blanc) ;
    background: var(--bg);
-   width: 521px;
 height: 456px;
 left: 88px;
 top: 1054px;
-
 background: #272935;
-box-shadow: 5px 8px 12px 2px #6870E0;
+box-shadow: 6px 5px 12px 1px #6870E0;
 border-radius: 45px;
   }
   .box>h2{
@@ -199,7 +253,7 @@ border-radius: 45px;
   }
   .etape{
     display: flex;
-   gap:5%;
+   gap:3%;
     padding-top: 2.5rem;
     width: var(--max-width);
   }
@@ -231,7 +285,7 @@ cursor: pointer;
   left: 90px;
   top: 507px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  box-shadow: 5px 8px 12px 2px #6870E0;
+  box-shadow: 6px 5px 12px 1px #6870E0;
   border-radius: 45px;
   display: flex;
   padding: 60px;
@@ -257,20 +311,20 @@ cursor: pointer;
   .card_1{
   width:87%;
   height:55vh;
-  margin-left:2%;
+  margin-left:6%;
   }
   .card_2{
-    margin-left:2%;
+    margin-left:6%;
     width:87%;
   }
   img{
-    width: 1100px;
+    width: var(--max-width);
   }
   .container1>h2{
-    margin-left: 2%;
+    margin-left: 4%;
   }
   .etape{
-    margin-left: 2%;
+    margin-left: 4%;
     width: 90%;
   }
   .card_etape{
@@ -280,7 +334,28 @@ cursor: pointer;
 
     
 }
-@media only screen and (max-width: 412px){
+@media only screen and (max-width: 768px){
+.card_2{
+  display: flex;
+  flex-wrap: wrap; 
+  margin-bottom: 8% ;
+}
+.box{
+  height: 38vh;
+}
+img{
+    width: var(--max-width);
+    height: 30vh;   
+}
+#image2>h1{
+    font-size: var(--titre);
+    width:  max-content; 
+    position: absolute;
+    top: 24%;
+    transform: translate(18%);
+   
+  }
+
 
 }
 
