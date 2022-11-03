@@ -2,10 +2,9 @@
     <div>
         <Carousel
           :slides="slides"
-          :interval="3000"
+          :interval="5000"
           :textes="textes"
           :titres="titres"
-          controls
           indicators
           class="carou"
           :style="{
