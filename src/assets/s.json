@@ -10,7 +10,7 @@
       "nom3":"Frameworks",
       "contenu3":"Un framework (ou infrastructure logicielle en français ) désigne en programmation informatique un ensemble d'outils et de composants logiciels à la base d'un logiciel ou d'une application. En javascript, nous avons une multitude de frameworks, les plus utilisés sont React JS , Vue JS et aussi Svelte",
       "image":"formations/js1.png",
-      "image1":[],
+      "image1":["disord.svg","firebase.svg","instagram.svg","netflix.svg"],
       "etapes": {
         "basics":{
           "titre": "JavaScript basics",
@@ -94,6 +94,7 @@
        "description":"PHP: Hypertext Preprocessor, plus connu sous son sigle PHP, est un langage de programmation libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP",
        "contenu":"Le langage PHP est un langage dynamique qui est directement lu par le serveur. Il s’agit donc d’un langage interprété. Si un ingénieur code une page en PHP, les utilisateurs de la page ne verront pas que celle-ci est en PHP puisqu’elle sera directement lue comme du HTML (langage statique). Utiliser du PHP est possible avec l’ensemble des systèmes d’exploitation informatique. Que vous ayez Microsoft Windows, Linux, Mac, Unix, ou autres, PHP sera toujours aussi bien lu. Un gros avantage pour les développeurs web qui travaillent avec des clients différents et ont besoin de langage universel. Tous les serveurs web sont aussi utilisés avec PHP. Le PHP est donc un langage informatique libre et gratuit utilisé pour la création de page web sur n’importe quel serveur de n’importe quel système d’exploitation. Il est ainsi possible de créer toutes sortes de formes de pages web, du blog au site, en passant par la base de données, etc.     ",
      "image":"formations/php01.png",
+     "image1":["istock_photo.svg","wordpress.svg","yahoo.svg","wikipedia.svg"],
      "nom2":"MYSQL ?",
      "contenu2":"MySQL est un système de gestion de bases de données relationnelles (SGBDR). Il est distribué sous une double licence GPL et propriétaire. Il fait partie des logiciels de gestion de base de données les plus utilisés au monde3, autant par le grand public (applications web principalement) que par des professionnels, en concurrence avec Oracle, PostgreSQL et Microsoft SQL Server.Son nom vient du prénom de la fille du cocréateur Michael Widenius, My (sv) (prononcer [my]). SQL fait référence au Structured Query Language, le langage de requête utilisé.MySQL AB a été acheté le 16 janvier 2008 par Sun Microsystems pour un milliard de dollars américains4. En 2009, Sun Microsystems a été acquis par Oracle Corporation, mettant entre les mains d'une même société les deux produits concurrents que sont Oracle Database et MySQL. Ce rachat a été autorisé par la Commission européenne le 21 janvier 20105,6. Depuis mai 2009, son créateur Michael Widenius a créé MariaDB (Maria est le prénom de sa deuxième fille) pour continuer son développement en tant que projet Open Source",
      "nom3":"Quelle est la version actuelle de Php ?",
@@ -195,7 +196,7 @@
       "nom":"Python",
       "description":"Python est un langage de programmation open source le plus employé par les informaticiens. Ce langage s’est propuisé en tête de la gestion d’infrastructure, d’analyse de données ou dans le domaine du déleloppement de logiciels.",
       "image":"formations/py1.png",
-      "image1":"",
+      "image1":["facebook.svg","printerest.svg","spotify.svg","uber.svg"],
       "contenu":"Python est le langage de programmation open source le plus employé par les informaticiens. Ce langage s’est propulsé en tête de la gestion d’infrastructure, d’analyse de données ou dans le domaine du développement de logiciels.En effet, parmi ses qualités, Python permet notamment aux développeurs de se concentrer sur ce qu’ils font plutôt que sur la manière dont ils le font. Il a libéré les développeurs des contraintes de formes qui occupaient leur temps avec les langages plus anciens. Ainsi, développer du code avec Python est plus rapide qu’avec d’autres langages.Il reste aussi accessible pour les débutants, à condition de lui consacrer un peu de temps pour la prise en main. De nombreux tutoriels sont d’ailleurs disponibles pour l’étudier sur des sites Internet spécialisés ou sur des comptes Youtube. Sur les forums d'informatique, il est toujours possible de trouver des réponses à ses questions, puisque beaucoup de professionnels l'utilisent.",
       "nom2":"A quoi sert le langage Python ?",
       "contenu2":"Les principales utilisations de Python par les développeurs sont :                        la programmation d’applications,la création de services web,  la génération de code,   la métaprogrammation,  Techniquement, ce langage servira surtout pour le scripting et l’automatisation (interaction avec les navigateurs web) ",
@@ -261,7 +262,7 @@
       "nom3":"Quelle est la version actuelle de Flutter?",
       "contenu3":"Google a maintenant lancé la dernière version de Flutter qui prend en charge iOS 15 et Android 11 . Récemment, il y a eu une version du nouveau Google Flutter qui est une version stable 2.5.3,Selon certaines données et recherches, on peut dire qu'il y a une augmentation de l'utilisation du SDK Google Flutter. En raison de ce nombre de personnes sont également de plus en plus nombreuses à vouloir connaître l'utilisation de Flutter et les avantages de son utilisation par rapport à d'autres outils. Source : Flutter",
       "image":"formations/flutter.png",
-      "image1":"",
+      "image1":["alibab.svg","byetance.svg","ebay.svg","google_ads.svg"],
       "etapes": {
         "Introduction":{
           "titre": "Introduction à Flutter",
