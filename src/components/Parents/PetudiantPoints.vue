@@ -2,7 +2,7 @@
   <div class="Etudiant_infos_plus">
         <div class="infos_plus1">
             <img src="../../assets/ImagesParents/jeshoots-com-9n1USijYJZ4-unsplash.jpg" alt="">
-            <h1>Janvier</h1>
+            <h1>{{ month }}</h1>
         </div>
         <div class="infos_plus1" style="align-self: center;">
           <div class="infos_data">
@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  props: ['pointInfo']
+  props: ['pointInfo', 'month']
 }
 </script>
 

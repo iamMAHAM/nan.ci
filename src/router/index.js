@@ -6,8 +6,6 @@ import Formations from '../views/Formations.vue'
 import Naniens from '../views/Naniens.vue'
 import Parent from '../views/Parent.vue'
 import FormationDetail from '../views/FormationDetail.vue'
-import ParentPoints from '../views/ParentPoints.vue'
-import ParentProjet from '../views/ParentProjet.vue'
 
 const routes = [
   {
@@ -40,16 +38,6 @@ const routes = [
     path: '/parent',
     name: 'parent',
     component: Parent
-  },
-  {
-    path: '/parent/Points',
-    name: 'ParentPoints',
-    component: ParentPoints
-  },
-  {
-    path: '/parent/Points_Projet',
-    name: 'ParentProjet',
-    component: ParentProjet
   },
   {
     path: '/formations/:specialite',

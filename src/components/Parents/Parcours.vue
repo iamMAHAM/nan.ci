@@ -19,7 +19,7 @@
     <Loader v-if="load"/>
     <div v-else style="max-width: 800px;">
       <h2>RESULTAT DU MOIS</h2>
-      <PetudiantPoints :point-info="currentInfo.points"/>
+      <PetudiantPoints :point-info="currentInfo.points" :month="month"/>
       <h2>PROJET DU MOIS</h2>
       <ProjetEt :projet-info="currentInfo.projet"/>
     </div>
@@ -33,27 +33,28 @@ import Loader from '../Global/Loader.vue';
 export default {
     name: "Parcours",
     props: ['matricule'],
-    created(){
-      this.currentMonth = this.months[new Date().getMonth() - 1]
-    },
+    created(){ this.currentMonth = this.months[new Date().getMonth()] },
     data(){
       return {
         currentInfo: {},
-        months: ['Janvier','Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre'],
+        months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
         load: true,
-        currentMonth: 'Octobre'
+        currentMonth: '',
+        month: ''
       }
     },
     methods: {
       showInfo(month){
         console.log(month)
-        fetch(`/getStudentMonthResults/${month}`, {
+        console.log(this.matricule)
+        this.month = month
+        fetch(`/api/getStudentMonthResults/${month}`, {
           method: 'GET',
           headers: {'auth': this.matricule}
         })
         .then(res=>res.json())
         .then(data=>{
-          console.log(data)
+          console.log('data', data)
         })
       }
     },

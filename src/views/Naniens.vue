@@ -96,23 +96,16 @@ export default {
         promotion: ''
       },
       slides:[
-          "ImagesAccueil/im2.jpg",
-          "ImagesAccueil/im3.jpg",
-          "ImagesAccueil/im4.jpg",
-          "ImagesAccueil/im6.jpg",
-          
+          "global/naniens-0.jpeg",
+          "global/naniens-3.jpeg",
       ],
       textes: [      
-          ` Travailler avec le sourire et sans stress, c'est sourire à l'avenir`,
-          'Un environnement motivant et inspirant',
-          'Coder pour devenir des professionnelles en programmation',
-          '',
+          `Découvrez nos certifiés`,
+          'Un réseau de parrain qualifiés'
       ],
       titres: [
-          'Une Pédagogie inspirée de 42',
-          'Un cadre agréable',
-          'Apprendre le code ',
-          'NaN forme des professionnelles',
+          'Les Certifiés de NaN',
+          'La Famille NaN',
       ],
       cards: [],
       itemToShow: 9,
@@ -131,7 +124,6 @@ export default {
     fetch('http://192.168.88.15:3001/api/naniens')
     .then(res => res.json())
     .then(data => {
-      console.log([...data.data])
       this.cards = [...data.data]
       this.load = false
     })

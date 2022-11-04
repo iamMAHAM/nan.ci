@@ -46,6 +46,9 @@ export default {
 
 <style scoped>
 
+.Etudiants_infos1{
+  background: var(--bg2);
+}
 .e-container{
   display: flex;
   padding: 50px;

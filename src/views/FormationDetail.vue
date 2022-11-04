@@ -24,7 +24,7 @@
   
   <div id="image2">
     <img  src="@/assets/formations/binary.jpg">
-     <h1>Ce que vous apprendriez à NaN</h1>
+     <h1>Ce que vous apprendrez à NaN</h1>
   </div>
   <div class="container1">
    <h2>Consulter le programme de notre formation, etape par etape</h2>

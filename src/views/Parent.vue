@@ -38,7 +38,7 @@ export default {
   methods: {
     displayUser(data){
       console.log(data)
-      this.userInfo = data
+      this.userInfo = {...data}
       this.isLogged = true
     }
   }

@@ -75,6 +75,7 @@ export default {
   font-size: medium;
 }
 .parents_contenaire{
+  height: 40vh;
   margin: 0 auto;
   background-color: var(--bg);
   max-width: var(--max-width);

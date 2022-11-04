@@ -1,7 +1,7 @@
 <template>
   <div class="index-container">
     <StudentCard :user="userInfo"/>
-    <Parcours :mat="userInfo.matricule"/>
+    <Parcours :matricule="userInfo.matricule"/>
   </div>
 </template>
 <script>

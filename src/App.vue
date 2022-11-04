@@ -18,7 +18,8 @@ export default {
     Footer
   },
   watch: {
-    $route(old, _new){
+    $route(to, _old){
+      document.title = `nan - ${to.name.toLowerCase()}`
       window.scrollTo({top: 0, behavior: 'smooth'})
     }
   }
