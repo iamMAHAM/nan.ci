@@ -55,10 +55,16 @@
         <p>Quelques projet realisés avec les technologies {{ spec }}</p>
       </div>
       <div class="item">
-        <img
+        <a
           v-for="img in formation?.image1"
-          :src="getImage(`formations/specialite/${spec}/${img}`)"
-          alt="">
+          :href="link(img)"
+          target="_blank"
+        >
+          <img
+            :src="getImage(`formations/specialite/${spec}/${img}`)"
+            :alt="`image de ${img}`"
+          >
+        </a>
       </div>
     </div>
   </div>
@@ -96,7 +102,10 @@ export default {
           }
           return titre
         },
-        getImage: getImage
+        getImage: getImage,
+        link(name=""){
+          return `https://${name.replace('svg', 'com')}`
+        }
     },
     mounted() {
       console.log(this.specialite)
@@ -163,7 +172,7 @@ export default {
   justify-content: center;
 }
 
-.item>img {
+.item img{
   background: var(--blanc);
   height: 70px;
   width: 70px;
