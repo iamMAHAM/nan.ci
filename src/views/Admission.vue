@@ -73,8 +73,8 @@
                     </p>
                     <div class="cardText">
                         <div>
-                            <p @click="$router.push(`/formations`)"> En  présentie: </p>
-                            <p> En ligne: </p>
+                            <p @click="$router.push({ path: '/formations', hash: '#abonner' })" style="cursor:pointer"> En  présentie: </p>
+                            <p @click="$router.push({ path: '/formations', hash: '#abonner' })" style="cursor:pointer"> En ligne: </p>
                         </div>
                         <div>
                             <p> 160 places</p>
