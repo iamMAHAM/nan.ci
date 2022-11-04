@@ -1,5 +1,5 @@
 <template>
-  <div class="abonnements">
+  <div class="abonnements" >
     <h1>Nos abonnements</h1>
     <p>
        Des tarifs adaptés et flexibles selon vos besoins
