@@ -1,6 +1,6 @@
 <template>
   <Header :slides="slides" :textes="textes" :titres="titles" :height="60"/>
-  <h1 align=center>PLUS D'INFORMATIONS SUR {{ specialite }}</h1>
+  <h1 align=center>PLUS D'INFORMATIONS SUR {{ specialite?.toUpperCase() }}</h1>
   <div class="container">
     <div  class='card_1'>
       <h2>{{ formation.nom }} ?</h2>
@@ -164,6 +164,7 @@ export default {
 }
 
 .item>img {
+  background: var(--blanc);
   height: 70px;
   width: 70px;
   border-radius: 30%;
