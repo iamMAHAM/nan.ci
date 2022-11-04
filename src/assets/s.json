@@ -10,6 +10,7 @@
       "nom3":"Frameworks",
       "contenu3":"Un framework (ou infrastructure logicielle en français ) désigne en programmation informatique un ensemble d'outils et de composants logiciels à la base d'un logiciel ou d'une application. En javascript, nous avons une multitude de frameworks, les plus utilisés sont React JS , Vue JS et aussi Svelte",
       "image":"formations/js1.png",
+      "image1":["disord.svg","firebase.svg","instagram.svg","netflix.svg"],
       "etapes": {
         "basics":{
           "titre": "JavaScript basics",
@@ -91,15 +92,111 @@
        "id":2,
        "nom":"PHP",
        "description":"PHP: Hypertext Preprocessor, plus connu sous son sigle PHP, est un langage de programmation libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP",
-       "contenu":" ",
-       "image":"formations/php01.png"
+       "contenu":"Le langage PHP est un langage dynamique qui est directement lu par le serveur. Il s’agit donc d’un langage interprété. Si un ingénieur code une page en PHP, les utilisateurs de la page ne verront pas que celle-ci est en PHP puisqu’elle sera directement lue comme du HTML (langage statique). Utiliser du PHP est possible avec l’ensemble des systèmes d’exploitation informatique. Que vous ayez Microsoft Windows, Linux, Mac, Unix, ou autres, PHP sera toujours aussi bien lu. Un gros avantage pour les développeurs web qui travaillent avec des clients différents et ont besoin de langage universel. Tous les serveurs web sont aussi utilisés avec PHP. Le PHP est donc un langage informatique libre et gratuit utilisé pour la création de page web sur n’importe quel serveur de n’importe quel système d’exploitation. Il est ainsi possible de créer toutes sortes de formes de pages web, du blog au site, en passant par la base de données, etc.     ",
+     "image":"formations/php01.png",
+     "image1":["istock_photo.svg","wordpress.svg","yahoo.svg","wikipedia.svg"],
+     "nom2":"MYSQL ?",
+     "contenu2":"MySQL est un système de gestion de bases de données relationnelles (SGBDR). Il est distribué sous une double licence GPL et propriétaire. Il fait partie des logiciels de gestion de base de données les plus utilisés au monde3, autant par le grand public (applications web principalement) que par des professionnels, en concurrence avec Oracle, PostgreSQL et Microsoft SQL Server.Son nom vient du prénom de la fille du cocréateur Michael Widenius, My (sv) (prononcer [my]). SQL fait référence au Structured Query Language, le langage de requête utilisé.MySQL AB a été acheté le 16 janvier 2008 par Sun Microsystems pour un milliard de dollars américains4. En 2009, Sun Microsystems a été acquis par Oracle Corporation, mettant entre les mains d'une même société les deux produits concurrents que sont Oracle Database et MySQL. Ce rachat a été autorisé par la Commission européenne le 21 janvier 20105,6. Depuis mai 2009, son créateur Michael Widenius a créé MariaDB (Maria est le prénom de sa deuxième fille) pour continuer son développement en tant que projet Open Source",
+     "nom3":"Quelle est la version actuelle de Php ?",
+     "contenu3":"",
+     "etapes":{
+      "Introduction":{
+        "titre": "Introduction",
+        "points": [
+          "Php-et-mysql-la-formation-ultime"
+        ]
+      },
+      "Module1":{
+        "titre": "Module1",
+        "points": [
+          "Become a wordpress developer php javascript",
+          "php et mysql la formation ultime"
+        ]
+      },
+      "Module2":{
+        "titre": "Module2",
+        "points": [
+          "Become a wordpress developer php javascript ",
+          "Creer un site php avec bootstrappdo et mvc pour ....."
+        ]
+      },
+      "Module3":{
+        "titre": "Module3",
+        "points": [
+          "Become a wordpress developer php javascript ",
+          "h2prog php pour etre autonome en programmation web"
+        ]
+      },
+      "Module4":{
+        "titre": "Module4",
+        "points": [
+          "Créer une API REST en utilisant PHP de base avec authentification par jeton.....",
+          "Php avec pdo apprendre a interroger les bases.....",
+          "Developpement web php poo mysql architecture mvc ....."
+        ]
+      },
+      "Module5":{
+        "titre": "Module5",
+        "points": [
+          "Créer une API REST en utilisant PHP de base avec authentification par jeton.....",
+          "Apprendre symfony par la creation d'un site e-commerce....."
+        ]
+      },
+      "Module6":{
+        "titre": "Module6",
+        "points": [
+          "Le bootcamp mysql ultime aller de sql débutant...."
+        ]
+      },
+      "Module7":{
+        "titre": "Module7",
+        "points": [
+          "Le bootcamp mysql ultime aller de sql débutant...."
+        ]
+      },
+      "Module8":{
+        "titre": "Module8",
+        "points": [
+          "Php pour les débutants complets inclut l’objet mysql...."
+        ]
+      },
+      "Module9":{
+        "titre": "Module9",
+        "points": [
+          "Php pour les débutants complets inclut l’objet mysql...."
+        ]
+      },
+      "Module11":{
+        "titre": "Module11",
+        "points": [
+          "Php pour les débutants complets inclut l’objet mysql...."
+        ]
+      },
+      "Module12":{
+        "titre": "Module12",
+        "points": [
+          "Blocs Gutenberg pour les développeurs wordPress et react"
+        ]
+      } 
      },
+     "Projet":{
+       "titre": "Projet de fin de formation",
+       "texte":"Dans ce module ",
+       "points": [
+         " vous aurez à travailler sur un projet qui vous sera donné à la fin de votre parcours.. ",
+         "  ce projet comporteras tout ce que vous aurez vue au cous de votre formation .. "
+         ]
+     }
+    
+      }  
+     ,
      
     {
       "id":3,
       "nom":"Python",
       "description":"Python est un langage de programmation open source le plus employé par les informaticiens. Ce langage s’est propuisé en tête de la gestion d’infrastructure, d’analyse de données ou dans le domaine du déleloppement de logiciels.",
       "image":"formations/py1.png",
+      "image1":["facebook.svg","printerest.svg","spotify.svg","uber.svg"],
       "contenu":"Python est le langage de programmation open source le plus employé par les informaticiens. Ce langage s’est propulsé en tête de la gestion d’infrastructure, d’analyse de données ou dans le domaine du développement de logiciels.En effet, parmi ses qualités, Python permet notamment aux développeurs de se concentrer sur ce qu’ils font plutôt que sur la manière dont ils le font. Il a libéré les développeurs des contraintes de formes qui occupaient leur temps avec les langages plus anciens. Ainsi, développer du code avec Python est plus rapide qu’avec d’autres langages.Il reste aussi accessible pour les débutants, à condition de lui consacrer un peu de temps pour la prise en main. De nombreux tutoriels sont d’ailleurs disponibles pour l’étudier sur des sites Internet spécialisés ou sur des comptes Youtube. Sur les forums d'informatique, il est toujours possible de trouver des réponses à ses questions, puisque beaucoup de professionnels l'utilisent.",
       "nom2":"A quoi sert le langage Python ?",
       "contenu2":"Les principales utilisations de Python par les développeurs sont :                        la programmation d’applications,la création de services web,  la génération de code,   la métaprogrammation,  Techniquement, ce langage servira surtout pour le scripting et l’automatisation (interaction avec les navigateurs web) ",
@@ -108,13 +205,12 @@
       "etapes": {
         "Git":{
           "titre": "Démarrer un dépôt Git ",
-          "texte":"Nous vous montrerons comment ",
           "points": [
             "paramétrer Git pour qu’il ignore certains fichiers ou patrons de fichiers",
             "revenir sur les erreurs rapidement et facilement ",
             "voir les modifications entre deux validations",
-            " parcourir l’historique de votre projet",
-            "pousser et tirer les modifications avec des dépôts distants."
+            " parcourir l’historique de votre projet"
+           
           ]
         },
         "Introduction ":{
@@ -130,6 +226,29 @@
           "points": [
             "Conseils pour installer et configurer Python Miniconda"
           ]
+        },
+        "Django et Django REST":{
+          "titre": "Django et Django REST  ",
+          "texte":"C'est quoi Python ?",
+          "points": [
+            "Conseils pour installer et configurer Python Miniconda"
+          ]
+        }
+        ,
+        "PostgreSQL":{
+          "titre": "PostgreSQL  ",
+
+          "points": [
+            "Développer une base de données PostgreSQL sécurisée"
+          ]
+        },
+        "Projet de fin de formation":{
+          "titre": "Projet de fin de formation  ",
+          "texte":"C'est quoi Python ?",
+          "points": [
+            " vous aurez à travailler sur un projet qui vous sera donné à la fin de votre parcours.. ",
+            "  ce projet comporteras tout ce que vous aurez vue au cous de votre formation .. "
+          ]
         }
     }
   },
@@ -143,54 +262,58 @@
       "nom3":"Quelle est la version actuelle de Flutter?",
       "contenu3":"Google a maintenant lancé la dernière version de Flutter qui prend en charge iOS 15 et Android 11 . Récemment, il y a eu une version du nouveau Google Flutter qui est une version stable 2.5.3,Selon certaines données et recherches, on peut dire qu'il y a une augmentation de l'utilisation du SDK Google Flutter. En raison de ce nombre de personnes sont également de plus en plus nombreuses à vouloir connaître l'utilisation de Flutter et les avantages de son utilisation par rapport à d'autres outils. Source : Flutter",
       "image":"formations/flutter.png",
+      "image1":["alibab.svg","byetance.svg","ebay.svg","google_ads.svg"],
       "etapes": {
         "Introduction":{
           "titre": "Introduction à Flutter",
-          "texte":"En général, développer une application mobile est une tâche complexe et exigeante ",
+
           "points": [
             "Il existe de nombreux frameworks disponibles pour développer une application mobile."
+           
                 ]
         },
         "Dart":{
           "titre": "Dart",
-          "texte":"C'est quoi Dart ?",
+
           "points": [
-            "Dart est un langage de programmation open source développé par Google et qui est apparu en 2011",
-            "Il est utilisé pour le développement d'applications mobiles, Web, de bureau ",
-            " d'autres applications intégrant la technologie Internet des objets (IoT)"
+            " développement d'applications mobiles, Web, de bureau ",
+            " applications intégrant la technologie Internet des objets (IoT)"
                 ]
         },
         "widgets":{
           "titre": "Introduction aux widgets",
-          "texte":"Créez des thèmes de matériaux personnalisés pour rendre votre produit unique",
+
           "points": [
+            "Créez des thèmes de matériaux personnalisés ",
             "Mettez en œuvre votre vision de la conception avec Material Theming,",
-            "simplifie le processus de personnalisation de votre produit et d'utilisation des composants.."
+            "simplifie le processus de personnalisation "
                 ]
         },
         "HTTP":{
           "titre": "Utilisation du protocole HTTP",
-          "texte":"Flutter fournit un package http pour consommer les ressources HTTP",
+
           "points": [
-            "http est une bibliothèque basée sur l’avenir et utilise les fonctionnalités d’attente et d’async",
-            " Il fournit de nombreuses méthodes de haut niveau",
+            "utiliser les fonctionnalités d’attente et d’async",
             "simplifie le développement d’applications mobiles basées sur REST."
                 ]
         },
         "Google Maps":{
           "titre": "Utilisation de Google Maps",
-          "texte":"Utiliser Google Maps dans vos application ",
+  
           "points": [
-            " apprenez à géolocalisé vos utilisateurs",
+            "Utiliser Google Maps dans vos application ",
+            " géolocaliser vos utilisateurs",
             " De nos jours, de nombreuses applications demandent l'accès à la géolocation de l'utilisateur.",
-            "Nous allons voir aujourd'hui comment l'utiliser dans nos applications Flutter.."
+            "utilisation de Flutter dans nos applications "
                 ]
         },
         "Les formulaires":{
           "titre": "Les formulaires",
-          "texte":"La première chose que nous allons voir  ",
+
           "points": [
-            " Un contrôleur est un objet puissant qui vous aide à gérer certains scénarios complexes avec des formulaires ainsi que les plus simples, comme nous allons le voir."
+            "gérer les champs par un contrôleur.",
+            " gérer certains scénarios complexes avec des formulaires "
+        
            
                 ]
         },
@@ -205,14 +328,228 @@
     }},
     {
       "id":5,
-      "nom":"Reseaux-voix",
+      "nom":"Reseaux-voip",
       "description":"La voix sur IP, ou << VoIP>> pour <<Voice over IP>>, est une technologie informatique qui permet de transmettre la voix sur des réseaux compatibles IP, via Internet ou des réseaux privés ou publics, qu’ils soient filaires ou non.",
-      "image":"formations/voip.png"
+      "contenu":"La voix sur IP, ou VoIP, est un raccourci qui signifie Voix via le protocole Internet, et définit la transmission du trafic vocal via une connexion Internet. La téléphonie traditionnelle, connue sous le terme de réseat RTC (Réseau Téléphonique Commuté), fonctionne par le biais de lignes téléphoniques physiques, et de systèmes de câbles et de réseaux permettant aux utilisateurs de passer des appels téléphoniques vers les lignes fixes et portables. La téléphonie IP, par contre, est beaucoup plus versatile et permet à la voix, la vidéo et les données d’être transmises vers une large gamme d’appareils incluant smartphones, laptops, tablettes et téléphones IP, pour beaucoup moins cher.",
+      "nom2":"Comment marche la Voix sur IP ?",
+      "contenu2":"La voix sur IP convertit les données, comme la voix ou la vidéo, en signal numérique et le transfert via Internet en paquets de données numériques. Afin d’utiliser la technologie VoIP, vous avez besoin d’un service ou d’une application VoIP qui permettra le transfert des appels, d’un accès à Internet, et d’un trunk SIP ou un opérateur VoIP. Certains opérateurs de téléphonie proposent de la téléphonie IP de façon standard, ou couplée avec des services RTC traditionnels. Cependant, la plupart des opérateurs télécom sont en train de se tourner vers le tout IP. Si votre opérateur actuel offre des solutions VoIP, vous n’aurez pas besoin d’utiliser un trunk SIP ou un opérateur VoIP séparé.",
+      "nom3":"la téléphonie VoIP ?",
+      "contenu3":"La téléphonie VoIP (téléphonie sur le Protocole Internet ou téléphonie sur IP) est le terme employé pour décrire les technologies utilisant différents protocoles utilisés pour échanger la voix, le fax et d’autres formes d’informations, traditionnellement transmises sur le réseau téléphonique public commuté (RTC). L’appel voyage sous forme de paquets, sur un réseau local (LAN), ou sur Internet, évitant les péages RTC.Ayant débuté au milieu et à la fin des années 90, le protocole Internet et TCP/IP a commencé à pousser l’industrie du téléphone et des communications au changement. Le protocole Internet devient le transport de la plupart des données de communications. A présent tous les opérateurs téléphoniques utilisent l’infrastructure IP en partie, ou pour tous leurs services concernant la voix.",
+      "image":"formations/voip.png",
+      "image1":"",
+      "etapes": {
+        "Intro":{
+          "titre": "Intro Courses",
+          "points": [
+            "apprenez pas a pas a devenir administrate reseaux voip"
+          ]
+        },
+        "module 1":{
+          "titre": "JavaScript advanced",
+  
+          "points": [
+            "apprendre linux en 5 jours ",
+            "apprenez linux par la pratique "
+          ]
+        },
+        "Moule 2":{
+          "titre": "DOM",
+         
+          "points": [
+            "GNU/linux de debutant a confirme  ",
+            "scripting shellbash automatisez votre systeme"
+          ]
+        },
+        "Module 3":{
+          "titre": "Node JS (environnement & server)",
+          
+          "points": [
+            " ICND/lapprenez pas a pas a devenir administrateur reseaux ",
+            "  ccna/icnd2/apprenez-a-devenir-administrateur-reseaux"
+          
+          ]
+        },
+        "Module 4":{
+          "titre": "Node JS (Express framework, CRUD and project folders structuration)",
+          
+          "points": [
+            
+            " comment installer asterisk sur centos linux video",
+            "comprendre tout sur le sip et la voip"
+            
+          ]
+        }
+        ,
+        "Module 5":{
+          "titre": "Node JS (mongodb and mongoose)",
+         
+          "points": [
+            " understanding and trouble shooting sip "
+          ]
+        },
+        "Module 6":{
+          "titre": "React JS (javascript front framework)",
+          
+          "points": [
+            " 6-the-beginners-guide-to-practical-cyber-securireseaux_voip"
+         
+          ]
+        },
+        "Module 7":{
+          "titre": "React JS (javascript front framework)",
+          
+          "points": [
+            " a complete cyber security guide for beginners"
+         
+          ]
+        },
+        "Module 8":{
+          "titre": "React JS (javascript front framework)",
+          
+          "points": [
+            " 8-cyber-security-for-beginners-v2022[EN]"
+         
+          ]
+        },
+        "Projet ":{
+          "titre": "Projet de fin de formation",
+          "texte":"Dans ce module ",
+          "points": [
+            " windows server 2019 active directory  ",
+            "  kali linux tutorial for beginners "
+            
+          ]
+        },
+        "Projet":{
+          "titre": "Projet de fin de formation  ",
+          "texte":"C'est quoi Python ?",
+          "points": [
+            " vous aurez à travailler sur un projet qui vous sera donné à la fin de votre parcours.. ",
+            "  ce projet comporteras tout ce que vous aurez vue au cous de votre formation .. "
+          ]
+        }
+
+      }  
+
     },
     {
       "id":6,
       "nom":"Marketing & Digital",
       "description":"Animation de communauté ou gestionnaire de communauté,aussi community manager (CM),est un métier - l’animation de communité ,gestion de communité, ou création de contenues.",
-      "image":"formations/mmx.png"
+      "contenu":"Le marketing digital désigne toutes les techniques marketing utilisées sur des supports et canaux digitaux pour promouvoir des produits et services. Dans le marketing digital ressort une notion essentielle, l’interactivité. On peut également parler de webmarketing puisque la différence est liée principalement à l’environnement, ici internet.Le marketing digital contrairement au marketing traditionnel met le client au cœur de sa stratégie. Le marketing digital procède de deux évolutions : les applications marketing liées à Internet et celles liées aux nouvelles technologies de l’information et de la communication.",
+      "nom2":"Le référencement naturel ou SEO",
+      "contenu2":"Le référencement naturel ou SEO est l’une des branches du Search Engine Marketing (SM). Cette notion de marketing digital désigne l’ensemble des techniques utilisées, pour optimiser un site internet ou des pages web.En d’autres termes, le référencement naturel vise à se positionner sur la première page d’un moteur de recherche tel que Google. Suite à une requête saisie par un internaute, le référenceur cherchera à faire monter son contenu en première position des résultats.Le référencement naturel ou SEO comprend également l’optimisation des pages d’un site web et la recherche de liens externes. Les liens externes ou backlinks permettront ainsi au site de gagner en autorité. On peut d’ailleurs avoir recours à des campagnes de netlinking pour optimiser ce levier.",
+      "nom3":"L’emailing ou email marketing",
+      "contenu3":"L’emailing ou email marketing est un levier très utilisé en marketing digital. Il regroupe toutes les utilisations de l’email dans le domaine de la publicité en ligne et de l’acquisition de clients. L’usage de l’emailing est aussi lié aux problématiques de fidélisation clients, d’activation de clients etc.Cette pratique comprend des usages relationnels, transactionnels, informationnels (les newsletters), ou des usages de prospection ou pratiques de sponsoring. En 2016, 131 milliards d’emails envoyés avaient été enregistrés pour un chiffre d’affaires de 105 millions d’euros. Notamment sur les 22 routeurs membres du SNCD.’email marketing garde toujours une place importante dans le domaine du marketing digital. Il est également un maillon fort du marketing automation quand il s’agit de communication B2B",
+      "image":"formations/mmx.png",
+      "etapes": {
+        "Introduction":{
+          "titre": "Introduction cours",
+
+          "points": [
+            "Formation-marketing-reseaux-sociaux"
+           
+                ]
+        },
+        "Module 1":{
+          "titre": "Dart",
+
+          "points": [
+            " formation marketing reseaux sociaux "
+                ]
+        },
+        "Module 2":{
+          "titre": "Introduction aux widgets",
+
+          "points": [
+            "formation marketing reseaux sociaux"
+                ]
+        },
+        "Module 3":{
+          "titre": "Utilisation du protocole HTTP",
+
+          "points": [
+            "utiliser les fonctionnalités d’attente et d’async"
+                ]
+        },
+        "Module 4":{
+          "titre": "Utilisa",
+  
+          "points": [
+            "gestion des reseaux sociaux de debutant a professionel marketing"
+           
+                ]
+        },
+        "Module 5":{
+          "titre": "Les formulaires",
+
+          "points": [
+            "gestion des reseaux sociaux de debutant a professionel marketing"
+                ]
+        },
+        "Module 6":{
+          "titre": "Les formulaires",
+
+          "points": [
+            "the canva master ",
+            "cm en moins de 5h|",
+            "utiliser canva pour tout vos projets graphique"
+                ]
+        }
+        ,
+        "Module 7":{
+          "titre": "Les formulaires",
+
+          "points": [
+            "adobe photoshop cc essentials training ",
+            "adobe photoshop 2021 tout savoir en 1 cour",
+            "6-photoshop pour lesdebutants"
+                ]
+        }
+        ,
+        "Module 8":{
+          "titre": "Les formulaires",
+
+          "points": [
+            
+            "design graphique avec crello pour le marketing"
+                ]
+        }
+        ,
+        "Module 9":{
+          "titre": "Les formulaires",
+
+          "points": [
+            
+            "formation complete premiere pro cc2020"
+                ]
+        },
+        "Module 10":{
+          "titre": "Les formulaires",
+
+          "points": [
+            
+            "tiktok marketing formation"
+                ]
+        }
+        ,
+        "Module 11":{
+          "titre": "Les formulaires",
+
+          "points": [
+            
+            "tiktok marketing formation"
+                ]
+        }
+        ,
+        "Projet":{
+          "titre": "Projet de fin de formation",
+          "texte":"Dans ce module ",
+          "points": [
+            " vous aurez à travailler sur un projet qui vous sera donné à la fin de votre parcours.. ",
+            "  ce projet comporteras tout ce que vous aurez vue au cous de votre formation .. "
+            ]
+        }
+    }
     }
   ]

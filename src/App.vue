@@ -16,6 +16,12 @@ export default {
   components:{
     NavBar,
     Footer
+  },
+  watch: {
+    $route(to, _old){
+      document.title = `nan - ${to.name.toLowerCase()}`
+      window.scrollTo({top: 0, behavior: 'smooth'})
+    }
   }
 }
 </script>

@@ -1,4 +1,5 @@
 <template>
+   <Header :slides="slides" :textes="textes" :titres="titres" :height="60" />
   <div class="container-Apropos">
     <h1>A PROPOS DE NOUS</h1>
 
@@ -107,16 +108,61 @@
                     </div>
                </div>
                 
-
+            
 
             </div>
-        </div>
+    </div>
+    <div class="newletter">
+ 
+      <h2 class="newletterH2">Inscrivez-vous à la newsletter</h2>
+      <p>
+        Soyez le premier à être informé des nouveautés et des actualités de NaN Digital academy.
+      </p>
+      <form action="">
+        <input id="input" type="email" placeholder="Entrez votre email">
+        <button id="button"> S'ABONNER</button>
+      </form>
+
+
+
+
+
+
+
+    </div>
 
   </div>
 </template>
 
 <script>
+import Header from '@/components/Accueil/header.vue'
 export default {
+  components:{
+    Header
+  },
+  data() {
+    return {
+      slides:[
+          "ImagesAccueil/im2.jpg",
+          "ImagesAccueil/im3.jpg",
+          "ImagesAccueil/im4.jpg",
+          "ImagesAccueil/im6.jpg",
+          
+      ],
+      textes: [      
+          ` Travailler avec le sourire et sans stress, c'est sourire à l'avenir`,
+          'Un environnement motivant et inspirant',
+          'Coder pour devenir des professionnelles en programmation',
+          '',
+      ],
+      titres: [
+          'Une Pédagogie inspirée de 42',
+          'Un cadre agréable',
+          'Apprendre le code ',
+          'NaN forme des professionnelles',
+      ],
+    }
+  },
 
 }
 </script >
@@ -136,13 +182,14 @@ export default {
     width: 100%;
     height: 350px;
     background-color:var(--bg2) ;
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
     padding: 10px;
 }
 
 .card-image{
-    /* border: 1px solid blue; */
+    border: 5px solid var(--blanc);
     height: 100%;
     /* width: 30%; */
 }
@@ -157,7 +204,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
+    color: var(--blanc);
 }
 .card-body .texte ,.texte1{
   padding:  20px;
@@ -217,13 +264,14 @@ export default {
 .container-card-valeurs{
     margin: 30px 0;
     width: 100%;
-    background-color:#262935 ;
+    background-color:var(--bg2) ;
     display: flex;
    flex-direction: column;
    align-items: center;
     padding: 10px;
     color: var(--blanc);
     text-align: center;
+    border-radius: 5px;
 }
 
 .container-card-valeurs h2{
@@ -261,6 +309,7 @@ export default {
     align-items: center;
     justify-content: space-evenly;
     position: relative;
+    box-shadow: 0 2px 5px hsl(242deg 88% 66%);
    
 }
 .card-content-card p{
@@ -329,5 +378,77 @@ export default {
     }
 }
  
+
+/* newletter */
+.newletter{
+    margin: 30px 0;
+    width: 100%;
+    height: 35vh;
+    background-color:var(--bg2) ;
+    display: flex;
+   flex-direction: column;
+   align-items: center;
+    padding: 30px;
+    color: var(--blanc);
+    text-align: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+}
+form{
+  /* border: 1px solid blue; */
+  padding: 10px;
+  width: 100%;
+
+}
+
+#input{
+  max-width: 450px;
+  width: 98%;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-right: 20px;
+  outline-color: var(--violet);
+}
+#button{
+  
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 12px 32px;
+    border-radius: 4px;
+    font-size: 14px;
+    display: inline-block;
+    line-height: 1.2;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    background-color: var(--violet);
+    color: var(--blanc);
+   
+}
+
+@media (max-width:699px) {
+
+  .newletter{
+    padding: 15px;
+  }
+  .newletterH2{
+    font-size: 1.2rem;
+  }
+  .newletter p{
+    font-size: 16px;
+  }
+  .newletter  #input{
+    padding: 10px 22px;
+
+  }
+.newletter  #button{
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 12px;
+  }
+
+}
 
 </style>

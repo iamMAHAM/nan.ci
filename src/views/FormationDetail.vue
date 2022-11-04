@@ -1,292 +1,373 @@
 <template>
-
-
-  <div class="container1">
-    
+  <Header :slides="slides" :textes="textes" :titres="titles" :height="60"/>
+  <h1 align=center>PLUS D'INFORMATIONS SUR {{ specialite }}</h1>
+  <div class="container">
     <div  class='card_1'>
-        <h2>{{formation.nom}} </h2>
-        
-        <p>{{formation.contenu}}</p>
+      <h2>{{ formation.nom }} ?</h2>
+      <p>{{ formation.contenu }}</p>
     </div>
-  
     <div class="card_2">
       <div class="box">
-          <h2>{{formation.nom2}} </h2>
-          <p>{{formation.contenu2}}</p>
+        <h2>{{formation.nom2}} </h2>
+        <p>{{formation.contenu2}}</p>
       </div>
       <div class="box">
-           <h2>{{formation.nom3}}</h2>
-           <p>{{formation.contenu3}}</p>
+        <h2>{{formation.nom3}}</h2>
+        <p>{{formation.contenu3}}</p>
       </div>
-  
     </div>
   </div>
-  
   <div id="image2">
-    <img  src="@/assets/formations/barbecue-g82069dcb5_1920.jpg">
-     <h1>Ce que vous apprendriez à NaN</h1>
+    <img  src="@/assets/formations/binary.jpeg">
+    <h1>Ce que vous apprendrez à NaN</h1>
   </div>
   <div class="container1">
-   <h2>Consulter le programme de notre formation, etape par etape</h2>
-   <div class='etape'>
-    <button
-      v-for="titre in titres"
-      :key="titre"
-      :title="JSON.stringify(formation.etapes[titre])"
-      @click="changeData"
-    >
-      {{ titre}}
-    </button>
-   
-   </div>
-  <div class='card_etape'>
-    <div class='card_etape1'>
-      <p>Dans ce module ce que vpous apprendrez,les bases du langage javascript,entre autres:</p>
-      <li
-        v-for="point in current?.points"
-        :key="point"
-      >
-        {{ point }}
-      </li>
-      <!-- <li>Qu'es ce que le javascript, les variables,</li> 
-      <li>Qu'es ce que le javascript, les variables,</li> 
-      <li>Qu'es ce que le javascript, les variables,</li>  -->
+    <h2>Consulter le programme de notre formation, étape par étape</h2>
+    <div class='etape'>
+      <button
+        v-for="titre in titres"
+        :key="titre"
+        :title="JSON.stringify(formation.etapes[titre])"
+        @click="changeData"
+        >
+      {{ formatTitle(titre)}}
+      </button>
     </div>
-    <div class="card_etape2" >
-      <p>ce que vous allez realiser en pratique</p>
-      <p>{{ current?.titre}}</p>
-  
+    <div class='card_etape'>
+      <div class='cards'>
+        <p>CE QUE VOUS VEREZ DANS CE MODULE</p>
+        <div class="liss">
+          <li
+            v-for="point in current?.points"
+            :key="point"
+            >
+            {{ point }}
+          </li>
+        </div>
+      </div>
+      <div class="cards" >
+        <p>MODULE</p>
+        <div class="lis">{{ current?.titre}}</div>
+      </div>
     </div>
-    
+    <div class="container2" v-if="!digital">
+      <div class="text">
+        <p>Quelques projet realisés avec les technologies {{ spec }}</p>
+      </div>
+      <div class="item">
+        <img
+          v-for="img in formation?.image1"
+          :src="getImage(`formations/specialite/${spec}/${img}`)"
+          alt="">
+      </div>
+    </div>
   </div>
-</div>
-  
-  
-    
-  </template>
-  
-  <script>
-  export default {
-  props:["specialite"],
+</template>
+
+<script>
+import Header from '@/components/Accueil/header.vue'
+import { getImage } from '@/lib/getImage';
+export default {
+    props: ["specialite"],
     data() {
-      return {
-       formation:"",
-       titres:[],
-       current: {}
-      }
+        return {
+            formation: "",
+            titres: [],
+            current: {},
+            slides:[
+              `naniens/${this.specialite?.toLowerCase()}.png`
+            ],
+            textes: [      
+              `Plus de detail sur la formation en ${this.specialite}`,
+            ],
+            titles: [
+              'Apprendre plus'
+            ],
+        };
     },
-    methods:{
-      changeData(e){
-        this.current = JSON.parse(e.target.title)
-        console.dir((this.current))
-      }
+    methods: {
+        changeData(e) {
+            this.current = JSON.parse(e.target.title);
+            console.dir((this.current));
+        },
+        formatTitle(titre=""){
+          if (titre.split(' ').length > 2){
+            return titre.split(' ')[0]
+          }
+          return titre
+        },
+        getImage: getImage
     },
-
     mounted() {
-      fetch(`http://192.168.88.15:3001/api/specialities/${this.specialite}`)
-      .then(res => res.json())
-      .then(data => {
-        console.log("vklnrkier")
-        console.log(data.data.etapes)
-        this.formation= data.data
-
-        const vals  = Object.entries(data.data.etapes)
-        vals.forEach(val => {
-          console.log(val)
-            this.titres.push(val[0])
-            console.log('titre : ', val[0], 'value :  ', val[1])
+      console.log(this.specialite)
+        fetch(`http://192.168.88.15:3001/api/specialities/${this.specialite}`)
+            .then(res => res.json())
+            .then(data => {
+              console.log(data.data);
+              this.formation = data.data;
+              const vals = Object.entries(data.data.etapes);
+              vals.forEach(val => {
+                  this.titres.push(val[0]);
+                  // console.log("titre : ", val[0], "value :  ", val[1]);
+              });
+              this.current = vals[0][1]
         })
-      })
-      .catch((error) =>{
-        console.log(error)
-      })
+          .catch((error) => {
+            console.log(error);
+        });
+    },
+    components: { Header },
+    computed: {
+      digital(){
+        console.log(this.specialite === 'multimedia')
+        const tch = this.specialite?.toLowerCase()
+        return tch === 'reseau-voip' || tch === 'multimedia'
+      },
+      spec(){
+        return this.specialite?.toLowerCase()
+      }
+    }
+}
+</script >
+
+<style scoped>
+
+.container,
+.container1 {
+  width: var(--max-width);
+  background: var(--bg);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
-                                                                                                                                                                                                                      
-  }
-  </script >
-  
-  <style scoped>
-  
-  .container1{
-   width: var(--max-width); 
-   background: var(--bg);
-   margin: 0 auto;
-   margin-bottom: 5%;
-   
-  }
-  h2{
-    font-size: var(--titre);
-    color: var(--blanc);
-  }
-  .card_1{
-   margin-top: 55px;
-   width: var(--max-width);
-   color:var(--blanc) ;
-   background: var(--bg);
-   font-size: 1.1em;
-  width: 1094px;
-  height: 381px;
-  left: 90px;
-  top: 507px;
+.container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg2);
+  width: 100%;
+  height: 200px;
+  gap: 2rem;
+  justify-content: center;
+  margin: 1.5rem auto;
+}
+
+.text>p {
+  font-size: 35px;
+}
+
+.item {
+  gap: 15%;
+  display: flex;
+  justify-content: center;
+}
+
+.item>img {
+  height: 70px;
+  width: 70px;
+  border-radius: 30%;
+}
+
+.box,
+.card_1 {
+  overflow: hidden;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: .7rem auto;
+  align-items: center;
+  justify-content: center;
+  color: var(--blanc);
+  background: var(--bg);
+  width: 100%;
+  height: 300px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  box-shadow: 5px 8px 12px 2px #6870E0;
-  border-radius: 45px;
-  }
-  .card_1>h2{
-    padding-top: 0.7em ;
-  padding-left: 5em;
-  }
-  .card_1>p{
-  padding-top: 2em ;
- padding-left: 3em;
- padding-right: 3em;
- display: flex;
- justify-content: center;
+  box-shadow: 6px 5px 12px 1px var(--violet);
+  border-radius: var(--radius);
+}
 
-  }
-  .card_2{
-   display: flex;
-   gap: 5%; 
-  }
-  .box{
-   margin-top: 55px;
-   width: var(--max-width);
-   color:var(--blanc) ;
-   background: var(--bg);
-   width: 521px;
-height: 456px;
-left: 88px;
-top: 1054px;
+.cards{
+  height: 100%;
+  position: relative;
+  padding: .7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 48%;
+}
 
-background: #272935;
-box-shadow: 5px 8px 12px 2px #6870E0;
-border-radius: 45px;
-  }
-  .box>h2{
-    padding-top: 0.7em ;
-  padding-left: 5em;
-  }
-  .box>p{
-    font-size: 1.1em;
-  padding-top: 2em ;
- padding-left: 2em;
- padding-right: 2em;
- display: flex;
- justify-content: center;
+.lis{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
 
+.liss{
+  position: relative;
+  flex-direction: column;
+  /* justify-content: center; */
+  display: flex;
+  height: 200px;
+  overflow-y: scroll;
+}
+
+li{
+  padding: .2rem;
+  margin: .3rem;
+}
+.card_2 {
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5%;
+}
+
+h2{
+  color: var(--blanc);
+  padding: .5rem;
+}
+.box {
+  width: 45%;
+  height: 500px;
+  border-radius: var(--radius);
+}
+
+.box>h2 {
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 25px;
+  text-align: justify;
+}
+
+img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+#image2 {
+  position: relative;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+#image2>h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container1>h2 {
+  margin: 20px 0;
+}
+
+.etape {
+  justify-content: center;
+  display: flex;
+  gap: 3%;
+  width: var(--max-width);
+  overflow: scroll;
+}
+
+button {
+  width: 100px;
+  background: var(--bg);
+  border: 1px solid rgb(162, 160, 160);
+  color: var(--blanc);
+  font-size: 17;
+  padding: .8rem;
+  border-radius: var(--radius);
+  transition-delay: 0.1s;
+
+}
+
+button:hover {
+  background: var(--violet);
+  color: black;
+  border: transparent;
+  cursor: pointer;
+
+}
+
+.card_etape {
+  margin: 2.3rem 0;
+  height: 250px;
+  color: var(--blanc);
+  background: var(--bg);
+  width: var(--max-width);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  box-shadow: 6px 5px 12px 1px var(--violet);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background: linear-gradient(269.9deg, rgba(104, 112, 223, 0.54) 42.63%, rgba(162, 180, 147, 0) 101.4%);
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .card_1 {
+    width: 87%;
+    height: 55vh;
+    margin-left: 6%;
   }
-  img{
-    width: 100%;
-    height: 40vh;
-    object-fit: cover;
+
+  .card_2 {
+    margin-left: 6%;
+    width: 87%;
   }
-  #image2{
-    position: relative;
-   
-  }
-  #image2>h1{
-    font-size: var(--titre);
-    position: absolute;
-    top: 35%;
-    left: 35%;
-    
-  }
-  .container1>h2{
-    margin-top: 5%;
-    font-size:1.5em;
-    margin-bottom: 3%;
-  }
-  .etape{
-    display: flex;
-   gap:5%;
-    padding-top: 2.5rem;
+
+  img {
     width: var(--max-width);
   }
-  button{
-    background: var(--bg);
-    border:1px solid rgb(162, 160, 160);
-    color: var(--blanc);
-    font-size: 18px;
-    padding: 16px;
-    border-radius: var(--radius);
-    transition-delay: 0.1s;
 
+  .container1>h2 {
+    margin-left: 4%;
   }
-  button:hover{
-background: var(--violet);
-color: black;
-border: transparent;
-cursor: pointer;
 
-  }
-  .card_etape{
-    margin-top: 48px;
-   width: var(--max-width);
-   color:var(--blanc) ;
-   background: var(--bg);
-   font-size: 1.1em;
-   width: var(--max-width);
-  height: 351px;
-  left: 90px;
-  top: 507px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  box-shadow: 5px 8px 12px 2px #6870E0;
-  border-radius: 45px;
-  display: flex;
-  padding: 60px;
-  gap: 13%;
-  background: linear-gradient(269.9deg, rgba(104, 112, 223, 0.54) 42.63%, rgba(162, 180, 147, 0) 101.4%);  }
-  .card_etape1{
-    width: 50%;
-  }
-  .card_etape1>li{
-    padding-top:25px ;
-    padding-left:20px ;
-    line-height: 45px;
-    lighting-color: red;
-
-  }
-  .card_etape2>:nth-child(2){
-    padding-top: 30%;
-    padding-left:10% ;
-    font-size: 25px;
-
-  }
-  @media only screen and (max-width: 1024px) {
-  .card_1{
-  width:87%;
-  height:55vh;
-  margin-left:2%;
-  }
-  .card_2{
-    margin-left:2%;
-    width:87%;
-  }
-  img{
-    width: 1100px;
-  }
-  .container1>h2{
-    margin-left: 2%;
-  }
-  .etape{
-    margin-left: 2%;
+  .etape {
+    margin-left: 4%;
     width: 90%;
   }
-  .card_etape{
-   margin-left: 2%;
-    width:95%;
+
+  .card_etape {
+    margin-left: 2%;
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .card_2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8%;
   }
 
-    
-}
-@media only screen and (max-width: 412px){
+  .box {
+    height: 38vh;
+  }
 
-}
+  img {
+    width: var(--max-width);
+    height: 30vh;
+  }
 
-  
-  
-  
-  
-  
-  </style>
+  #image2>h1 {
+    font-size: var(--titre);
+    width: max-content;
+    position: absolute;
+    top: 24%;
+    transform: translate(18%);
+  }
+}
+</style>

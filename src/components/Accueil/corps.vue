@@ -35,7 +35,7 @@
         <h2>Nos Valeurs</h2>
         <p>
           La position de NaN est unique en Côte d’ivoire 
-          de l’enseignement supérieur : elle repose sur des valeurs fortes pour une insertion professionnelle durable sur le marché de l’emploi.
+          de l'enseignement supérieur: elle repose sur des valeurs fortes pour une insertion professionnelle durable sur le marché de l’emploi.
         </p>
         <a href="">Concept Unique</a>
       </div>
@@ -82,7 +82,12 @@
           <div class="corps-formations-content">
             <div>
               <h3>Developpeur D'Application Web</h3>
-              <p>Activité principale du développeur web: le développement web consiste à programmer et mettre en place des sites web. Cela peut couvrir notamment la simple création d’une page Internet au développement d’une application web plus complexe, ou même d’un réseau social
+              <p>Activité principale du développeur web: 
+                le développement web consiste à programmer et
+                mettre en place des sites web. Cela peut couvrir 
+                notamment la simple création d’une page Internet 
+                au développement d’une application web plus complexe
+                ,ou même d’un réseau social
               </p>
             </div>
           </div>
@@ -165,22 +170,24 @@
           <div class="corps-statistique-stat1">
             <h3>41</h3>
             <span></span>
-            <p>ÉTUDIANTS EN PRÉSENTIEL</p>
+            <p class="etud">ÉTUDIANTS EN PRÉSENTIEL</p>
           </div>
           <div class="corps-statistique-stat1">
-            <h3>41</h3>
+            <h3>98</h3>
             <span></span>
-            <p>ÉTUDIANTS EN PRÉSENTIEL</p>
+            <p class="etud">ETUDIANTS EN LIGNE</p>
           </div>
           <div class="corps-statistique-stat1">
-            <h3>41</h3>
+            <h3>143</h3>
             <span></span>
-            <p>ÉTUDIANTS EN PRÉSENTIEL</p>
+            <br><br>
+            <p class="cert">CERTIFIÉS</p>
           </div>
           <div class="corps-statistique-stat1">
-            <h3>41</h3>
+            <h3>55</h3>
             <span></span>
-            <p>ÉTUDIANTS EN PRÉSENTIEL</p>
+            <br>
+            <p class="cert">TAUX <br>D'INSERTIONS </p>
           </div>
         </div>
       </div>
@@ -314,13 +321,16 @@ export default {
   background-color: var(--bg2);
   border-radius: 20px;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
 }
 
 .corps-val1 {
   background-color: var(--blanc);
   /* height: 400px; */
   width: 500px;
-  margin: 50px 0 50px 50px;
+  /* margin: 50px 0 50px 50px; */
   display: flex;
   flex-direction: column;
   padding: 50px;
@@ -332,8 +342,11 @@ export default {
   /* background-color: var(--blanc); */
   /* height: 400px; */
   width: 500px;
-  margin: 50px;
+  /* margin: 50px; */
   border-radius: 30px;
+  display: flex;
+    justify-content: space-around;
+    flex-direction: column;
 }
 
 .corps-val21 {
@@ -345,7 +358,7 @@ export default {
   height: 180px;
   width: 250px;
   background-color: var(--blanc);
-  margin: 30px;
+  margin: 20px 30px 30px 30px;
   padding-top: 20px;
   text-align: center;
   border-radius: 15px;
@@ -526,6 +539,7 @@ export default {
 .corps-formations .corps-formations-card .corps-formations-content p {
   color: var(--noir);
   text-align: justify;
+  font-size: 17px;
 }
 
 .corps-formations .corps-formations-card .corps-formations-content a {
@@ -626,7 +640,7 @@ export default {
 }
 
 .corps-statistique-group {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   display: flex;
   height: 300px;
   justify-content: center;
@@ -644,7 +658,7 @@ export default {
 }
 
 .corps-statistique-stat1 {
-  border: 1px solid yellow;
+  border-right: 3px solid var(--violet);
   height: 150px;
   width: 150px;
   display: flex;
@@ -664,8 +678,16 @@ export default {
 .corps-statistique-stat1 p {
   text-align: center;
   font-size: 15px;
-  margin-top: 20px;
+  width:150px;
+  font-weight: bold;
 }
+ .etud{
+  margin-top: 35px;
+}
+.cert{
+  margin-top: 7px;
+}
+
 
 .corps-maps {
   max-width: var(--max-width);
