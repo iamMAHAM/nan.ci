@@ -170,22 +170,24 @@
           <div class="corps-statistique-stat1">
             <h3>41</h3>
             <span></span>
-            <p>ÉTUDIANTS EN PRÉSENTIEL</p>
+            <p class="etud">ÉTUDIANTS EN PRÉSENTIEL</p>
           </div>
           <div class="corps-statistique-stat1">
             <h3>98</h3>
             <span></span>
-            <p>ÉTUDIANTS EN PRÉSENTIEL</p>
+            <p class="etud">ETUDIANTS EN LIGNE</p>
           </div>
           <div class="corps-statistique-stat1">
             <h3>143</h3>
             <span></span>
-            <p>ÉTUDIANTS EN PRÉSENTIEL</p>
+            <br><br>
+            <p class="cert">CERTIFIÉS</p>
           </div>
           <div class="corps-statistique-stat1">
             <h3>55</h3>
             <span></span>
-            <p>ÉTUDIANTS EN PRÉSENTIEL</p>
+            <br>
+            <p class="cert">TAUX <br>D'INSERTIONS </p>
           </div>
         </div>
       </div>
@@ -638,7 +640,7 @@ export default {
 }
 
 .corps-statistique-group {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   display: flex;
   height: 300px;
   justify-content: center;
@@ -676,8 +678,16 @@ export default {
 .corps-statistique-stat1 p {
   text-align: center;
   font-size: 15px;
-  margin-top: 20px;
+  width:150px;
+  font-weight: bold;
 }
+ .etud{
+  margin-top: 35px;
+}
+.cert{
+  margin-top: 7px;
+}
+
 
 .corps-maps {
   max-width: var(--max-width);
