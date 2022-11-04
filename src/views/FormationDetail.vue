@@ -1,64 +1,65 @@
 <template>
   <Header :slides="slides" :textes="textes" :titres="titles" :height="60"/>
-    <div class="container1">
-      <div  class='card_1'>
-        <h2>{{formation.nom}} </h2>
-        <p>{{formation.contenu}}</p>
+  <h1 align=center>PLUS D'INFORMATIONS SUR {{ specialite }}</h1>
+  <div class="container">
+    <div  class='card_1'>
+      <h2>{{ formation.nom }} ?</h2>
+      <p>{{ formation.contenu }}</p>
+    </div>
+    <div class="card_2">
+      <div class="box">
+        <h2>{{formation.nom2}} </h2>
+        <p>{{formation.contenu2}}</p>
       </div>
-      <div class="card_2">
-        <div class="box">
-          <h2>{{formation.nom2}} </h2>
-          <p>{{formation.contenu2}}</p>
-        </div>
-        <div class="box">
-          <h2>{{formation.nom3}}</h2>
-          <p>{{formation.contenu3}}</p>
-        </div>
+      <div class="box">
+        <h2>{{formation.nom3}}</h2>
+        <p>{{formation.contenu3}}</p>
       </div>
     </div>
-    <div id="image2">
-      <img  src="@/assets/formations/binary.jpg">
-      <h1>Ce que vous apprendrez à NaN</h1>
+  </div>
+  <div id="image2">
+    <img  src="@/assets/formations/binary.jpeg">
+    <h1>Ce que vous apprendrez à NaN</h1>
+  </div>
+  <div class="container1">
+    <h2>Consulter le programme de notre formation, etape par etape</h2>
+    <div class='etape'>
+      <button
+        v-for="titre in titres"
+        :key="titre"
+        :title="JSON.stringify(formation.etapes[titre])"
+        @click="changeData"
+        >
+      {{ titre}}
+      </button>
     </div>
-    <div class="container1">
-      <h2>Consulter le programme de notre formation, etape par etape</h2>
-      <div class='etape'>
-        <button
-          v-for="titre in titres"
-          :key="titre"
-          :title="JSON.stringify(formation.etapes[titre])"
-          @click="changeData"
+    <div class='card_etape'>
+      <div class='card_etape1'>
+        <p>Dans ce module ce que vpous apprendrez,les bases du langage javascript,entre autres:</p>
+        <li
+          v-for="point in current?.points"
+          :key="point"
           >
-        {{ titre}}
-        </button>
+          {{ point }}
+        </li>
       </div>
-      <div class='card_etape'>
-        <div class='card_etape1'>
-          <p>Dans ce module ce que vpous apprendrez,les bases du langage javascript,entre autres:</p>
-          <li
-            v-for="point in current?.points"
-            :key="point"
-            >
-            {{ point }}
-          </li>
-        </div>
-        <div class="card_etape2" >
-          <p>ce que vous allez realiser en pratique</p>
-          <p>{{ current?.titre}}</p>
-        </div>
-      </div>
-      <div class="container2">
-        <div class="text">
-          <p>rejoignez un réseau tech mondial</p>
-        </div>
-        <div class="item">
-          <img src="@/assets/formations/py1.png" alt="">
-          <img src="@/assets/formations/py1.png" alt="">
-          <img src="@/assets/formations/py1.png" alt="">
-          <img src="@/assets/formations/py1.png" alt="">
-        </div>
+      <div class="card_etape2" >
+        <p>ce que vous allez realiser en pratique</p>
+        <p>{{ current?.titre}}</p>
       </div>
     </div>
+    <div class="container2">
+      <div class="text">
+        <p>rejoignez un réseau tech mondial</p>
+      </div>
+      <div class="item">
+        <img src="@/assets/formations/py1.png" alt="">
+        <img src="@/assets/formations/py1.png" alt="">
+        <img src="@/assets/formations/py1.png" alt="">
+        <img src="@/assets/formations/py1.png" alt="">
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -111,18 +112,17 @@ export default {
 
 <style scoped>
 
+.container,
 .container1 {
   width: var(--max-width);
   background: var(--bg);
   margin: 0 auto;
-  margin-top: 10%;
-  margin-bottom: 5%;
-
+  display: flex;
+  flex-direction: column;
 }
 
 .container2 {
   background-color: var(--bg2);
-  height: 40VH;
   margin-top: 5%;
   border-radius: 9px;
   border: none;
@@ -159,52 +159,41 @@ export default {
 
 }
 
-h2 {
-  font-size: var(--titre);
-  color: var(--blanc);
-}
 
+
+.box,
 .card_1 {
-  margin-top: 55px;
-  width: var(--max-width);
+  overflow: hidden;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: .7rem auto;
+  align-items: center;
+  justify-content: center;
   color: var(--blanc);
   background: var(--bg);
-  font-size: 1.1em;
-  width: 1094px;
-  height: 381px;
-  left: 90px;
-  top: 507px;
+  width: 100%;
+  height: 300px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  box-shadow: 6px 5px 12px 1px #6870E0;
-  border-radius: 45px;
-}
-
-.card_1>h2 {
-  padding-top: 0.7em;
-  padding-left: 5em;
-}
-
-.card_1>p {
-  padding-top: 2em;
-  padding-left: 3em;
-  padding-right: 3em;
-  display: flex;
-  justify-content: center;
-
+  box-shadow: 6px 5px 12px 1px var(--violet);
+  border-radius: var(--radius);
 }
 
 .card_2 {
   display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 5%;
 }
 
+h2{
+  padding: .5rem;
+}
 .box {
-  width: var(--max-width);
-  color: var(--blanc);
-  background: var(--bg);
-  height: 456px;
-  background: #272935;
-  box-shadow: 6px 5px 12px 1px #6870E0;
+  width: 45%;
+  height: 500px;
   border-radius: var(--radius);
 }
 
@@ -212,18 +201,15 @@ h2 {
   text-align: center;
 }
 
-.box>p {
-  max-height: 456px;
-  padding: 2;
-  overflow-y: scroll;
-  display: flex;
-  justify-content: center;
-
+p {
+  font-size: 1rem;
+  line-height: 25px;
+  text-align: justify;
 }
 
 img {
   width: 100%;
-  height: 40vh;
+  height: 400px;
   object-fit: cover;
 }
 

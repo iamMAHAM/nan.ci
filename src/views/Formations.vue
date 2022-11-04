@@ -74,7 +74,7 @@ mounted() {
   })
   .catch((error) =>{
     this.$router.push('/')
-
+    this.loading = false
   })
 },
 
