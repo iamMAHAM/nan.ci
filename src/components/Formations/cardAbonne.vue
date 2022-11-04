@@ -13,7 +13,7 @@
       <ul class="features">
 
 <li>
-  <span class="list-name">Accès à NaN 1 jour par Mois (Battles Day)</span>
+  <span class="list-name">Accès à NaN 1J/Mois (Battles Day)</span>
   <span class="icon check"><i class="fas fa-check"></i></span>
 </li>
 <li>
@@ -41,7 +41,7 @@
   <span class="icon check"><i class="fas fa-check"></i></span>
 </li>
 <li>
-  <span class="list-name">Certificat dévellopeur junior</span>
+  <span class="list-name">Attestation de fin de formation</span>
   <span class="icon check"><i class="fas fa-check"></i></span>
 </li>
 <li>
@@ -55,7 +55,7 @@
     </div> 
 
     <div class="table premium">
-      <div class="ribbon"><span>Recommander</span></div>
+      <div class="ribbon"><span>Recommandé</span></div>
       <div class="price-section">
         <div class="price-area">
           <div class="inner-area">
@@ -96,7 +96,7 @@
           <span class="icon check"><i class="fas fa-check"></i></span>
         </li>
         <li>
-          <span class="list-name">Certificat dévellopeur junior</span>
+          <span class="list-name">Certificat développeur junior</span>
           <span class="icon check"><i class="fas fa-check"></i></span>
         </li>
         <li>
@@ -150,7 +150,7 @@
   <span class="icon check"><i class="fas fa-check"></i></span>
 </li>
 <li>
-  <span class="list-name">Certificat dévellopeur junior</span>
+  <span class="list-name">Certificat développeur junior</span>
   <span class="icon check"><i class="fas fa-check"></i></span>
 </li>
 <li>
@@ -304,7 +304,7 @@ export default {
 .premium .price-area,
 .premium .inner-area,
 .premium .btn button{
-  background: #a26bfa;
+  background: var(--violet);
 }
 .premium .btn button:hover{
   background: #833af8;
@@ -388,7 +388,7 @@ export default {
   right: 0;
   transform: rotate(-45deg);
   width: 200px;
-  background: #a26bfa;
+  background: var(--violet);
   padding: 10px 0;
   color: var(--blanc);
   text-align: center;
