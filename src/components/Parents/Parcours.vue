@@ -19,9 +19,9 @@
     <Loader v-if="load"/>
     <div v-else style="max-width: 800px;">
       <h2>RESULTAT DU MOIS</h2>
-      <PetudiantPoints :point-info="currentInfo.points" :month="month"/>
+      <PetudiantPoints :point-info="currentInfo" :month="month"/>
       <h2>PROJET DU MOIS</h2>
-      <ProjetEt :projet-info="currentInfo.projet"/>
+      <ProjetEt :projet-info="currentInfo.project"/>
     </div>
   </div>
 </template>
@@ -45,9 +45,9 @@ export default {
     },
     methods: {
       showInfo(month){
+        this.load = true
         console.log(month)
         console.log(this.matricule)
-        this.month = month
         fetch(`/api/getStudentMonthResults/${month}`, {
           method: 'GET',
           headers: {'auth': this.matricule}
@@ -55,6 +55,14 @@ export default {
         .then(res=>res.json())
         .then(data=>{
           console.log('data', data)
+          this.currentInfo = {...data.data}
+          console.log(this.currentInfo)
+          this.month = month
+          this.load = false
+        })
+        .catch(e=>{
+          console.log(e)
+          this.load = false
         })
       }
     },

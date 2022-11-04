@@ -1,64 +1,64 @@
 <template>
   <Header :slides="slides" :textes="textes" :titres="titles" :height="60"/>
-  <div class="container1">
-    <div  class='card_1'>
-      <h2>{{formation.nom}} </h2>
-      <p>{{formation.contenu}}</p>
-    </div>
-    <div class="card_2">
-      <div class="box">
-        <h2>{{formation.nom2}} </h2>
-        <p>{{formation.contenu2}}</p>
+    <div class="container1">
+      <div  class='card_1'>
+        <h2>{{formation.nom}} </h2>
+        <p>{{formation.contenu}}</p>
       </div>
-      <div class="box">
-        <h2>{{formation.nom3}}</h2>
-        <p>{{formation.contenu3}}</p>
+      <div class="card_2">
+        <div class="box">
+          <h2>{{formation.nom2}} </h2>
+          <p>{{formation.contenu2}}</p>
+        </div>
+        <div class="box">
+          <h2>{{formation.nom3}}</h2>
+          <p>{{formation.contenu3}}</p>
+        </div>
       </div>
     </div>
-  </div>
-  <div id="image2">
-    <img  src="@/assets/formations/binary.jpg">
-    <h1>Ce que vous apprendrez à NaN</h1>
-  </div>
-  <div class="container1">
-    <h2>Consulter le programme de notre formation, etape par etape</h2>
-    <div class='etape'>
-      <button
-        v-for="titre in titres"
-        :key="titre"
-        :title="JSON.stringify(formation.etapes[titre])"
-        @click="changeData"
-        >
-      {{ titre}}
-      </button>
+    <div id="image2">
+      <img  src="@/assets/formations/binary.jpg">
+      <h1>Ce que vous apprendrez à NaN</h1>
     </div>
-    <div class='card_etape'>
-      <div class='card_etape1'>
-        <p>Dans ce module ce que vpous apprendrez,les bases du langage javascript,entre autres:</p>
-        <li
-          v-for="point in current?.points"
-          :key="point"
+    <div class="container1">
+      <h2>Consulter le programme de notre formation, etape par etape</h2>
+      <div class='etape'>
+        <button
+          v-for="titre in titres"
+          :key="titre"
+          :title="JSON.stringify(formation.etapes[titre])"
+          @click="changeData"
           >
-          {{ point }}
-        </li>
+        {{ titre}}
+        </button>
       </div>
-      <div class="card_etape2" >
-        <p>ce que vous allez realiser en pratique</p>
-        <p>{{ current?.titre}}</p>
+      <div class='card_etape'>
+        <div class='card_etape1'>
+          <p>Dans ce module ce que vpous apprendrez,les bases du langage javascript,entre autres:</p>
+          <li
+            v-for="point in current?.points"
+            :key="point"
+            >
+            {{ point }}
+          </li>
+        </div>
+        <div class="card_etape2" >
+          <p>ce que vous allez realiser en pratique</p>
+          <p>{{ current?.titre}}</p>
+        </div>
+      </div>
+      <div class="container2">
+        <div class="text">
+          <p>rejoignez un réseau tech mondial</p>
+        </div>
+        <div class="item">
+          <img src="@/assets/formations/py1.png" alt="">
+          <img src="@/assets/formations/py1.png" alt="">
+          <img src="@/assets/formations/py1.png" alt="">
+          <img src="@/assets/formations/py1.png" alt="">
+        </div>
       </div>
     </div>
-    <div class="container2">
-      <div class="text">
-        <p>rejoignez un réseau tech mondial</p>
-      </div>
-      <div class="item">
-        <img src="@/assets/formations/py1.png" alt="">
-        <img src="@/assets/formations/py1.png" alt="">
-        <img src="@/assets/formations/py1.png" alt="">
-        <img src="@/assets/formations/py1.png" alt="">
-      </div>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -110,6 +110,7 @@ export default {
 </script >
 
 <style scoped>
+
 .container1 {
   width: var(--max-width);
   background: var(--bg);
@@ -198,28 +199,23 @@ h2 {
 }
 
 .box {
-  margin-top: 55px;
   width: var(--max-width);
   color: var(--blanc);
   background: var(--bg);
   height: 456px;
-  left: 88px;
-  top: 1054px;
   background: #272935;
   box-shadow: 6px 5px 12px 1px #6870E0;
-  border-radius: 45px;
+  border-radius: var(--radius);
 }
 
 .box>h2 {
-  padding-top: 0.7em;
-  padding-left: 5em;
+  text-align: center;
 }
 
 .box>p {
-  font-size: 1.1em;
-  padding-top: 2em;
-  padding-left: 2em;
-  padding-right: 2em;
+  max-height: 456px;
+  padding: 2;
+  overflow-y: scroll;
   display: flex;
   justify-content: center;
 
@@ -255,14 +251,15 @@ img {
   gap: 3%;
   padding-top: 2.5rem;
   width: var(--max-width);
+  overflow: scroll;
 }
 
 button {
   background: var(--bg);
   border: 1px solid rgb(162, 160, 160);
   color: var(--blanc);
-  font-size: 18px;
-  padding: 16px;
+  font-size: 17;
+  padding: .8rem;
   border-radius: var(--radius);
   transition-delay: 0.1s;
 

@@ -35,9 +35,18 @@ export default {
       userInfo: {}
     }
   },
+  created(){
+    const user = JSON.parse(sessionStorage.getItem('nanien'))
+    if (user){
+      this.isLogged = true
+      this.userInfo = {...user}
+      return
+    }
+    this.isLogged = false
+  },
   methods: {
     displayUser(data){
-      console.log(data)
+      sessionStorage.setItem('nanien', JSON.stringify({...data}))
       this.userInfo = {...data}
       this.isLogged = true
     }

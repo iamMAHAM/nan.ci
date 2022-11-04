@@ -1,31 +1,22 @@
 <template>
-  <div class="casse" v-if="!started">
+  <div class="casse" v-if="projetInfo">
     <div class="casse1">
-      <h2> 📂 - {{ projetInfo.theme}}</h2>
+      <h2> 📂 - {{ projetInfo?.theme}}</h2>
     </div>
     <div class="casse1">
-      <h2><span>{{ projetInfo.note }}</span>/10</h2>
+      <h2>{{ projetInfo?.points }} / 10</h2>
     </div>
     <div class="casse1">
-      <h2><span>{{ projetInfo.rang }}</span> ème / 90</h2>
+      <h2>{{ projetInfo?.rank }}</h2>
     </div>
-    <!-- <div class="casse1">
-      <h2>Janvier</h2>
-    </div> -->
   </div>
-  <p v-else class="nostarted">Pas encore demmaré ...</p>
+  <p v-else class="nostarted">Pas de projet ...</p>
 </template>
 
 <script>
 export default {
   name: 'ProjetEtudiant',
-  props: ['projetInfo'],
-  data(){
-    return {
-      started: false
-    }
-  }
-
+  props: ['projetInfo']
 }
 </script>
 
@@ -39,17 +30,18 @@ export default {
 }
 
 .casse .casse1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: var(--blanc);
   border: 1px solid var(--blanc);
   width: 30%;
   height: 100px;
-  margin: auto;
   border-radius: 20px;
   box-shadow: 0 0 20px 8px #1b1f2b;
 }
 .casse1>h2{
   text-align: center;
-  margin: 30px auto;
 }
 
 .nostarted{

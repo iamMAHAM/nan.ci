@@ -7,20 +7,20 @@
         <div class="infos_plus1" style="align-self: center;">
           <div class="infos_data">
             <p>quizz passé :</p>
-            <span>{{pointInfo.quizzPassed}}/11</span>
+            <span>{{pointInfo.quizzes_passed}}</span>
           </div>
           <div class="infos_data">
             <p>exercices passés :</p>
-            <span>{{pointInfo.exercicePassed}}</span>
+            <span>{{pointInfo.exercices_passed}}</span>
           </div>
           <div class="infos_data">
             <p>Points :</p>
-            <span>{{pointInfo.Total}}</span>
+            <span>{{pointInfo.total_points}}</span>
           </div>
           <div class="infos_data">
             <p>Rang :</p>
             <span>
-              {{pointInfo.rang === 1 ? 1 + 'er' : pointInfo.rang + ' ème'}}/30
+              {{pointInfo.rank}}
             </span>
           </div>
         </div>
