@@ -22,7 +22,7 @@
     <h1>Ce que vous apprendrez à NaN</h1>
   </div>
   <div class="container1">
-    <h2>Consulter le programme de notre formation, etape par etape</h2>
+    <h2>Consulter le programme de notre formation, étape par étape</h2>
     <div class='etape'>
       <button
         v-for="titre in titres"
@@ -30,33 +30,35 @@
         :title="JSON.stringify(formation.etapes[titre])"
         @click="changeData"
         >
-      {{ titre}}
+      {{ formatTitle(titre)}}
       </button>
     </div>
     <div class='card_etape'>
-      <div class='card_etape1'>
-        <p>Dans ce module ce que vpous apprendrez,les bases du langage javascript,entre autres:</p>
-        <li
-          v-for="point in current?.points"
-          :key="point"
-          >
-          {{ point }}
-        </li>
+      <div class='cards'>
+        <p>CE QUE VOUS VEREZ DANS CE MODULE</p>
+        <div class="liss">
+          <li
+            v-for="point in current?.points"
+            :key="point"
+            >
+            {{ point }}
+          </li>
+        </div>
       </div>
-      <div class="card_etape2" >
-        <p>ce que vous allez realiser en pratique</p>
-        <p>{{ current?.titre}}</p>
+      <div class="cards" >
+        <p>MODULE</p>
+        <div class="lis">{{ current?.titre}}</div>
       </div>
     </div>
-    <div class="container2">
+    <div class="container2" v-if="!digital">
       <div class="text">
-        <p>rejoignez un réseau tech mondial</p>
+        <p>Quelques projet realisés avec les technologies {{ spec }}</p>
       </div>
       <div class="item">
-        <img src="@/assets/formations/py1.png" alt="">
-        <img src="@/assets/formations/py1.png" alt="">
-        <img src="@/assets/formations/py1.png" alt="">
-        <img src="@/assets/formations/py1.png" alt="">
+        <img
+          v-for="img in formation?.image1"
+          :src="getImage(`formations/specialite/${spec}/${img}`)"
+          alt="">
       </div>
     </div>
   </div>
@@ -64,7 +66,7 @@
 
 <script>
 import Header from '@/components/Accueil/header.vue'
-
+import { getImage } from '@/lib/getImage';
 export default {
     props: ["specialite"],
     data() {
@@ -87,26 +89,44 @@ export default {
         changeData(e) {
             this.current = JSON.parse(e.target.title);
             console.dir((this.current));
-        }
+        },
+        formatTitle(titre=""){
+          if (titre.split(' ').length > 2){
+            return titre.split(' ')[0]
+          }
+          return titre
+        },
+        getImage: getImage
     },
     mounted() {
       console.log(this.specialite)
         fetch(`http://192.168.88.15:3001/api/specialities/${this.specialite}`)
             .then(res => res.json())
             .then(data => {
-            console.log(data.data);
-            this.formation = data.data;
-            const vals = Object.entries(data.data.etapes);
-            vals.forEach(val => {
-                this.titres.push(val[0]);
-                // console.log("titre : ", val[0], "value :  ", val[1]);
-            });
+              console.log(data.data);
+              this.formation = data.data;
+              const vals = Object.entries(data.data.etapes);
+              vals.forEach(val => {
+                  this.titres.push(val[0]);
+                  // console.log("titre : ", val[0], "value :  ", val[1]);
+              });
+              this.current = vals[0][1]
         })
-            .catch((error) => {
+          .catch((error) => {
             console.log(error);
         });
     },
-    components: { Header }
+    components: { Header },
+    computed: {
+      digital(){
+        console.log(this.specialite === 'multimedia')
+        const tch = this.specialite?.toLowerCase()
+        return tch === 'reseau-voip' || tch === 'multimedia'
+      },
+      spec(){
+        return this.specialite?.toLowerCase()
+      }
+    }
 }
 </script >
 
@@ -122,18 +142,15 @@ export default {
 }
 
 .container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--bg2);
-  margin-top: 5%;
-  border-radius: 9px;
-  border: none;
-
-
-}
-
-.text {
-  padding-top: 8%;
-  padding-left: 25%;
-  padding-bottom: 5%;
+  width: 100%;
+  height: 200px;
+  gap: 2rem;
+  justify-content: center;
+  margin: 1.5rem auto;
 }
 
 .text>p {
@@ -143,23 +160,14 @@ export default {
 .item {
   gap: 15%;
   display: flex;
-  margin: 0 auto;
-  width: 200px;
   justify-content: center;
 }
 
 .item>img {
-
-
   height: 70px;
   width: 70px;
   border-radius: 30%;
-  border: 1px solid black;
-
-
 }
-
-
 
 .box,
 .card_1 {
@@ -179,6 +187,36 @@ export default {
   border-radius: var(--radius);
 }
 
+.cards{
+  height: 100%;
+  position: relative;
+  padding: .7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 48%;
+}
+
+.lis{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.liss{
+  position: relative;
+  flex-direction: column;
+  /* justify-content: center; */
+  display: flex;
+  height: 200px;
+  overflow-y: scroll;
+}
+
+li{
+  padding: .2rem;
+  margin: .3rem;
+}
 .card_2 {
   display: flex;
   justify-content: center;
@@ -189,6 +227,7 @@ export default {
 }
 
 h2{
+  color: var(--blanc);
   padding: .5rem;
 }
 .box {
@@ -215,32 +254,33 @@ img {
 
 #image2 {
   position: relative;
-
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
 #image2>h1 {
-  font-size: var(--titre);
   position: absolute;
-  top: 35%;
-  left: 35%;
-
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .container1>h2 {
-  margin-top: 5%;
-  font-size: 1.5em;
-  margin-bottom: 3%;
+  margin: 20px 0;
 }
 
 .etape {
+  justify-content: center;
   display: flex;
   gap: 3%;
-  padding-top: 2.5rem;
   width: var(--max-width);
   overflow: scroll;
 }
 
 button {
+  width: 100px;
   background: var(--bg);
   border: 1px solid rgb(162, 160, 160);
   color: var(--blanc);
@@ -260,42 +300,20 @@ button:hover {
 }
 
 .card_etape {
-  margin-top: 48px;
-  width: var(--max-width);
+  margin: 2.3rem 0;
+  height: 250px;
   color: var(--blanc);
   background: var(--bg);
-  font-size: 1.1em;
   width: var(--max-width);
-  height: 351px;
-  left: 90px;
-  top: 507px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  box-shadow: 6px 5px 12px 1px #6870E0;
-  border-radius: 45px;
+  box-shadow: 6px 5px 12px 1px var(--violet);
+  border-radius: var(--radius);
   display: flex;
-  padding: 60px;
-  gap: 13%;
+  flex-direction: row;
+  flex-wrap: wrap;
   background: linear-gradient(269.9deg, rgba(104, 112, 223, 0.54) 42.63%, rgba(162, 180, 147, 0) 101.4%);
 }
 
-.card_etape1 {
-  width: 50%;
-}
-
-.card_etape1>li {
-  padding-top: 25px;
-  padding-left: 20px;
-  line-height: 45px;
-  lighting-color: red;
-
-}
-
-.card_etape2>:nth-child(2) {
-  padding-top: 30%;
-  padding-left: 10%;
-  font-size: 25px;
-
-}
 
 @media only screen and (max-width: 1024px) {
   .card_1 {
