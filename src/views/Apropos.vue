@@ -309,6 +309,7 @@ export default {
     align-items: center;
     justify-content: space-evenly;
     position: relative;
+    box-shadow: 0 2px 5px hsl(242deg 88% 66%);
    
 }
 .card-content-card p{
