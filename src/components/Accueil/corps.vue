@@ -82,7 +82,12 @@
           <div class="corps-formations-content">
             <div>
               <h3>Developpeur D'Application Web</h3>
-              <p>Activité principale du développeur web: le développement web consiste à programmer et mettre en place des sites web. Cela peut couvrir notamment la simple création d’une page Internet au développement d’une application web plus complexe, ou même d’un réseau social
+              <p>Activité principale du développeur web: 
+                le développement web consiste à programmer et
+                mettre en place des sites web. Cela peut couvrir 
+                notamment la simple création d’une page Internet 
+                au développement d’une application web plus complexe
+                ,ou même d’un réseau social
               </p>
             </div>
           </div>
@@ -168,17 +173,17 @@
             <p>ÉTUDIANTS EN PRÉSENTIEL</p>
           </div>
           <div class="corps-statistique-stat1">
-            <h3>41</h3>
+            <h3>98</h3>
             <span></span>
             <p>ÉTUDIANTS EN PRÉSENTIEL</p>
           </div>
           <div class="corps-statistique-stat1">
-            <h3>41</h3>
+            <h3>143</h3>
             <span></span>
             <p>ÉTUDIANTS EN PRÉSENTIEL</p>
           </div>
           <div class="corps-statistique-stat1">
-            <h3>41</h3>
+            <h3>55</h3>
             <span></span>
             <p>ÉTUDIANTS EN PRÉSENTIEL</p>
           </div>
@@ -332,8 +337,11 @@ export default {
   /* background-color: var(--blanc); */
   /* height: 400px; */
   width: 500px;
-  margin: 50px;
+  /* margin: 50px; */
   border-radius: 30px;
+  display: flex;
+    justify-content: space-around;
+    flex-direction: column;
 }
 
 .corps-val21 {
@@ -345,7 +353,7 @@ export default {
   height: 180px;
   width: 250px;
   background-color: var(--blanc);
-  margin: 30px;
+  margin: 20px 30px 30px 30px;
   padding-top: 20px;
   text-align: center;
   border-radius: 15px;
@@ -526,6 +534,7 @@ export default {
 .corps-formations .corps-formations-card .corps-formations-content p {
   color: var(--noir);
   text-align: justify;
+  font-size: 17px;
 }
 
 .corps-formations .corps-formations-card .corps-formations-content a {
@@ -644,7 +653,7 @@ export default {
 }
 
 .corps-statistique-stat1 {
-  border: 1px solid yellow;
+  border-right: 3px solid var(--violet);
   height: 150px;
   width: 150px;
   display: flex;
