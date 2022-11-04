@@ -1,7 +1,6 @@
 
 [
     {
-      "id":1,
       "nom":"JavaScript",
       "description":"JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web.",
       "contenu":"JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web. Avec les technologies HTML et CSS, JavaScript est parfois considéré comme l'une des technologies cœur du World Wide Web3. Une grande majorité des sites web l'utilisent4, et la majorité des navigateurs web disposent d'un moteur JavaScript5 dédié pour l'interpréter, indépendamment des considérations de sécurité qui peuvent se poser le cas échéant. C'est un langage orienté objet à prototype : les bases du langage et ses principales interfaces sont fournies par des objets. Cependant, à la différence d'un langage orienté objets, les objets de base ne sont pas des instances de classes.Chaque objet de base (ex : l'objet document ou windows) possède son propre modèle qui lui permettra d'instancier des objets fils à l'aide de constructeurs utilisant ses propriétés. Par exemple, la propriété de prototypage va leur permettre de créer des objets héritiers personnalisés. En outre, les fonctions sont des objets de première classe. Le langage supporte le paradigme objet, impératif et fonctionnel. JavaScript est le langage possédant le plus large écosystème grâce à son gestionnaire de dépendances npm, avec environ 500 000 paquets en août 20176.",
@@ -10,7 +9,7 @@
       "nom3":"Frameworks",
       "contenu3":"Un framework (ou infrastructure logicielle en français ) désigne en programmation informatique un ensemble d'outils et de composants logiciels à la base d'un logiciel ou d'une application. En javascript, nous avons une multitude de frameworks, les plus utilisés sont React JS , Vue JS et aussi Svelte",
       "image":"formations/js1.png",
-      "image1":["disord.svg","firebase.svg","instagram.svg","netflix.svg"],
+      "image1":["discord.svg","firebase.svg","instagram.svg","netflix.svg"],
       "etapes": {
         "basics":{
           "titre": "JavaScript basics",
@@ -89,7 +88,6 @@
       }  
     } ,
     {
-       "id":2,
        "nom":"PHP",
        "description":"PHP: Hypertext Preprocessor, plus connu sous son sigle PHP, est un langage de programmation libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP",
        "contenu":"Le langage PHP est un langage dynamique qui est directement lu par le serveur. Il s’agit donc d’un langage interprété. Si un ingénieur code une page en PHP, les utilisateurs de la page ne verront pas que celle-ci est en PHP puisqu’elle sera directement lue comme du HTML (langage statique). Utiliser du PHP est possible avec l’ensemble des systèmes d’exploitation informatique. Que vous ayez Microsoft Windows, Linux, Mac, Unix, ou autres, PHP sera toujours aussi bien lu. Un gros avantage pour les développeurs web qui travaillent avec des clients différents et ont besoin de langage universel. Tous les serveurs web sont aussi utilisés avec PHP. Le PHP est donc un langage informatique libre et gratuit utilisé pour la création de page web sur n’importe quel serveur de n’importe quel système d’exploitation. Il est ainsi possible de créer toutes sortes de formes de pages web, du blog au site, en passant par la base de données, etc.     ",
@@ -192,7 +190,6 @@
      ,
      
     {
-      "id":3,
       "nom":"Python",
       "description":"Python est un langage de programmation open source le plus employé par les informaticiens. Ce langage s’est propuisé en tête de la gestion d’infrastructure, d’analyse de données ou dans le domaine du déleloppement de logiciels.",
       "image":"formations/py1.png",
@@ -253,7 +250,6 @@
     }
   },
     {
-      "id":4,
       "nom":"Flutter",
       "description":"PHP Hypertext Preprocessor, plus connu sous son sigle PHP,est un langage de programmation libre,principalement utilisé pour produire des pages web dynamiques via un serveur HTTP",
       "contenu":"Flutter est utile pour créer des applications sur mobile, tablette, télévision et desktop. L'utilisation du Dart, qui est un langage de programmation très facile d'accès si vous connaissez JavaScript, TypeScript ou Java, permet une compilation en ARM (langage machine). Cette compilation permet la création d'applications natives extrêmement performantes. Flutter n'utilise pas de bridge JavaScript comme le fait ReactNative par exemple. Flutter utilise son propre système de rendu, qui lui laisse donc une très grande liberté. La librairie incorpore une large collection de widgets Material et Cupertino qui fonctionnent sur iOS et Android. Flutter est de loin le framework mobile le plus performant et moderne. L'essayer c'est l'adoper !Apple lance son SDK en 2008, Google en 2009,chacun basé sur son langage propre : Objective-C et Java. • L’application communique avec la plateforme pour créer des widgets ou accéder à des services comme l’appareil photo. Le rendu des widgets est fait sur un Canvas et les événements sont renvoyés aux widgets. C’est une architecture assez simple,cependant, il faut créer des applications différentes pour chaque plateforme car les widgets et le langage de développement sont différents chez iOS et Android.haute vitesse de développement avec des fonctionnalités comme le « hot reload »,un framework reactif, des widgets pré-existants et des outils intégrés aux environnements de développement • designs de qualité, personnalisables,reposant sur des widgets, une bibliothèque d’animations,une architecture en couches extensible • expérience de haute qualité sur les différentes plateformes grâce à un coeur à haute performance et une prise en compte de l’interopérabilité des plateformes.",
@@ -262,7 +258,7 @@
       "nom3":"Quelle est la version actuelle de Flutter?",
       "contenu3":"Google a maintenant lancé la dernière version de Flutter qui prend en charge iOS 15 et Android 11 . Récemment, il y a eu une version du nouveau Google Flutter qui est une version stable 2.5.3,Selon certaines données et recherches, on peut dire qu'il y a une augmentation de l'utilisation du SDK Google Flutter. En raison de ce nombre de personnes sont également de plus en plus nombreuses à vouloir connaître l'utilisation de Flutter et les avantages de son utilisation par rapport à d'autres outils. Source : Flutter",
       "image":"formations/flutter.png",
-      "image1":["alibab.svg","byetance.svg","ebay.svg","google_ads.svg"],
+      "image1":["alibaba.svg","byetance.svg","ebay.svg","google_ads.svg"],
       "etapes": {
         "Introduction":{
           "titre": "Introduction à Flutter",
@@ -327,8 +323,7 @@
         }
     }},
     {
-      "id":5,
-      "nom":"Reseaux-voip",
+      "nom":"Reseau-voip",
       "description":"La voix sur IP, ou << VoIP>> pour <<Voice over IP>>, est une technologie informatique qui permet de transmettre la voix sur des réseaux compatibles IP, via Internet ou des réseaux privés ou publics, qu’ils soient filaires ou non.",
       "contenu":"La voix sur IP, ou VoIP, est un raccourci qui signifie Voix via le protocole Internet, et définit la transmission du trafic vocal via une connexion Internet. La téléphonie traditionnelle, connue sous le terme de réseat RTC (Réseau Téléphonique Commuté), fonctionne par le biais de lignes téléphoniques physiques, et de systèmes de câbles et de réseaux permettant aux utilisateurs de passer des appels téléphoniques vers les lignes fixes et portables. La téléphonie IP, par contre, est beaucoup plus versatile et permet à la voix, la vidéo et les données d’être transmises vers une large gamme d’appareils incluant smartphones, laptops, tablettes et téléphones IP, pour beaucoup moins cher.",
       "nom2":"Comment marche la Voix sur IP ?",
@@ -433,8 +428,7 @@
 
     },
     {
-      "id":6,
-      "nom":"Marketing & Digital",
+      "nom":"Multimedia",
       "description":"Animation de communauté ou gestionnaire de communauté,aussi community manager (CM),est un métier - l’animation de communité ,gestion de communité, ou création de contenues.",
       "contenu":"Le marketing digital désigne toutes les techniques marketing utilisées sur des supports et canaux digitaux pour promouvoir des produits et services. Dans le marketing digital ressort une notion essentielle, l’interactivité. On peut également parler de webmarketing puisque la différence est liée principalement à l’environnement, ici internet.Le marketing digital contrairement au marketing traditionnel met le client au cœur de sa stratégie. Le marketing digital procède de deux évolutions : les applications marketing liées à Internet et celles liées aux nouvelles technologies de l’information et de la communication.",
       "nom2":"Le référencement naturel ou SEO",
