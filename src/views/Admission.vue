@@ -1,311 +1,423 @@
 <template>
-  <div class="Admission">
-    
-  </div>
-  <div class="nan">
-      <h1>parcours d'Admission</h1>
-      <div class="container">
-        <div class="cours">
-          <div class="en-ligne"><img src="../assets/images/registration.svg" alt=""></div>
-          <h2>concours en ligne</h2>
-          <p>Janvier: 1ère rentrée <br>
-            Juillet : 2ème rentrée
-          </p>
-        </div>
-        <div class="ph">
-          <img  class="php" src="../assets/images/n2.png" alt="">
-        </div>
-        <div class="droit">
-          <p>Droit de participassion <span>10.000 FCFA 
-            <p> Inscription via </p>
-          </span><span class="pan">https://concours.nan.ci/auth/rigister</span></p>
-        </div>
-        <div class="phs">
-          <img  class="php" src="../assets/images/n2.png" alt="">
-        </div>
-        <div class="choix">
-           <h2>Choix du parcours</h2>
-           <p class="pol">
-            En ligne : 360 places
-            <br> Présentiel : 160 places
-          </p>
-        </div>
-        
-        <div class="ths">
-          <img  class="thp" src="../assets/images/n1.png" alt="">
-        </div>
-        <div class="piscine">
-           <h2>Choix de specialité</h2>
-        </div>
-        <div class="phss">
-          <img  class="php" src="../assets/images/n2.png" alt="">
-        </div>
+  <Header :slides="slides" :textes="textes" :titres="titres" :height="60"/>
+  <div>
+    <div class="head">
+      <h1>MODE D'ADMISSION</h1>
+    </div>
+    <div class="admission">
+            <div class="card card1">
 
-        <div class="piscines">
-           <h2>la piscine</h2>
-        </div>
-
-              <div class="phA">
-                <img  class="php" src="../assets/images/n2.png" alt="">
+                <div class="inscription option">
+                    <div class="etape">
+                        <p>1</p>
+                        
+                    </div>
+                    <h3>Inscription et frais</h3>
+                    <p> 
+                        Inscription via:
+                    </p>
+                    <a href=" https://concours.nan.ci/auth/register"> https://concours.nan.ci/auth/register</a>
+                    <p>
+                        droit de participation: 10.000fr
+                    </p>
+                        
+                </div>
             </div>
+            <div class="fleche1">
+                <img src="@/assets/images/n2.png" alt="">
+            </div>
+            
+            <div class="card card2">
+                <div class="concours option">
+                    <div class="etape">
+                        <p>2</p>
+                        
+                    </div>
+                    <h3>Concours en ligne</h3>
+                    <p> 
+                      Après l'inscription, la sélection commence par un concours en ligne,tranquillement sur un ordinateur disposant d'une bonne connexion internet.
+                      la date du concours est fixé à partir de : 
+                    </p>
+                    <div class="cardText">
+                        <div>
+                            <p> Décembre: </p>
+                            <p> Juin: </p>
+                        </div>
+                        <div>
+                            <p>1ère rentrée</p>
+                            <p>2ème rentrée</p>
+                        </div>
+                       
+                       
+                    </div>
+                   
+                    <p>
+                        
+                    </p>
+                  
+                </div>
+            </div>
+            <div class="fleche2">
+                <img src="@/assets/images/n1.png" alt="">
+            </div>
+            <div class="card card3">
+                <div class="choix option">
+                    <div class="etape">
+                        <p>3</p>
+                        
+                    </div>
+                    <h3>Choix du parcours</h3>
+                    <p> 
+                        Une fois la compétition validé, il est temps de choisir un parcours. Chez NaN, nous avons 2 types de parcours
+                         dont :
+                    </p>
+                    <div class="cardText">
+                        <div>
+                            <p @click="$router.push(`/formations`)"> En  présentie: </p>
+                            <p> En ligne: </p>
+                        </div>
+                        <div>
+                            <p> 160 places</p>
+                            <p>  360 places</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fleche1">
+                <img src="@/assets/images/n2.png" alt="">
+            </div>
+            <div class="card card4">
+                <div class="specialite option">
+                    <div class="etape">
+                        <p>4</p>
+                        
+                    </div>
+                    <h3>Choix de spécialité</h3>
+                    <p> 
+                        Ensuite vous pouvez choisir différentes specialites :  
+                    </p>
+                    <div class="image">
+                        <div class="image1">
+                            <div @click="$router.push(`/formations/JavaScript`)" >
+                                <img src="@/assets/formations/js1.png" alt="">
+                            </div>
+                            <div @click="$router.push(`/formations/PHP`)" >
+                            <img src="@/assets/formations/php01.png" alt="">
 
-              <div class="rentré">
-                <img src="../assets/images/gate.svg" alt="">
-                <h2>La Rentrée</h2>
-                <p>Bienvenue à Nan</p>
-              </div>
-              <div class="offre">
-                <h2>Offre special</h2>
-                <p>Deux mois de cours gratuit <br> pour tous les participants au concours</p>
-              </div>
-      </div>
+                            </div>
+                            <div @click="$router.push(`/formations/Python`)"> 
+                            <img src="@/assets/formations/py1.png" alt="">
+
+                            </div>
+                        </div>
+                        <div class="image1">
+                            <div @click="$router.push(`/formations/Flutter`)">
+                                <img src="@/assets/formations/flutter.png" alt="">
+    
+                                </div>
+                                <div @click="$router.push(`/formations/Reseau-voip`)">
+                                <img src="@/assets/formations/voip.png" alt="">
+    
+                                </div>
+                                <div @click="$router.push(`/formations/Multimedia`)">
+                                <img src="@/assets/formations/mmx.png" alt="">
+    
+                                </div>
+                        </div>
+                            
+
+                           
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="fleche1">
+                <img src="@/assets/images/n2.png" alt="">
+            </div>
+            <div class="card card5">
+                <div class="piscine option">
+                    <div class="etape">
+                        <p>5</p>
+                        
+                    </div>
+                    <h3>La piscine de NaN</h3>
+                    <p> 
+                        La Piscine de NaN est un test de niveau d'un mois en conditions réelles dans nos locaux,
+                         ou un test en ligne à temps plein.
+
+                        
+                    </p>
+                </div>
+            </div>
+            <div class="fleche2">
+                <img src="@/assets/images/n1.png" alt="">
+            </div>
+            <div class="card card6">
+                <div class="rentrer option">
+                    <div class="etape">
+                        <p>5</p>
+                        
+                    </div>
+                    <h3>La rentrée de NaN</h3>
+                    <p>
+                        En fin vient la Rentrée . A NaN nous avons 2 entrée qui sont:
+                    </p>
+                    <div class="cardText">
+                        <div>
+                            <p>  Janvier: </p>
+                            <p>  Juillet: </p>
+                        </div>
+                        <div>
+                            <p>  1ère rentrée</p>
+                            <p>  2ère rentrée</p>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+
+        <div class="offre">
+            <p>
+                Offre special
+          
+            </p>
+            <p>
+                Deux mois de cours gratuit
+               
+            </p>
+            <p>
+            pour tous les participants au concours !
+
+            </p>
+
+        </div>
   </div>
-  
 </template>
 
 <script>
- export default {
-
-  name: 'Admission',
+import Header from '@/components/Accueil/header.vue';
+export default {
+  components:{
+    Header
+  },
+  data(){
+    return {
+      slides:[
+          
+          "inform.jpeg",
+          "ImagesAccueil/im3.jpg",
+          "ImagesAccueil/im4.jpg",
+          "ImagesAccueil/im6.jpg",
+          
+      ],
+      textes: [  
+              
+          ` la motivation reste toujours source du coder`,
+          'Un environnement motivant et inspirant',
+          'Coder pour devenir des professionnelles en programmation',
+          '',
+      ],
+      titres: [
+          'Apprendre l \' avenir',
+          'Un cadre agréable',
+          'Apprendre le code ',
+          'NaN forme des professionnelles',
+      ],
+    }
+  }
 
 }
 </script>
 
 <style scoped>
-.Admission{
-  background: url('@/assets/inform.jpeg') center no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 500px;
+.head{
+  text-align: center;
 }
-  .nan{
-    max-width: var(--max-width);
+.admission{
+    max-width: 1140px;
     margin: 0 auto;
-    padding: 10px;
-    height: 100vh;
-    background:var(--vg2);
+    background-color: #262935;
+    padding: 30px 10px;
+}
 
-  }
-  h1{
-    color: var(--blanc);
-    font-size: var(--titre);
-    text-align: center;
-    text-transform: uppercase;
-  }
-  .container{
-    position: relative;
-    margin-top: 50px;
-    background:var(--blanc);
-    height: 242vh;
-    padding: 5px;
-  }.cours{
-   position: relative;
-   background-color: var(--bg); 
-   border: 1px solid;
-   margin: auto;
-   /* margin-left: 380px; */
-   width: 400px;
-   padding: 30px;
-   border-radius: 50px;
-    
-  }
-  h2{
-    color: var(--blanc);
-    text-transform: uppercase;
-    text-align: center;
-  }
-  .choix{
-   position: relative;
-   background-color: var(--bg); 
-   border: 1px solid;
-   /* margin: auto; */
-   margin-left: 700px;
-   width: 380px;
-   height: 100px;
-   margin-top: 20px;
-   border-radius: 50px;
-   padding: 10px;
-  }
-  .piscine{
-   position: relative;
-   background-color: var(--bg);
-   border: 1px solid;
-   /* margin: auto; */
-   margin-left: 350px;
-   width: 290px;
-   margin-top:0px;
-   border-radius: 50px;
-   padding: 10px;
-  }
-  .piscine :hover{
-    background-color: var(--violet);
-  }
-  .piscines{
-    position: relative;
-   background-color: var(--bg);
-   border: 1px solid;
-   /* margin: auto; */
-   margin-left: 100px;
-   width: 290px;
-   margin-top: 50px;
-   border-radius: 50px;
-   padding: 10px;
-  }
-  .image-piscine{
-   width: 100px;
-   display: flex;
-    padding: 10px;
-    margin-left: 50px;
-  }
-  .en-ligne{
-    width: 100px;
+.card{
+    width: 100%;
+    height: 200px; 
+}
+
+.card1{
+   
+    /* border: 1px solid rgb(0, 255, 102); */
     display: flex;
-    padding: 10px;
-    margin-left: 120px;
-  }
-  p{
-    font-size: var(--paragraphe);
-    letter-spacing: .5px;
-    color: var(--blanc);
-    text-align: center;
-  }
-  .paragraph{
-   position: relative;
-   background-color: var(--bg); 
-   border: 1px solid;
-   margin-left:70px;
-   width: 400px;
-   padding: 20px;
-   border-radius: 50px;
-  }.para{
-   position: relative;
-   background-color: var(--bg); 
-   border: 1px solid;
-   margin-left:680px;
-   width: 400px;
-   padding: 25px;
-   border-radius: 50px; 
-   display: flex;
-   margin-top:-110px; 
-  /* }.vide{
-    position: absolute;
-    top: 360px;
-    left: 290px;
-    border-right: 1px solid;
-    width: 200px;
-    height: 80px;
-    rotate:20deg;
+    justify-content: center;
+}
 
-  }.vides{
-    position: absolute;
-    top: 420px;
-    left: 480px;
-    border-right: 1px solid;
-    width: 200px;
-    height: 80px;
-    transform: rotate(-10deg); */
-  }
-  .text{
-   position: relative;
-   background-color: var(--bg); 
-   border: 1px solid;
-   border-radius:50%;
-   margin-left:500px;
-   width: 150px;
-   padding: 25px;
-   display: flex;
-   margin-top:60px; 
-  }
-  .clone{
-   position: relative;
-   background-color: var(--bg); 
-   border: 1px solid;
-   margin-left:70px;
-   width: 400px;
-   padding: 20px;
-   border-radius: 50px;
-  }.clause{
+.option{
     position: relative;
-   background-color: var(--bg); 
-   border: 1px solid;
-   margin-left:660px;
-   width: 400px;
-   padding: 20px;
-   border-radius: 50px;
-   margin-top:-110px; 
-  }.rentré{
-   position: relative;
-   background-color: var(--bg); 
-   border: 1px solid;
-   margin-left: 500px;
-   width: 300px;
-   padding: 10px;
-   /* height: 350px; */
-   /* border-radius: 50px; */
-   top:0px;
-    
-  }.droit{
-   position: relative;
-   background-color: var(--violet); 
-   border: 1px solid;
-   width: 289px;
-   height: 120px;
-   text-align: center;
-   padding: 20px;
-   border-radius: 50px;
-   margin-top:-110px; 
-   
-  }
-  span{
-    color: var(--rouge);
-  }
-  .pan{
-    color: var(--blanc);
-  }
-  .ph{
-    position: absolute;
-    top: 168px;
-    left: 230px;
-   
-  }
-  .ph .php{
-    width: 100px;
-    height: 160px;
-    transform: rotate(-0.18turn);
-  }
-  .phs .php{
-    position: relative;
-    margin-top: 30px;
-    margin-left: 640px;
-    transform: rotate(-0.88turn);
-
-  }
-  .ths .thp{
-    position: relative;
-    margin-top: 30px;
-    margin-left: 640px;
-    
-    transform: rotate(-0.100turn);
-  }
-  .phss .php{
-    position: relative;
-    margin-top: 30px;
-    margin-left: 280px;
-    transform: rotate(-0.88turn);
-
-  }.phA .php{
-    position: relative;
-    margin-top: 30px;
-    margin-left: 350px;
-    transform: rotate(-0.98turn);
-  }
-  .offre{
-    position: relative;
-     background-color: var(--bg); 
-    border: 1px solid;
+    color: #fff;
+    border-radius: 10px;
+    background-color: #1E2029;
+    border: 1px solid #6870E0;
     width: 500px;
-    margin: auto;
-    margin-top: 80px;
-  }
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+
+}
+.cardText{
+    display: flex;
+}
+
+.inscription:hover{
+    background-color: #6870E0;
+    color: #1E2029;
+    border: 1px solid #fff;
+}
+.etape{
+    height: 40px;
+    border: 1px solid #6870E0;
+    position: absolute;
+    top: -28px;
+    width: 40px;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    color: #6870E0;
+    
+}
+.fleche1{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+}
+
+.fleche1 img{
+    transform: rotate(87deg);
+}
+
+.fleche2{
+    /* border: 1px solid rgb(0, 255, 119); */
+    display: flex;
+    justify-content: space-around;   
+}
+
+.fleche2 img{
+    transform: rotate(272deg);
+}
+
+.card2{  
+    /* border: 1px solid blue; */
+    display: flex;
+}
+
+.concours , .choix , .piscine, .specialite p{
+    text-align: center;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.card3{
   
+    /* border: 1px solid rgb(255, 234, 0); */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card4{
+    
+    /* border: 1px solid rgb(255, 0, 0); */
+    display: flex;
+    justify-content: center;
+}
+
+.specialite .image{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+}
+.specialite .image .image1{
+    /* border: 1px solid blue; */
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.specialite .image div{
+    width: 60px;
+    /* border: 1px solid #000; */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.specialite .image div img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+
+}
+.card5{
+  
+    /* border: 1px solid rgb(0, 255, 17); */
+    display: flex;
+}
+.piscine{
+   
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+ 
+}
+.card6{
+   
+    /* border: 1px solid rgb(0, 149, 255); */
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.rentrer{
+  
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  
+}
+.offre{
+    /* margin-top: 30px; */
+    max-width: 1140px;
+    margin: 30px auto;
+    background-color: #262935;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+@media  (max-width: 450px){
+   .specialite .image{
+    flex-direction: column;
+    height: auto;
+
+
+   }
+   .specialite .image .image1{
+    margin-bottom: 10px;
+   }
+   
+   .specialite .image div{
+    width: 40px;
+   }
+   .concours , .choix , .piscine, .specialite p{
+    
+    font-size: 16px;
+}
+  }
+
 </style>
