@@ -1,37 +1,44 @@
 <template>
   <div class="Etudiant_infos_plus">
-        <div class="infos_plus1">
-            <img src="../../assets/ImagesParents/jeshoots-com-9n1USijYJZ4-unsplash.jpg" alt="">
-            <h1>{{ month }}</h1>
+      <div class="infos_plus1" v-if="isAv">
+        <img src="../../assets/ImagesParents/jeshoots-com-9n1USijYJZ4-unsplash.jpg" alt="">
+        <h1>{{ month }}</h1>
+      </div>
+      <div class="infos_plus1" v-if="isAv" style="align-self: center;">
+        <div class="infos_data">
+          <p>quizz passé :</p>
+          <span>{{pointInfo.quizzes_passed}}</span>
         </div>
-        <div class="infos_plus1" style="align-self: center;">
-          <div class="infos_data">
-            <p>quizz passé :</p>
-            <span>{{pointInfo.quizzes_passed}}</span>
-          </div>
-          <div class="infos_data">
-            <p>exercices passés :</p>
-            <span>{{pointInfo.exercices_passed}}</span>
-          </div>
-          <div class="infos_data">
-            <p>Points :</p>
-            <span>{{pointInfo.total_points}}</span>
-          </div>
-          <div class="infos_data">
-            <p>Rang :</p>
-            <span>
-              {{pointInfo.rank}}
-            </span>
-          </div>
+        <div class="infos_data">
+          <p>exercices passés :</p>
+          <span>{{pointInfo.exercices_passed}}</span>
         </div>
-    </div>
-   
-    
+        <div class="infos_data">
+          <p>Points :</p>
+          <span>{{pointInfo.total_points}}</span>
+        </div>
+        <div class="infos_data">
+          <p>Rang :</p>
+          <span>
+          {{pointInfo.rank}}
+          </span>
+        </div>
+      </div>
+      <div class="nostarted" v-else="isAv" style="align-self: center;">
+        Pas encore disponible
+      </div>
+  </div>
 </template>
 
 <script>
 export default {
-  props: ['pointInfo', 'month']
+  props: ['pointInfo', 'month'],
+  computed: {
+    isAv(){
+      console.log(this.pointInfo.exercices_passed !== '0/0')
+      return this.pointInfo.exercices_passed !== '0/0'
+    }
+  }
 }
 </script>
 
@@ -42,6 +49,8 @@ export default {
   position: relative;
   width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   font-size: 16px;
   margin: 0 auto;

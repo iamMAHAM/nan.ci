@@ -13,11 +13,11 @@
           @click="showInfo(month)"
           :class="currentMonth === month ? 'active' : ''"
         ></li>
-        <span>{{ month }}</span>
+        <span>{{ month.slice(0, 3) }}</span>
       </div>
     </ol>
     <Loader v-if="load"/>
-    <div v-else style="max-width: 800px;">
+    <div v-else class="props">
       <h2>RESULTAT DU MOIS</h2>
       <PetudiantPoints :point-info="currentInfo" :month="month"/>
       <h2>PROJET DU MOIS</h2>
@@ -33,12 +33,15 @@ import Loader from '../Global/Loader.vue';
 export default {
     name: "Parcours",
     props: ['matricule'],
-    created(){ this.currentMonth = this.months[new Date().getMonth()] },
+    created(){
+      this.currentMonth = this.months[new Date().getMonth()]
+      // this.showInfo(this.currentMonth)
+    },
     data(){
       return {
         currentInfo: {},
         months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-        load: true,
+        load: false,
         currentMonth: '',
         month: ''
       }
@@ -46,8 +49,6 @@ export default {
     methods: {
       showInfo(month){
         this.load = true
-        console.log(month)
-        console.log(this.matricule)
         fetch(`/api/getStudentMonthResults/${month}`, {
           method: 'GET',
           headers: {'auth': this.matricule}
@@ -65,24 +66,6 @@ export default {
           this.load = false
         })
       }
-    },
-    mounted(){
-      this.currentInfo = {
-        projet: {
-          theme: 'Santé',
-          note: 7,
-          rang: 2
-        },
-        points: {
-          quizzPassed: 11,
-          totalQuizsPercent: 927,
-          totalQuizsSeconds: 567,
-          totalQuizsPoints: 11.5,
-          Total: 11.5,
-          rang: 20
-        }
-      }
-      this.load = false
     },
     setup() {
       document.addEventListener('DOMContentLoaded', () => {
@@ -112,6 +95,7 @@ h2{
 }
 .body {
   border-radius: var(--radius);
+  margin-bottom: 50px;
   padding: 20px;
   display: flex;
   margin-top: 20px;
@@ -132,7 +116,8 @@ ol, li {
 }
 ol {
   display: flex;
-  width: 800px;
+  flex-wrap: wrap;
+  max-width: 800px;
   justify-content: space-between;
   position: relative;
 }
@@ -184,10 +169,17 @@ li.active:after{
   width: 100px;
 } */
 .parc{
+  min-width: 50px;
   display: flex;
   gap: 10px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+
+.props{
+  max-width: 800%;
+  width: 70%;
+}
+
 </style>

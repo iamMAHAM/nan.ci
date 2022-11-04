@@ -10,7 +10,7 @@
       <h2>{{ projetInfo?.rank }}</h2>
     </div>
   </div>
-  <p v-else class="nostarted">Pas de projet ...</p>
+  <p v-else class="nostarted">Aucun projet pour ce mois</p>
 </template>
 
 <script>
@@ -45,6 +45,14 @@ export default {
 }
 
 .nostarted{
+  color: var(--violet);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100%;
+  border: 1px solid var(--blanc);
   font-size: 30px;
 }
 

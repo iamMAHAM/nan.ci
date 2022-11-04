@@ -61,7 +61,7 @@ export default {
 
 
 legend{
-  width: 226px;
+  width: 200px;
   height: 200px;
   border: 1px solid white;
   text-align: center;
@@ -88,5 +88,11 @@ legend>img{
 .card_infos p{
   font-size: 20px;
   padding: 10px;
+}
+
+@media screen and (max-width: 559px){
+  .e-container{
+    padding: 0;
+  }
 }
 </style>
