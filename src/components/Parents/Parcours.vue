@@ -1,6 +1,9 @@
 <template>
   <div class="body">
     <h1>PARCOURS DU NANIEN</h1>
+    <p>
+      Cliquez sur l'un des points en blanc pour voir les resultats du mois
+    </p>
     <ol>
       <div
         class="parc"
@@ -16,12 +19,15 @@
         <span>{{ month.slice(0, 3) }}</span>
       </div>
     </ol>
-    <Loader v-if="load"/>
+    <Loader v-if="load" :height="200" :width="200"/>
     <div v-else class="props">
       <h2>RESULTAT DU MOIS</h2>
       <PetudiantPoints :point-info="currentInfo" :month="month"/>
       <h2>PROJET DU MOIS</h2>
       <ProjetEt :projet-info="currentInfo.project"/>
+      <div class="error" v-if="error">
+        Une Erreur est survenue vérifiez votre connexion internet.
+      </div>
     </div>
   </div>
 </template>
@@ -35,7 +41,7 @@ export default {
     props: ['matricule'],
     created(){
       this.currentMonth = this.months[new Date().getMonth()]
-      // this.showInfo(this.currentMonth)
+      this.showInfo(this.currentMonth)
     },
     data(){
       return {
@@ -43,7 +49,8 @@ export default {
         months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
         load: false,
         currentMonth: '',
-        month: ''
+        month: '',
+        error: false
       }
     },
     methods: {
@@ -63,6 +70,7 @@ export default {
         })
         .catch(e=>{
           console.log(e)
+          this.error = true
           this.load = false
         })
       }
@@ -121,7 +129,7 @@ ol {
   justify-content: space-between;
   position: relative;
 }
-ol:after {
+/* ol:after {
   content: '';
   display: block;
   width: 100%;
@@ -132,11 +140,15 @@ ol:after {
   left: 0;
   transform: translate(0, -50%);
   z-index: -1;
-}
+} */
 li {
   list-style-type: none;
   position: relative;
   cursor: pointer;
+}
+
+.fa-person-walking{
+  color: var(--vert);
 }
 
 li:after {

@@ -1,5 +1,4 @@
 <template>
-  <Loader v-if="load"/>
   <div class="parents_contenaire"> 
     <form class="sous_cadre_parents_id">
       <h1>PORTAIL PARENT</h1>
@@ -8,7 +7,9 @@
         <input type="text" placeholder="Matricule de l'Étudiant" class="saisie" v-model="studentMat">
         <p class="error" v-if="error">Invalid Credential</p>
       </div>
+      <Loader v-if="load" :height="50" :width="50" :bg="'var(--bg2)'"/>
       <button
+        v-else
         type="submit"
         class="btn"
         @click.prevent="login"
@@ -36,6 +37,7 @@ export default {
     login() {
       if (!this.parentCode && this.parentCode !== this.studentMat) {
         this.error = true;
+        setTimeout(()=> this.error = false, 3000)
         return;
       }
       this.load = true

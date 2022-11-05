@@ -19,7 +19,7 @@
 
       <div class="user-center">
         <div class="ct">
-          <img :src="info.profilUrl">
+          <img :src="info.profilUrl" loading="lazy" decoding="async">
           <span class="fullname">{{ info.fullName?.toUpperCase() }}</span>
         </div>
 

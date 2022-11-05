@@ -1,5 +1,11 @@
 <template>
   <div class="Etudiants_infos1">
+    <span
+      class="close"
+      @click="logout"
+    >
+      Se déconnecter
+    </span>
     <h1>INFORMATIONS DE L’ETUDIANT</h1>
     <fieldset class="e-container">
       <legend>
@@ -40,6 +46,12 @@ export default {
         ? 'présentiel'
         : 'en ligne '
     }
+  },
+  methods: {
+    logout(){
+      sessionStorage.clear()
+      this.$forceUpdate()
+    }
   }
 }
 </script>
@@ -47,6 +59,7 @@ export default {
 <style scoped>
 
 .Etudiants_infos1{
+  position: relative;
   background: var(--bg2);
 }
 .e-container{
@@ -59,6 +72,16 @@ export default {
   background-color: var(--bg2);
 }
 
+.close{
+  padding: 10px;
+  background-color: var(--violet);
+  border-radius: var(--radius);
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--blanc);
+}
 
 legend{
   width: 200px;
