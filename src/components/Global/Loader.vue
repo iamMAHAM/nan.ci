@@ -17,10 +17,7 @@
 <script>
 export default {
   name: 'loader',
-  props: ['width', 'height', 'bg'],
-  mounted(){
-    console.log(this.height, this.width, this.bg)
-  }
+  props: ['width', 'height', 'bg']
 }
 </script>
 <style>
