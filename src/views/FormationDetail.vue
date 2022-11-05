@@ -1,70 +1,72 @@
 <template>
   <Header :slides="slides" :textes="textes" :titres="titles" :height="60"/>
-  <h1 align=center>PLUS D'INFORMATIONS SUR {{ specialite?.toUpperCase() }}</h1>
-  <div class="container">
-    <div  class='card_1'>
-      <h2>{{ formation.nom }} ?</h2>
-      <p>{{ formation.contenu }}</p>
-    </div>
-    <div class="card_2">
-      <div class="box">
-        <h2>{{formation.nom2}} </h2>
-        <p>{{formation.contenu2}}</p>
+  <div class="f-main-container">
+    <h1 align=center>PLUS D'INFORMATIONS SUR {{ specialite?.toUpperCase() }}</h1>
+    <div class="container">
+      <div  class='card_1'>
+        <h2>{{ formation.nom }} ?</h2>
+        <p>{{ formation.contenu }}</p>
       </div>
-      <div class="box">
-        <h2>{{formation.nom3}}</h2>
-        <p>{{formation.contenu3}}</p>
-      </div>
-    </div>
-  </div>
-  <div id="image2">
-    <img  src="@/assets/formations/binary.jpeg">
-    <h1>Ce que vous apprendrez à NaN</h1>
-  </div>
-  <div class="container1">
-    <h2>Consulter le programme de notre formation, étape par étape</h2>
-    <div class='etape'>
-      <button
-        v-for="titre in titres"
-        :key="titre"
-        :title="JSON.stringify(formation.etapes[titre])"
-        @click="changeData"
-        >
-      {{ formatTitle(titre)}}
-      </button>
-    </div>
-    <div class='card_etape'>
-      <div class='cards'>
-        <p>CE QUE VOUS VEREZ DANS CE MODULE</p>
-        <div class="liss">
-          <li
-            v-for="point in current?.points"
-            :key="point"
-            >
-            {{ point }}
-          </li>
+      <div class="card_2">
+        <div class="box">
+          <h2>{{formation.nom2}} </h2>
+          <p>{{formation.contenu2}}</p>
+        </div>
+        <div class="box">
+          <h2>{{formation.nom3}}</h2>
+          <p>{{formation.contenu3}}</p>
         </div>
       </div>
-      <div class="cards" >
-        <p>MODULE</p>
-        <div class="lis">{{ current?.titre}}</div>
-      </div>
     </div>
-    <div class="container2" v-if="!digital">
-      <div class="text">
-        <p>Quelques projet realisés avec les technologies {{ spec }}</p>
-      </div>
-      <div class="item">
-        <a
-          v-for="img in formation?.image1"
-          :href="link(img)"
-          target="_blank"
-        >
-          <img
-            :src="getImage(`formations/specialite/${spec}/${img}`)"
-            :alt="`image de ${img}`"
+    <div id="image2">
+      <img  src="@/assets/formations/binary.jpeg">
+      <h1>Ce que vous apprendrez à NaN</h1>
+    </div>
+    <div class="container1">
+      <h2>Consulter le programme de notre formation, étape par étape</h2>
+      <div class='etape'>
+        <button
+          v-for="titre in titres"
+          :key="titre"
+          :title="JSON.stringify(formation.etapes[titre])"
+          @click="changeData"
           >
-        </a>
+        {{ formatTitle(titre)}}
+        </button>
+      </div>
+      <div class='card_etape'>
+        <div class='cards'>
+          <p>CE QUE VOUS VEREZ DANS CE MODULE</p>
+          <div class="liss">
+            <li
+              v-for="point in current?.points"
+              :key="point"
+              >
+              {{ point }}
+            </li>
+          </div>
+        </div>
+        <div class="cards" >
+          <p>MODULE</p>
+          <div class="lis">{{ current?.titre}}</div>
+        </div>
+      </div>
+      <div class="container2" v-if="!digital">
+        <div class="text">
+          <h1>Quelques projet realisés avec les technologies {{ spec }}</h1>
+        </div>
+        <div class="item">
+          <a
+            v-for="img in formation?.image1"
+            :href="link(img)"
+            target="_blank"
+          >
+            <img
+              :src="getImage(`formations/specialite/${spec}/${img}`)"
+              :alt="`image de ${img}`"
+            >
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -141,29 +143,35 @@ export default {
 
 <style scoped>
 
+.f-main-container{
+  margin: 0 auto;
+  max-width: var(--max-width);
+  background: var(--bg);
+  /* overflow: ; */
+}
+
 .container,
 .container1 {
-  width: var(--max-width);
-  background: var(--bg);
-  margin: 0 auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .container2 {
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--bg2);
+  border-radius: var(--radius);
   width: 100%;
-  height: 200px;
   gap: 2rem;
   justify-content: center;
   margin: 1.5rem auto;
 }
 
-.text>p {
-  font-size: 35px;
+h1{
+  text-align: center;
 }
 
 .item {
@@ -195,6 +203,11 @@ export default {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   box-shadow: 6px 5px 12px 1px var(--violet);
   border-radius: var(--radius);
+}
+
+.card_1,
+.card_2{
+  width: 100%;
 }
 
 .cards{
@@ -257,6 +270,7 @@ p {
 }
 
 img {
+  margin: 0 auto;
   width: 100%;
   height: 400px;
   object-fit: cover;
@@ -264,7 +278,6 @@ img {
 
 #image2 {
   position: relative;
-  max-width: var(--max-width);
   margin: 0 auto;
   border-radius: var(--radius);
   overflow: hidden;
@@ -282,10 +295,9 @@ img {
 }
 
 .etape {
-  justify-content: center;
+  padding: 1rem;
   display: flex;
   gap: 3%;
-  width: var(--max-width);
   overflow: scroll;
 }
 
@@ -313,8 +325,6 @@ button:hover {
   margin: 2.3rem 0;
   height: 250px;
   color: var(--blanc);
-  background: var(--bg);
-  width: var(--max-width);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   box-shadow: 6px 5px 12px 1px var(--violet);
   border-radius: var(--radius);
@@ -327,57 +337,71 @@ button:hover {
 
 @media only screen and (max-width: 1024px) {
   .card_1 {
-    width: 87%;
-    height: 55vh;
-    margin-left: 6%;
-  }
-
-  .card_2 {
-    margin-left: 6%;
-    width: 87%;
-  }
-
-  img {
-    width: var(--max-width);
-  }
-
-  .container1>h2 {
-    margin-left: 4%;
-  }
-
-  .etape {
-    margin-left: 4%;
+    height: max-content;
     width: 90%;
   }
 
+
+  .container2 h1{
+    padding: .5rem;
+  }
+
+  .card_2 {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  #image2{
+    width: 90%;
+  }
+
+  .etape{
+    flex-wrap: wrap;
+  }
+
+  .etape button{
+    margin: .2rem;
+  }
+
+  .card_2 .box{
+    width: 100%;
+    height: max-content;
+  }
+
+  .container1{
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .card_etape .cards{
+    width: 100%;
+    height: 200px;
+    overflow-y: scroll;
+  }
+
+  .cards:nth-child(2){
+    border-top: .1px solid var(--blanc);
+  }
+
+  .card_etape{
+    height: auto;
+    flex-wrap: unset;
+    flex-direction: column;
+  }
+
+  img {
+  }
+
+  .container1>h2 {
+  }
+
+  .etape {
+  }
+
   .card_etape {
-    margin-left: 2%;
-    width: 95%;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .card_2 {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 8%;
-  }
-
-  .box {
-    height: 38vh;
-  }
-
-  img {
-    width: var(--max-width);
-    height: 30vh;
-  }
-
-  #image2>h1 {
-    font-size: var(--titre);
-    width: max-content;
-    position: absolute;
-    top: 24%;
-    transform: translate(18%);
-  }
 }
 </style>
