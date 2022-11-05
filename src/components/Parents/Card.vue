@@ -50,7 +50,7 @@ export default {
   methods: {
     logout(){
       sessionStorage.clear()
-      this.$forceUpdate()
+      window.location.href = '/parent'
     }
   }
 }
