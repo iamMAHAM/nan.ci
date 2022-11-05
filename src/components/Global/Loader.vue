@@ -18,9 +18,7 @@
 export default {
   name: 'loader',
   props: ['width', 'height', 'bg'],
-  mounted(){
-    console.log(this.height, this.width, this.bg)
-  }
+  
 }
 </script>
 <style>

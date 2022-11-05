@@ -5,7 +5,7 @@
 
     <div class="container-card">
             <div class="card-image">
-                <img src="@/assets/ImagesAccueil/im3.jpg" alt="">
+                <img src="https://scontent.fabj4-1.fna.fbcdn.net/v/t39.30808-6/270221587_943253462965835_4428444102021885826_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=hkvh_EFgTkcAX-jEvHj&_nc_ht=scontent.fabj4-1.fna&oh=00_AfAJUbLlF_8j4npQTEtXxTWFFcLwl5DqZbsmN1IPM-cZzQ&oe=636A7F82" alt="">
             </div>
             <div class="card-body">
                 <h2 class="texte">Qui sommes-nous?</h2>
@@ -22,7 +22,7 @@
 
     <div class="container-card">
             <div class="card-image">
-                <img src="@/assets/ImagesAccueil/im3.jpg" alt="">
+                <img src="https://scontent.fabj4-1.fna.fbcdn.net/v/t39.30808-6/235454809_858329174791598_5573216885781059755_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=nehZ3E3lkx0AX-i8VMU&_nc_ht=scontent.fabj4-1.fna&oh=00_AfCWfsh2MYlR1BwNXOeLfLRF4MX0QvKvrz_hXXUMJ5DeXA&oe=636C1D3C" alt="">
             </div>
             <div class="card-body">
                 <h2 class="texte">Notre vision</h2>
@@ -143,23 +143,17 @@ export default {
   data() {
     return {
       slides:[
-          "ImagesAccueil/im2.jpg",
           "ImagesAccueil/im3.jpg",
-          "ImagesAccueil/im4.jpg",
-          "ImagesAccueil/im6.jpg",
+          "https://images.unsplash.com/photo-1665686304312-16e3a16be0ed?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80",
           
       ],
       textes: [      
-          ` Travailler avec le sourire et sans stress, c'est sourire à l'avenir`,
           'Un environnement motivant et inspirant',
           'Coder pour devenir des professionnelles en programmation',
-          '',
       ],
       titres: [
-          'Une Pédagogie inspirée de 42',
           'Un cadre agréable',
           'Apprendre le code ',
-          'NaN forme des professionnelles',
       ],
     }
   },

@@ -8,7 +8,7 @@
         </div>
       <div class="corps-footer-menu" >
         <nav >
-          <ul class="Acc-menu" >
+          <ul class="menu" >
             <li><router-link to="/" class="Acc-lien current">Accueil</router-link></li>
             <li><router-link to="/formations" class="Acc-lien">Nos Formations</router-link></li>
             <li><router-link to="/admission" class="Acc-lien">Admission</router-link></li>
@@ -100,5 +100,18 @@ export default {
 
 .corps-footer-text p:hover {
   color: var(--violet)
+}
+
+@media (max-width: 685px) {
+  .corps-footer {
+    height: auto;
+  }
+  .corps-footer-menu ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .corps-footer-menu ul li a{
+    margin-right: 0;
+  }
 }
 </style>

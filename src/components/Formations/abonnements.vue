@@ -1,6 +1,6 @@
 <template>
   <div class="abonnements" >
-    <h1>Nos abonnements</h1>
+    <h1>NOS ABONNEMENTS </h1>
     <p>
        Des tarifs adaptés et flexibles selon vos besoins
     </p>
@@ -35,6 +35,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
  .abonnement-cardre{
