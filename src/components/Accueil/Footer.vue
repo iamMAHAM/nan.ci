@@ -2,7 +2,7 @@
     <div class="corps-footer" >
       <div class="corps-footer-logo" >
         <a href="" class="logo" >
-          <img src="/img/logoN.58439b18.png" >
+          <img src="@/assets/ImagesAccueil/logoN.png" >
           NaN Digital Academy
         </a>
         </div>
