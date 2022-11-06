@@ -1,5 +1,4 @@
 <template>
- 
     <div class="table basic">
       <div class="price-section">
         <div class="price-area">

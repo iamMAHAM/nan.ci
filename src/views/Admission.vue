@@ -11,7 +11,7 @@
             <p>1</p>
           </div>
           <h3>Inscription et frais</h3>
-          <p>Inscription via:</p>
+          <p>Inscription via ce lien:</p>
           <a href=" https://concours.nan.ci/auth/register">
             https://concours.nan.ci/auth/register</a
           >
@@ -207,18 +207,14 @@ export default {
   padding: 30px 10px;
   border-radius: 10px;
 }
-
 .card {
   width: 100%;
   height: 200px;
 }
-
-.card1 {
-  /* border: 1px solid rgb(0, 255, 102); */
+.card1 , .card4 {
   display: flex;
   justify-content: center;
 }
-
 .option {
   position: relative;
   color: var(--blanc);
@@ -236,12 +232,19 @@ export default {
 .cardText {
   display: flex;
 }
-
-.inscription:hover {
+.inscription a{
+  color: var(--violet);
+  text-decoration: none;
+}
+.inscription a:hover{
+  font-weight: bold;
+font-style: oblique;
+}
+/* .inscription:hover {
   background-color: var(--violet);
   color: var(--bg);
   border: 1px solid var(--blanc);
-}
+} */
 .etape {
   height: 40px;
   border: 1px solid var(--violet);
@@ -257,7 +260,6 @@ export default {
   color: var(--violet);
 }
 .fleche1 {
-  /* border: 1px solid red; */
   display: flex;
   justify-content: center;
 }
@@ -267,17 +269,13 @@ export default {
 }
 
 .fleche2 {
-  /* border: 1px solid rgb(0, 255, 119); */
   display: flex;
   justify-content: space-around;
 }
-
 .fleche2 img {
   transform: rotate(272deg);
 }
-
 .card2 {
-  /* border: 1px solid blue; */
   display: flex;
 }
 
@@ -291,44 +289,32 @@ export default {
 }
 
 .card3 {
-  /* border: 1px solid rgb(255, 234, 0); */
   display: flex;
   justify-content: flex-end;
 }
 
-.card4 {
-  /* border: 1px solid rgb(255, 0, 0); */
-  display: flex;
-  justify-content: center;
-}
-
 .specialite .image {
-  /* border: 1px solid red; */
   width: 100%;
   height: 60px;
   display: flex;
   justify-content: space-around;
 }
 .specialite .image .image1 {
-  /* border: 1px solid blue; */
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
 .specialite .image div {
   width: 60px;
-  /* border: 1px solid #000; */
   border-radius: 5px;
   cursor: pointer;
 }
-
 .specialite .image div img {
   width: 100%;
   height: 100%;
   border-radius: 5px;
 }
 .card5 {
-  /* border: 1px solid rgb(0, 255, 17); */
   display: flex;
 }
 .piscine {
@@ -337,7 +323,6 @@ export default {
   justify-content: space-evenly;
 }
 .card6 {
-  /* border: 1px solid rgb(0, 149, 255); */
   display: flex;
   justify-content: flex-end;
 }
@@ -347,12 +332,17 @@ export default {
   justify-content: space-evenly;
 }
 .offre {
-  /* margin-top: 30px; */
   max-width: 1140px;
   margin: 30px auto;
   background-color: var(--bg2);
   text-align: center;
   padding: 10px;
+}
+@media (max-width: 768px) {
+  .card{
+    justify-content: center;
+  }
+
 }
 
 @media (max-width: 450px) {

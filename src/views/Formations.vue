@@ -44,8 +44,8 @@ export default {
       formation:"",
       loading:true,
       slides:[
-          "formations/forma1.jpeg",
-          "https://images.unsplash.com/photo-1528901166007-3784c7dd3653?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80",
+          "",
+          "global/naniens-1.jpeg",
           
           
           
@@ -83,15 +83,6 @@ mounted() {
 
 <style scoped>
 
-.general{
-  /* background: var(--bg2); */
-}
-.image{
-  width: 100%;
-  height: 500px;
-  background: url('@/assets/ImagesAccueil/im4.jpg') no-repeat center;
-  background-size: cover;
-}
 .footer{
   width: 100%;
   height: 350px;
@@ -107,7 +98,6 @@ mounted() {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: var(--bg2); */
   height: auto;
 }
 
@@ -120,7 +110,6 @@ mounted() {
 }
 
 .formation-container .formation-cadre{
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, auto));
   grid-gap: 35px;

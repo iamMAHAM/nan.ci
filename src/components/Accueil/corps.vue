@@ -67,7 +67,7 @@
           <p>hvjhfjgjgjghjgjhgjgj</p>
       </div>
       </div> -->
-    <!-- <div class="corps-formationsAcc">
+    <div class="corps-formationsAcc">
       <div class="corps-formations-titre">
         <h2>Nos Formations Certifiantes de NaN </h2>
       </div>
@@ -129,7 +129,7 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div> 
     <div class="corps-mission">
       <div class="corps-mission-titre">
         <h2>Pourquoi Etudier À NaN</h2>
@@ -472,7 +472,7 @@ export default {
 
 .corps-formations {
   position: relative;
-  width: 1000Px;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -874,7 +874,20 @@ export default {
     font-size: 2em;
   }
 }
-
+@media (max-width:1000px){
+  .corps-formationsAcc{
+    height: auto;
+  }
+  .corps-formations{
+    border: 1px solid red;
+    flex-direction: column;
+    align-items: center;
+  }
+  .corps-formations .corps-formations-card{
+    width: 63%;
+  }
+  
+}
 @media (max-width:602px){
   .corps-val21{
     flex-direction: column;
