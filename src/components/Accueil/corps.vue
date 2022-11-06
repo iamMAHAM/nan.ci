@@ -440,6 +440,11 @@ export default {
   height: 830px;
   background-color: var(--bg2);
   border-radius: 20px;
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
 }
 
 .corps-formations-titre h2 {
@@ -471,7 +476,6 @@ export default {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 40px 70px;
 }
 
 .corps-formations .corps-formations-card {
