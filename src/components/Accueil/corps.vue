@@ -156,11 +156,11 @@
     <div class="corps-video">
       <!-- <video src="@/assets/ImagesAccueil/VIDEO1.mp4">le fichier ne peut pas être lu</video> -->
       <video width="1140" height="500" controls>
-        <source src="@/assets/ImagesAccueil/VIDEO1.mp4" type=video/ogg>
+        <source src="@/assets/ImagesAccueil/demo.mp4" type=video/mp4>
         
       </video>
     </div>
-    <!-- <div class="corps-statistique">
+    <div class="corps-statistique">
       <div class="corps-statistique-titre">
         <h2>Statistiques 2021 De NaN</h2>
       </div>
@@ -191,7 +191,7 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
     <div class="corps-maps" ><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.101780364658!2d-3.964882484463386!3d5.401462436684686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1933ec546f809%3A0xa13e690552d16e30!2sNaN%20Digital%20Academy!5e0!3m2!1sfr!2sci!4v1656348981532!5m2!1sfr!2sci" width="800" height="600" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"  style="border: 0px;"></iframe></div>
     <div class="corps-info" >
       <img src="/img/1.eb7ba76d.jpg" alt="" >
@@ -636,6 +636,7 @@ export default {
   /* height: 500px; */
   border: 2px solid var(--bg2);
   border-radius: 20px;
+
 }
 
 .corps-video video {
@@ -644,14 +645,19 @@ export default {
   border-radius: 20px;
   width: 100%;
   height: 100%;
+  background-color: aliceblue;
 }
 
 .corps-statistique {
   max-width: var(--max-width);
   margin: 47px auto;
-  height: 500px;
+  height: 400px;
   background-color: var(--bg2);
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: space-around;
 }
 
 .corps-statistique-titre h2 {
@@ -665,9 +671,9 @@ export default {
 }
 
 .corps-statistique-group {
-  /* border: 1px solid green; */
+  border: 1px solid green;
   display: flex;
-  height: 300px;
+  /* height: 300px; */
   justify-content: center;
   align-items: center;
 }
