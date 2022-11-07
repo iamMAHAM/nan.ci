@@ -64,6 +64,7 @@
           v-for="info in toDisplayed"
           :key="info.id"
           :info="info"
+          @askVote="showModal"
         />
       </div>
 
@@ -71,6 +72,7 @@
         <Pagination :itemToShow="itemToShow" :total="filtered.length" @page="paginate" :isFilter="isFilter"/>
       </div>
     </div>
+    <LikeModal v-if="askVote" :datas="datas" @close='this.askVote = false'/>
   </div>
 </template>
 <script>
@@ -79,14 +81,18 @@ import Pagination from '@/components/Naniens/Pagination.vue';
 import { specialities } from '@/lib/specialities';
 import Loader from '@/components/Global/Loader.vue';
 import Header from '@/components/Accueil/header.vue';
+import LikeModal from '@/components/Naniens/LikeModal.vue';
+
+
 export default {
   name: 'naniens',
   components: {
     Card,
     Pagination,
     Loader,
-    Header
-  },
+    Header,
+    LikeModal
+},
   data(){
     return {
       control:{
@@ -107,9 +113,11 @@ export default {
           'Les Certifiés de NaN',
           'La Famille NaN',
       ],
+      askVote: false,
       cards: [],
       itemToShow: 9,
       page: 1,
+      datas: [],
       isFilter: false,
       specialities: specialities,
       load: true
@@ -118,6 +126,10 @@ export default {
   methods: {
     paginate(number){
       this.page = number
+    },
+    showModal(data){
+     this.datas = [...data]
+      this.askVote = true
     }
   },
   mounted(){

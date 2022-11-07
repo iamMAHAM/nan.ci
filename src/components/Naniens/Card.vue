@@ -3,9 +3,9 @@
     <div class="user-card front" @click="flip">
       <div class="user-top">
         <div class="tt">
-          <span class="tl" @click="likes">
+          <span class="tl" @click="$emit('askVote', [info.email, info.likers])" title="liker">
             <i class="fa-regular fa-thumbs-up"></i>
-            <span class="nb-likes">5k</span>
+            <span class="nb-likes">{{ info.likers?.length}}</span>
           </span>
           <span class="status"
             :style="{
@@ -90,37 +90,31 @@
 
 <script>
 import { defineComponent } from 'vue';
+import LikeModal from './LikeModal.vue';
 
 export default defineComponent({
-  name: 'Card',
-  props: ['info', 'specs'],
-  methods:{
-    getImage(name){
-      try{
-        return require(`@/assets/naniens/${name.toLowerCase()}.png`)
-      } catch (e){
-        if (e instanceof Error){
-          // alert(`aucune image trouvé avec le nom : ${name}`)
-          return require('@/assets/naniens/no.png')
+    name: "Card",
+    props: ["info", "specs"],
+    methods: {
+        getImage(name) {
+            try {
+              return require(`@/assets/naniens/${name.toLowerCase()}.png`);
+            }catch (e) {
+              return require("@/assets/naniens/no.png");
+            }
+        },
+        flip(e) {
+            const target = e.target;
+            const parent = target.closest(".card-container");
+            if (["A", "IMG", "I"].includes(target.tagName)) {
+                return;
+            }
+            parent.classList.add("active");
+            parent.addEventListener("mouseleave", () => {
+                parent.classList.remove("active");
+            });
         }
-      }
-    },
-    flip(e){
-      const target = e.target
-      const parent = target.closest('.card-container')
-
-      if (['A', 'IMG'].includes(target.tagName)){
-        return
-      }
-      parent.classList.add('active')
-      parent.addEventListener('mouseleave', () => {
-        parent.classList.remove('active')
-      })
-    },
-    likes(){
-      console.log(this.info)
     }
-  }
 })
 </script>
 <style>
