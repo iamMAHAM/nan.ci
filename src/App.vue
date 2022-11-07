@@ -87,4 +87,13 @@ export default {
     color: var(--violet) !important;
     cursor: pointer;
   }
+
+  @media (max-width:768px) {
+  h1{
+    font-size: 20px;
+  }
+  p{
+    font-size: 16px;
+  }
+}
 </style>

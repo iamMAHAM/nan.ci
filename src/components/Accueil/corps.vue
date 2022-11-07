@@ -671,7 +671,7 @@ export default {
 }
 
 .corps-statistique-group {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   display: flex;
   /* height: 300px; */
   justify-content: center;

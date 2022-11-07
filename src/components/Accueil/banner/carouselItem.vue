@@ -39,7 +39,7 @@
     max-width: var(--max-width);
   }
   .Acc-texte h1{
-    font-size: 60px;
+    font-size: 50px;
   }
   .Acc-texte p{
     font-size: 25px;
@@ -90,5 +90,17 @@
   }
   .slide-out-leave-to {
     transform: translateX(-100%);
+  }
+
+  @media (max-width:768px) {
+    .Acc-texte{
+      left: 9%;
+    }
+    .Acc-texte h1{
+    font-size: 30px;
+  }
+  .Acc-texte p{
+    font-size: 20px;
+  }
   }
   </style>
