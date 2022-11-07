@@ -19,7 +19,7 @@
 
       <div class="user-center">
         <div class="ct">
-          <img :src="info.profilUrl" loading="lazy" decoding="async">
+          <img :src="info.profilUrl" loading="lazy" decoding="async" referrerPolicy="no-referrer">
           <span class="fullname">{{ info.fullName?.toUpperCase() }}</span>
         </div>
 
@@ -53,7 +53,7 @@
       <div class="skills"
         v-if="specs.devs.includes(info.speciality.toLowerCase())"
       >
-        <div class="skill">
+        <div class="skill" v-if="info.skills.frontEnd.length">
           <span>Front-End : </span>
           <div class="simages">
             <img
@@ -63,7 +63,7 @@
             >
           </div>
         </div>
-        <div class="skill">
+        <div class="skill" v-if="info.skills.backEnd.length">
           <span>Back-End : </span>
           <div class="simages">
             <img
@@ -73,7 +73,7 @@
             >
           </div>
         </div>
-        <div class="skill">
+        <div class="skill" v-if="info.skills.databases.length">
           <span>Database : </span>
           <div class="simages">
             <img
@@ -117,6 +117,9 @@ export default defineComponent({
         parent.classList.remove('active')
       })
     }
+  },
+  mounted(){
+    console.log(this.info)
   }
 })
 </script>

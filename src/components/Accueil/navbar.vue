@@ -9,11 +9,11 @@
             <li><router-link to="/naniens" class="Acc-lien">Naniens</router-link></li>
             <li><router-link to="/parent" class="Acc-lien">Parent</router-link></li>
             <li><router-link to="/apropos" class="Acc-lien">A propos</router-link></li>
-            <div class="Acc-cadenas">
-              <a href="https://classe.nan.ci" class="Acc-boutton" target="_blank">
+            <li class="Acc-cadenas">
+              <a href="https://classe.nan.ci" class="Acc-boutton" target="_blank" style="color: var(--blanc) !important;">
                 <i class="fas fa-lock"></i>Accès aux Cours
               </a>
-            </div>
+            </li>
           </ul>
           <div class="Acc-cadenas">
             <a href="https://classe.nan.ci" class="Acc-boutton" target="_blank">
@@ -48,8 +48,10 @@ export default {
         window.addEventListener('scroll', () => {
           if (window.scrollY >= 50) {
             scrolle.classList.add('Acc-nav_active');
+            Navmenu.classList.remove('Acc-menu-active')
           }else {
             scrolle.classList.remove('Acc-nav_active');
+            burger.classList.remove('burger-active')
           }
         })
         burger.addEventListener('click',() =>{
