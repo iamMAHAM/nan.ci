@@ -1,7 +1,7 @@
 <template>
     <nav class="Acc-nav">
         <div class="container-nav">
-          <a href="" class="logo"><img src="@/assets/ImagesAccueil/logoN.png" alt=""></a>
+          <router-link to="/" class="logo"><img src="@/assets/ImagesAccueil/logoN.png" alt=""></router-link>
           <ul class="Acc-menu">
             <li><router-link to="/" class="Acc-lien">Accueil</router-link></li>
             <li><router-link to="/formations" class="Acc-lien">Nos Formations</router-link></li>

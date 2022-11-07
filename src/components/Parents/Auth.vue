@@ -5,7 +5,7 @@
       <div class="parents_id_input">
         <input type="text" placeholder="code parent" class="saisie" v-model="parentCode">
         <input type="text" placeholder="Matricule de l'Étudiant" class="saisie" v-model="studentMat">
-        <p class="error" v-if="error">Invalid Credential</p>
+        <p class="error" v-if="error">{{ message}}</p>
       </div>
       <Loader v-if="load" :height="50" :width="50" :bg="'var(--bg2)'"/>
       <button
@@ -30,14 +30,14 @@ export default {
       parentCode: "",
       studentMat: "",
       error: false,
-      load: false
+      load: false,
+      message: ''
     };
   },
   methods: {
     login() {
       if (!this.parentCode && this.parentCode !== this.studentMat) {
         this.error = true;
-        setTimeout(()=> this.error = false, 3000)
         return;
       }
       this.load = true
@@ -56,12 +56,21 @@ export default {
           console.log("data", data);
           if (data.status) {
             this.$emit('logged', data.data);
-          } else this.error = true;
+          } else this.showError(3000, data.message)
           this.load = false;
         })
         .catch(e => {
           console.log(e);
+          this.load = false
+          this.showError(3000, 'Une erreur est survenue réesayer plus tard !')
         });
+    },
+    showError(time=0, message=''){
+      this.error = true
+      setTimeout(()=>{
+        this.error = false
+        this.message = message
+      }, time)
     }
   },
   components: {
@@ -70,7 +79,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 .error{
   color: var(--rouge);
@@ -86,6 +95,7 @@ export default {
  .sous_cadre_parents_id{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 50%;
   height: 350px;
@@ -108,14 +118,53 @@ export default {
   padding: 10px;
   outline: none;
  }
- .btn{
+ .parents_contenaire .btn{
+  border: none;
   margin-top: 20px;
   cursor: pointer;
-  text-transform: uppercase;
-  width: 200px;
   padding: 10px;
+  font-size: 1.3rem;
   border-radius: var(--radius);
   background-color: var(--violet);
+  font-weight: 400;
   color: var(--blanc);
+ }
+
+ @media screen and (max-width: 946px){
+  .sous_cadre_parents_id{
+    width: 70%;
+  }
+
+  .Etudiant_infos_plus{
+    flex-direction: column;
+  }
+
+  .infos_plus1:nth-child(2){
+    width: 100% !important;
+  }
+
+ }
+ @media screen and (max-width: 551px){
+  .sous_cadre_parents_id{
+    width: 85%;
+  }
+
+  .props{
+    width: 100% !important;
+  }
+
+  .parents_id_input .saisie{
+    font-size: 18px;
+    padding: 8px;
+    width: 100%;
+  }
+
+  .Etudiant_infos_plus{
+  }
+
+  h1{
+    font-size: 1.8rem;
+    padding: 5px;
+  }
  }
 </style>

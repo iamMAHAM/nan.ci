@@ -17,8 +17,7 @@
 <script>
 export default {
   name: 'loader',
-  props: ['width', 'height', 'bg'],
-  
+  props: ['width', 'height', 'bg']
 }
 </script>
 <style>

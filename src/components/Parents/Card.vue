@@ -9,7 +9,11 @@
     <h1>INFORMATIONS DE L’ETUDIANT</h1>
     <fieldset class="e-container">
       <legend>
-        <img :src="user.avatar">
+        <img
+          :src="avatar"
+          loading="lazy"
+          decoding="async"
+        >
       </legend>
       <div class="card_infos">
         <div class="libel">
@@ -21,7 +25,7 @@
           <p>Formation</p>
         </div>
         <div class="values">
-          <p>{{ user.login}}</p>
+          <p>{{ user.login || 'valeur non définie'}}</p>
           <p>{{ user.email }}</p>
           <p>{{ user.phone }}</p>
           <p>{{ user.speciality.name}}</p>
@@ -34,6 +38,8 @@
 </template>
 
 <script>
+import { getImage } from '@/lib/getImage'
+
 export default {
   name: 'studentCard',
   props: ['user'],
@@ -45,6 +51,11 @@ export default {
       return this.user.status === 'realtime'
         ? 'présentiel'
         : 'en ligne '
+    },
+    avatar(){
+      return this.user.avatar
+        ? this.user.avatar
+        : getImage('global/avatar.svg')
     }
   },
   methods: {
@@ -81,15 +92,6 @@ export default {
   top: 10px;
   right: 10px;
   color: var(--blanc);
-}
-
-legend{
-  width: 200px;
-  height: 200px;
-  border: 1px solid white;
-  text-align: center;
-  border-radius: 60px;
-  overflow: hidden;
 }
 
 legend>img{

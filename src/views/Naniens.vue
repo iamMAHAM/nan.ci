@@ -57,7 +57,7 @@
         </div>
       </div>
       <div class="naniens-cards">
-        <Loader v-if="load"/>
+        <Loader v-if="load" :height="100" :width="100"/>
         <Card
           v-else
           :specs="specialities"
@@ -216,7 +216,7 @@ export default {
 
   .naniens-cards{
     margin-top: 50px;
-    height: 1000px;
+    max-height: 1000px;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;

@@ -41,6 +41,7 @@ export default {
     props: ['matricule'],
     created(){
       this.currentMonth = this.months[new Date().getMonth()]
+      console.log(this.currentMonth)
       this.showInfo(this.currentMonth)
     },
     data(){
@@ -56,15 +57,13 @@ export default {
     methods: {
       showInfo(month){
         this.load = true
-        fetch(`/api/getStudentMonthResults/${month}`, {
+        fetch(`https://classe.nan.ci/api/getStudentMonthResults/${month}`, {
           method: 'GET',
           headers: {'auth': this.matricule}
         })
         .then(res=>res.json())
         .then(data=>{
-          console.log('data', data)
           this.currentInfo = {...data.data}
-          console.log(this.currentInfo)
           this.month = month
           this.load = false
         })
@@ -190,7 +189,6 @@ li.active:after{
 }
 
 .props{
-  max-width: 800%;
   width: 70%;
 }
 

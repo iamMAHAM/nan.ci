@@ -35,6 +35,7 @@ export default {
   props: ['pointInfo', 'month'],
   computed: {
     isAv(){
+      console.log(this.pointInfo)
       console.log(this.pointInfo.exercices_passed !== '0/0')
       return this.pointInfo.exercices_passed !== '0/0'
     }
