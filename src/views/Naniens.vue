@@ -127,7 +127,7 @@ export default {
       this.cards = [...data.data]
       this.load = false
     })
-
+    .catch(e => this.load = false)
   },
   computed: {
     showFs(){

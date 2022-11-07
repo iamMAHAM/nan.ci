@@ -43,8 +43,10 @@ export default {
       this.load = true
       fetch("/api/getStudentInfo", {
           method: "POST",
+          mode: 'cors',
           headers: {
-            "Content-Type": "application/json"
+            "content-type": "application/json",
+            "user-agent": "web - nan.ci headers"
           },
           body: JSON.stringify({
             codeparent: this.parentCode,
@@ -53,14 +55,12 @@ export default {
         })
         .then(res => res.json())
         .then(data => {
-          console.log("data", data);
           if (data.status) {
             this.$emit('logged', data.data);
           } else this.showError(3000, data.message)
           this.load = false;
         })
         .catch(e => {
-          console.log(e);
           this.load = false
           this.showError(3000, 'Une erreur est survenue réesayer plus tard !')
         });
@@ -157,9 +157,6 @@ export default {
     font-size: 18px;
     padding: 8px;
     width: 100%;
-  }
-
-  .Etudiant_infos_plus{
   }
 
   h1{

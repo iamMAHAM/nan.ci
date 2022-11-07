@@ -19,7 +19,13 @@ export default {
   },
   watch: {
     $route(to, _old){
-      document.title = `nan - ${to.name.toLowerCase()}`
+      const name = to.name.toLowerCase()
+      const title = name === 'formation'
+        ? name + to.href.split('/')[2].toLowerCase()
+        : name
+      document.title = `nan - ${title}`
+      document.querySelector('.Acc-menu')?.classList.remove('Acc-menu-active')
+      document.querySelector('.burger')?.classList.remove('burger-active')
       window.scrollTo({top: 0, behavior: 'smooth'})
     }
   }

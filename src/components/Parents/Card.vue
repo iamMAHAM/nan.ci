@@ -6,8 +6,14 @@
     >
       Se déconnecter
     </span>
-    <h1>INFORMATIONS DE L’ETUDIANT</h1>
-    <fieldset class="e-container">
+    <span
+      class="close active"
+      @click="logout"
+    >
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    </span>
+    <h1>ÉTUDIANT</h1>
+    <div class="e-container">
       <legend>
         <img
           :src="avatar"
@@ -33,7 +39,7 @@
           <p>{{ formation }}</p>
         </div>
       </div>
-    </fieldset>
+    </div>
   </div>
 </template>
 
@@ -94,10 +100,17 @@ export default {
   color: var(--blanc);
 }
 
+.close.active{
+  display: none;
+}
+
+legend{
+  height: 150px;
+}
 legend>img{
-  width: 230px;
-  height: 195px;
-  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius);
   margin: 0px auto;
 
 }
@@ -115,9 +128,27 @@ legend>img{
   padding: 10px;
 }
 
-@media screen and (max-width: 559px){
+@media screen and (max-width: 880px){
   .e-container{
     padding: 0;
+  }
+
+  .close{
+    display: none;
+  }
+
+  .close.active{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .libel{
+    display: none;
+  }
+
+  .card_infos{
+    width: 100%;
   }
 }
 </style>
