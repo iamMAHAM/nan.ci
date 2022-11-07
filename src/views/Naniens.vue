@@ -217,7 +217,6 @@ export default {
 
   .naniens-cards{
     margin-top: 50px;
-    max-height: 1000px;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
