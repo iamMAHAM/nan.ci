@@ -117,9 +117,6 @@ export default defineComponent({
         parent.classList.remove('active')
       })
     }
-  },
-  mounted(){
-    console.log(this.info)
   }
 })
 </script>
@@ -129,6 +126,7 @@ export default defineComponent({
     width: 300px;
     height: 300px;
     position: relative;
+    margin: .5rem;
   }
 
   .card-container .user-card.back {
