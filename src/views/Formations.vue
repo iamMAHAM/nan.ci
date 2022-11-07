@@ -2,10 +2,10 @@
    <Header :slides="slides" :textes="textes" :titres="titres" :height="60" />
 
   <div class="general">
-    <Loader v-if="loading"></Loader>
-    <div class="formation-container" v-else>
+    <div class="formation-container" >
 
       <div class="formation-hearder">
+        <h1>NOS  FORMATIONS</h1>
         <p>
             L’informatique est la science du traitement automatique de l’information. Elle permet d’automatiser plusieurs tâches et continue à
             évoluer pour devenir indispensable dans beaucoup de domaines. Les branches de l’informatique ont également évolué et de nouvelles
@@ -14,7 +14,9 @@
       </div>
 
       <div class="formation-cadre">
-        <Card  :formation="formation" />
+    <Loader v-if="loading"  :height="120" :width="120" :bg="'var(--bg2)'"></Loader>
+
+        <Card  :formation="formation"  v-else />
       </div>
       <div  class="abonnement" id="abonner" >
         <Abonnements/>
@@ -42,21 +44,18 @@ export default {
       formation:"",
       loading:true,
       slides:[
-          "https://images.unsplash.com/photo-1637563680361-3e7ee7599318?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80",
-          "https://images.unsplash.com/photo-1573496773905-f5b17e717f05?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2369&q=80",
-          "https://scontent.fabj4-1.fna.fbcdn.net/v/t39.30808-6/270221587_943253462965835_4428444102021885826_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=t87Dm3q5PZcAX-k5UUT&_nc_ht=scontent.fabj4-1.fna&oh=00_AfAfqlGe7BnsB_w3w3Oo8v3-mT-QBAFm0lY10yXmIjormg&oe=63688542",
-          "ImagesAccueil/im6.jpg",
+          "",
+          "global/naniens-1.jpeg",
+          
+          
           
       ],
       textes: [      
-          ` Travailler avec le sourire et sans stress, c'est sourire à l'avenir`,
-          'Un environnement motivant et inspirant',
           'Coder pour devenir des professionnelles en programmation',
-          '',
+        
+          
       ],
       titres: [
-          'Une Pédagogie inspirée de 42',
-          'Un cadre agréable',
           'Apprendre le code ',
           'NaN forme des professionnelles',
       ],
@@ -68,12 +67,11 @@ mounted() {
   fetch('http://192.168.88.15:3001/api/specialities')
   .then(response => response.json())
   .then((response)=>{
-    console.log(response);
      this.formation = response.specialities
      this.loading = false
   })
   .catch((error) =>{
-    this.$router.push('/')
+    // this.$router.push('/')
     this.loading = false
   })
 },
@@ -85,15 +83,6 @@ mounted() {
 
 <style scoped>
 
-.general{
-  /* background: var(--bg2); */
-}
-.image{
-  width: 100%;
-  height: 500px;
-  background: url('@/assets/ImagesAccueil/im4.jpg') no-repeat center;
-  background-size: cover;
-}
 .footer{
   width: 100%;
   height: 350px;
@@ -109,7 +98,6 @@ mounted() {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: var(--bg2); */
   height: auto;
 }
 
@@ -122,7 +110,6 @@ mounted() {
 }
 
 .formation-container .formation-cadre{
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, auto));
   grid-gap: 35px;

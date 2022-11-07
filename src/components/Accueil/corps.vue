@@ -129,7 +129,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> 
     <div class="corps-mission">
       <div class="corps-mission-titre">
         <h2>Pourquoi Etudier À NaN</h2>
@@ -160,7 +160,7 @@
         
       </video>
     </div>
-    <div class="corps-statistique">
+    <!-- <div class="corps-statistique">
       <div class="corps-statistique-titre">
         <h2>Statistiques 2021 De NaN</h2>
       </div>
@@ -191,7 +191,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="corps-maps" ><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.101780364658!2d-3.964882484463386!3d5.401462436684686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1933ec546f809%3A0xa13e690552d16e30!2sNaN%20Digital%20Academy!5e0!3m2!1sfr!2sci!4v1656348981532!5m2!1sfr!2sci" width="800" height="600" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"  style="border: 0px;"></iframe></div>
     <div class="corps-info" >
       <img src="/img/1.eb7ba76d.jpg" alt="" >
@@ -199,34 +199,41 @@
         <h3 >CONTACT INFORMATION </h3>
         <div class="corps-info-details-plus" >
           <div class="corps-info-details1" >
-            <i class="fas fa-phone-alt" ></i>
             <div class="corps-info-details11" >
+              <i class="fa-solid fa-phone"></i>
               <span >Telephone:</span>
-              <p >+23459122345666</p>
             </div>
+            <p >+23459122345666</p>
           </div>
+
           <div class="corps-info-details1" >
-            <i class="fas fa-envelope" ></i>
+            
             <div class="corps-info-details11" >
+              <i class="fas fa-envelope" ></i>
               <span >Email:</span>
-              <p >nandigital@gmail.com</p>
+              
             </div>
+            <p >nandigital@gmail.com</p>
           </div>
         </div>
         <div class="corps-info-details-plus1" >
           <div class="corps-info-details1" >
-            <i class="fas fa-map-marker-alt" ></i>
+           
             <div class="corps-info-details11" >
+              <i class="fas fa-map-marker-alt" ></i>
               <span >Adresse:</span>
-              <p >cocody André </p>
             </div>
+            <p >cocody André </p>
+
           </div>
           <div class="corps-info-details1" >
-            <i class="fas fa-clock" ></i>
+           
             <div class="corps-info-details11" >
+              <i class="fas fa-clock" ></i>
               <span >Temps de Travail</span>
-              <p >Lundi Au Vendredi <br > De 09h00 à 17h30 </p>
             </div>
+            <p >Lundi Au Vendredi <br > De 09h00 à 17h30 </p>
+
           </div>
         </div>
       </div>
@@ -317,7 +324,7 @@ export default {
   max-width: var(--max-width);
   margin: 47px auto;
   /* border: 1px solid red; */
-  height: 500px;
+  height: 30%;
   background-color: var(--bg2);
   border-radius: 20px;
   display: flex;
@@ -333,12 +340,16 @@ export default {
   /* margin: 50px 0 50px 50px; */
   display: flex;
   flex-direction: column;
-  padding: 50px;
+  padding: 30px 15px;
   justify-content: space-evenly;
-  border-radius: 30px;
+  border-radius: 10px;
+  /* border: 1px solid blue; */
+  text-align: center;
+  align-items: center;
 }
 
 .corps-val2 {
+  /* border: 1px solid ; */
   /* background-color: var(--blanc); */
   /* height: 400px; */
   width: 500px;
@@ -347,11 +358,13 @@ export default {
   display: flex;
     justify-content: space-around;
     flex-direction: column;
+    
 }
 
 .corps-val21 {
   display: flex;
-  margin-top: -20px;
+  justify-content: center;
+  /* margin-top: -20px; */
 }
 
 .corps-val211 {
@@ -359,10 +372,14 @@ export default {
   width: 250px;
   background-color: var(--blanc);
   margin: 20px 30px 30px 30px;
-  padding-top: 20px;
   text-align: center;
   border-radius: 15px;
   color: var(--noir);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
 }
 
 .corps-val211 img {
@@ -383,8 +400,8 @@ export default {
 
 .corps-val1 p {
   color: var(--noir);
-  text-align: justify;
-  line-height: 29px;
+  /* text-align: justify;
+  line-height: 29px; */
 }
 
 .corps-val1 a {
@@ -423,6 +440,11 @@ export default {
   height: 830px;
   background-color: var(--bg2);
   border-radius: 20px;
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
 }
 
 .corps-formations-titre h2 {
@@ -450,11 +472,10 @@ export default {
 
 .corps-formations {
   position: relative;
-  width: 1000Px;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 40px 70px;
 }
 
 .corps-formations .corps-formations-card {
@@ -580,18 +601,20 @@ export default {
   display: flex;
   justify-content: space-evenly;
   align-content: center;
+  align-items: center;
 }
 
 .corps-mission-card1 {
   height: 261px;
   width: 290px;
   background-color: var(--blanc);
-  margin-top: 50px;
+  /* margin-top: 50px; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  margin: 0 5px;
 }
 
 .corps-mission-card1 img {
@@ -610,7 +633,7 @@ export default {
 .corps-video {
   max-width: var(--max-width);
   margin: 47px auto;
-  height: 500px;
+  /* height: 500px; */
   border: 2px solid var(--bg2);
   border-radius: 20px;
 }
@@ -619,6 +642,8 @@ export default {
   /* height: 500px;
     width: 1140px; */
   border-radius: 20px;
+  width: 100%;
+  height: 100%;
 }
 
 .corps-statistique {
@@ -695,7 +720,7 @@ export default {
 }
 
 .corps-maps iframe {
-  width: 1140px;
+  width: 100%;
   height: 510px;
   border-radius: 10px;
   z-index: 999;
@@ -704,6 +729,7 @@ export default {
 .corps-info {
   height: 350px;
   max-width: 850px;
+  width: 98%;
   margin: 30px auto;
   background-color: var(--blanc);
   display: flex;
@@ -711,40 +737,43 @@ export default {
 }
 
 .corps-info img {
-  width: 425px;
+  max-width: 425px;
+  width: 98%;
   border-radius: 10px;
   -o-object-fit: cover;
   object-fit: cover;
 }
 
 .corps-info-details {
-  width: 425px;
+  max-width: 425px;
+  width: 98%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
-.corps-info-details-plus {
+.corps-info-details-plus , .corps-info-details-plus1{
   display: flex;
   justify-content: space-evenly;
 }
 
-.corps-info-details-plus1 {
+/* .corps-info-details-plus1 {
   display: flex;
   justify-content: space-evenly;
-}
+} */
 
 .corps-info-details h3 {
   color: var(--violet);
   text-align: center;
-  padding: 20px 20px 0 20px;
+  /* padding: 20px 20px 0 20px; */
   font-size: 24px;
 }
 
 .corps-info-details1 {
   margin-left: 10px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
 }
 
 .corps-info-details1 i {
@@ -758,7 +787,7 @@ export default {
   font-size: 20px;
 }
 
-.corps-info-details11 p {
+.corps-info-details1 p {
   color: var(--noir);
   font-size: 14px;
   margin-top: 8px;
@@ -796,18 +825,18 @@ export default {
     display: flex;
     flex-direction: column;
     /* margin: 0 0px 0 20px; */
-    margin: 0px 20px;
-    height: 100vh;
+    /* margin: 0px 20px; */
+    /* height: 100vh; */
   }
 
   .corps-val1 {
-    width: 85%;
-    height: 1000px;
+    width: 100%;
+    /* height: 1000px; */
   }
 
   .corps-val2 {
-    width: 85%;
-    height: 1000px;
+    width: 100%;
+    /* height: 1000px; */
   }
 
   .corps-formations .corps-formations-card {
@@ -844,5 +873,81 @@ export default {
   .corps-formations .corps-formations-card .corps-formations-image::before {
     font-size: 2em;
   }
+}
+@media (max-width:1000px){
+  .corps-formationsAcc{
+    height: auto;
+  }
+  .corps-formations{
+    border: 1px solid red;
+    flex-direction: column;
+    align-items: center;
+  }
+  .corps-formations .corps-formations-card{
+    width: 63%;
+  }
+  
+}
+@media (max-width:602px){
+  .corps-val21{
+    flex-direction: column;
+    align-items: center;
+  }
+  .corps-val1 p {
+    font-size: 16px;
+  }
+  .corps-info-details h3{
+  padding: 15px;
+  font-size: 20px;
+}
+}
+@media (max-width: 800px) {
+.corps-info{
+  flex-direction: column;
+  height: auto;
+  align-items: center;
+  padding: 10px;
+  max-width: 450px;
+  width: 98%;
+}
+.corps-info-details{
+  width: 100%;
+}
+.corps-info-details h3{
+  padding: 20px;
+}
+.corps-info-details-plus ,.corps-info-details-plus1{
+  padding: 10px;
+}
+.corps-info-details11 span{
+ font-size: 16px;
+}
+
+}
+
+
+@media (max-width: 768px) {
+  .corps-mission{
+    height: auto;
+    border: none;
+  }
+  .corps-mission-titre p {
+    padding: 10px;
+  }
+  .corps-mission-card{
+    height: auto;
+    flex-direction: column;
+  }
+  .corps-mission-card1{
+    margin: 10px 0;
+    height: 265px;
+    width: 300px;
+
+  }
+  .corps-pro{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
 }
 </style>
