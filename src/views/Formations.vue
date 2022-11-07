@@ -51,9 +51,7 @@ export default {
           
       ],
       textes: [      
-          'Coder pour devenir des professionnelles en programmation',
-        
-          
+          'Coder pour devenir des professionnelles en programmation',  
       ],
       titres: [
           'Apprendre le code ',

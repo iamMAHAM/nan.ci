@@ -19,14 +19,16 @@
         <span>{{ month.slice(0, 3) }}</span>
       </div>
     </ol>
-    <Loader v-if="load" :height="200" :width="200"/>
+    <Loader v-if="load" :height="150" :width="150"/>
     <div v-else class="props">
-      <h2>RESULTAT DU MOIS</h2>
-      <PetudiantPoints :point-info="currentInfo" :month="month"/>
-      <h2>PROJET DU MOIS</h2>
-      <ProjetEt :projet-info="currentInfo.project"/>
       <div class="error" v-if="error">
         Une Erreur est survenue vérifiez votre connexion internet.
+      </div>
+      <div v-else>
+        <h2>RESULTAT DU MOIS DE {{ currentMonth.toUpperCase() }}</h2>
+        <PetudiantPoints :point-info="currentInfo" :month="month"/>
+        <h2>PROJET DU MOIS DE {{ currentMonth.toUpperCase() }}</h2>
+        <ProjetEt :projet-info="currentInfo.project"/>
       </div>
     </div>
   </div>
@@ -41,7 +43,6 @@ export default {
     props: ['matricule'],
     created(){
       this.currentMonth = this.months[new Date().getMonth()]
-      console.log(this.currentMonth)
       this.showInfo(this.currentMonth)
     },
     data(){
@@ -57,7 +58,7 @@ export default {
     methods: {
       showInfo(month){
         this.load = true
-        fetch(`https://classe.nan.ci/api/getStudentMonthResults/${month}`, {
+        fetch(`/api/getStudentMonthResults/${month}`, {
           method: 'GET',
           headers: {'auth': this.matricule}
         })

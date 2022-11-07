@@ -110,7 +110,6 @@ export default {
         }
     },
     mounted() {
-      console.log(this.specialite)
         fetch(`http://192.168.88.15:3001/api/specialities/${this.specialite}`)
             .then(res => res.json())
             .then(data => {
@@ -123,14 +122,13 @@ export default {
               });
               this.current = vals[0][1]
         })
-          .catch((error) => {
-            console.log(error);
+          .catch((e) => {
+            console.log(e);
         });
     },
     components: { Header },
     computed: {
       digital(){
-        console.log(this.specialite === 'multimedia')
         const tch = this.specialite?.toLowerCase()
         return tch === 'reseau-voip' || tch === 'multimedia'
       },
@@ -175,8 +173,10 @@ h1{
 }
 
 .item {
-  gap: 15%;
+  gap: 5%;
   display: flex;
+  flex-wrap: wrap;
+  min-width: 400px;
   justify-content: center;
 }
 
@@ -233,7 +233,7 @@ h1{
   /* justify-content: center; */
   display: flex;
   height: 200px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 li{
@@ -290,6 +290,22 @@ img {
   transform: translate(-50%, -50%);
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--blanc);
+  border-radius: var(--radius);
+}
 .container1>h2 {
   margin: 20px 0;
 }
@@ -297,8 +313,10 @@ img {
 .etape {
   padding: 1rem;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 3%;
-  overflow: scroll;
+  /* overflow-x: scroll; */
 }
 
 button {
@@ -319,6 +337,10 @@ button:hover {
   border: transparent;
   cursor: pointer;
 
+}
+
+.etape button{
+    margin: .2rem;
 }
 
 .card_etape {
@@ -354,15 +376,6 @@ button:hover {
   #image2{
     width: 90%;
   }
-
-  .etape{
-    flex-wrap: wrap;
-  }
-
-  .etape button{
-    margin: .2rem;
-  }
-
   .card_2 .box{
     width: 100%;
     height: max-content;
@@ -376,7 +389,7 @@ button:hover {
   .card_etape .cards{
     width: 100%;
     height: 200px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
   }
 
   .cards:nth-child(2){
@@ -388,20 +401,16 @@ button:hover {
     flex-wrap: unset;
     flex-direction: column;
   }
-
-  img {
-  }
-
-  .container1>h2 {
-  }
-
-  .etape {
-  }
-
-  .card_etape {
-  }
 }
 
 @media only screen and (max-width: 768px) {
+  .container2{
+    padding: 1rem;
+  }
+
+  .item img{
+    width: 50px;
+    height: 50px;
+  }
 }
 </style>
