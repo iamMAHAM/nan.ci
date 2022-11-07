@@ -37,7 +37,7 @@
           La position de NaN est unique en Côte d’ivoire 
           de l'enseignement supérieur: elle repose sur des valeurs fortes pour une insertion professionnelle durable sur le marché de l’emploi.
         </p>
-        <a href="">Concept Unique</a>
+        <!-- <a href="">Concept Unique</a> -->
       </div>
       <div class="corps-val2">
         <div class="corps-val21">
@@ -77,7 +77,7 @@
       <div class="corps-formations">
         <div class="corps-formations-card">
           <div class="corps-formations-image" data-text="Developpeur  Web">
-            <img src="@/assets/ImagesAccueil/com.jpg" alt="">
+            <img src="@/assets/ImagesAccueil/web.png" alt="">
           </div>
           <div class="corps-formations-content">
             <div>
@@ -94,7 +94,7 @@
         </div>
         <div class="corps-formations-card">
           <div class="corps-formations-image" data-text="Developpeur Mobile">
-            <img src="@/assets/ImagesAccueil/devM.png" alt="">
+            <img src="@/assets/ImagesAccueil/mobile.png" alt="">
           </div>
           <div class="corps-formations-content">
             <div>
@@ -106,7 +106,7 @@
         </div>
         <div class="corps-formations-card">
           <div class="corps-formations-image" data-text="Marketing & Media">
-            <img src="@/assets/ImagesAccueil/devw1.png" alt="">
+            <img src="@/assets/ImagesAccueil/mmx.jpg" alt="">
           </div>
           <div class="corps-formations-content">
             <div>
@@ -118,7 +118,7 @@
         </div>
         <div class="corps-formations-card">
           <div class="corps-formations-image" data-text="Reseaux-Voip">
-            <img src="@/assets/ImagesAccueil/devw2.png" alt="">
+            <img src="@/assets/ImagesAccueil/reseaux.png" alt="">
           </div>
           <div class="corps-formations-content">
             <div>
@@ -840,9 +840,13 @@ export default {
   }
 
   .corps-formations .corps-formations-card {
-    max-width: 300px;
+    max-width: 500px;
+    width: 100%;
     flex-direction: column;
     height: auto;
+  }
+  .corps-formations .corps-formations-card .corps-formations-content h3 {
+    font-size: 20px;
   }
 
   .corps-formations .corps-formations-card .corps-formations-image {
@@ -869,6 +873,10 @@ export default {
   .corps-formations .corps-formations-card .corps-formations-content h3 {
     text-align: center;
   }
+  .corps-formations .corps-formations-card .corps-formations-content p{
+    text-align: initial;
+    letter-spacing: 0px;
+  }
 
   .corps-formations .corps-formations-card .corps-formations-image::before {
     font-size: 2em;
@@ -879,7 +887,6 @@ export default {
     height: auto;
   }
   .corps-formations{
-    border: 1px solid red;
     flex-direction: column;
     align-items: center;
   }

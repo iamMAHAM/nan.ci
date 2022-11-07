@@ -44,7 +44,7 @@ export default {
       formation:"",
       loading:true,
       slides:[
-          "",
+           "formations/binary.jpeg",
           "global/naniens-1.jpeg",
           
           
