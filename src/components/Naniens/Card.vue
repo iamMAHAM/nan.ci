@@ -3,7 +3,7 @@
     <div class="user-card front" @click="flip">
       <div class="user-top">
         <div class="tt">
-          <span class="tl">
+          <span class="tl" @click="likes">
             <i class="fa-regular fa-thumbs-up"></i>
             <span class="nb-likes">5k</span>
           </span>
@@ -116,6 +116,9 @@ export default defineComponent({
       parent.addEventListener('mouseleave', () => {
         parent.classList.remove('active')
       })
+    },
+    likes(){
+      console.log(this.info)
     }
   }
 })
