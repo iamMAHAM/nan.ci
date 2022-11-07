@@ -94,8 +94,8 @@ export default {
 }
 .corps-footer-reseau-content{
   height: 100%;
-  width: 50%;
-      display: flex;
+  width: 20%;
+    display: flex;
     justify-content: space-around;
     align-items: center;
 }

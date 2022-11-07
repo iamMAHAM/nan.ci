@@ -44,7 +44,11 @@ export default {
       formation:"",
       loading:true,
       slides:[
-          "global/naniens-1.jpeg",   
+           "formations/binary.jpeg",
+          "global/naniens-1.jpeg",
+          
+          
+          
       ],
       textes: [      
           'Coder pour devenir des professionnelles en programmation',  
