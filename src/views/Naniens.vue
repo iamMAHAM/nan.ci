@@ -67,7 +67,7 @@
         />
       </div>
 
-      <div>
+      <div v-if="toDisplayed.length">
         <Pagination :itemToShow="itemToShow" :total="filtered.length" @page="paginate" :isFilter="isFilter"/>
       </div>
     </div>
@@ -124,6 +124,7 @@ export default {
     fetch('http://192.168.88.15:3001/api/naniens')
     .then(res => res.json())
     .then(data => {
+      console.log(data)
       this.cards = [...data.data]
       this.load = false
     })
