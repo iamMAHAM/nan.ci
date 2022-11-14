@@ -55,7 +55,7 @@
       <div class="naniens-cards">
         <Card
           v-for="info in cards"
-          :info="info.id"
+          :info="info"
         />
       </div>
 
